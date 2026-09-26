@@ -1,0 +1,1615 @@
+{
+  "schema": "compact-analog-layout-gplus-v1",
+  "scope": "recorded G+ geometry observations; no failed observation records",
+  "counts": {
+    "circuits": 40,
+    "pairs": 120,
+    "observations_G": 3760,
+    "observations_C": 2364,
+    "observations_L": 1469,
+    "circuit_inputs_included": 40,
+    "circuit_inputs_upstream_only": 0,
+    "original_requested_slots": 7680
+  },
+  "sampling": {
+    "global_sampling_seed": 20260919,
+    "ALIGN_seed": 1,
+    "engine": "scipy.stats.qmc.Sobol",
+    "d": 35,
+    "scramble": true,
+    "bits": 30,
+    "call": "Sobol(d=35,scramble=True,bits=30,seed=int).random_base2(m=5)",
+    "composition": "independent global32 plus lineage-specific32, NOT first64 of one sequence",
+    "discretization": "D_j[floor(u_j * len(D_j))], no interpolation or rounding",
+    "design_seed": "uint32(first 8 hex chars of SHA256(UTF8 canonical JSON [method, global_seed, design_specific, lineage_id]))",
+    "canonical_JSON": "ensure_ascii=False,sort_keys=True,separators=(comma,colon),allow_nan=False",
+    "PDK_never_in_seed": true,
+    "versions": {
+      "python": "3.12.2",
+      "numpy": "1.26.4",
+      "scipy": "1.13.1",
+      "sampling_script_sha256": "6016b35a181a16deade87bb9d19a4282f42b93fecd4cef17820ac7e92906f9fc"
+    }
+  },
+  "formal35": {
+    "dimension_count": 35,
+    "file": "formal35.json",
+    "original_contract_sha256": "321aaa3d993c110d9bf9adb6ef265ece0436b469fa484adac15a6cda4a931a3c",
+    "published_contract_sha256": "6c99396ffc5f1f5788898b5aedec0d3866938b61c5bafd5797c1c27121478d87"
+  },
+  "quality": {
+    "G": "complete geometry and full recorded flow under frozen qualification checks",
+    "C": "G and OPEN=0 and SHORT=0 and checker_unknown=0",
+    "L": "C and DRC_total=0",
+    "nested": true,
+    "not_foundry_signoff": true,
+    "electrical_performance_validated": false,
+    "masks_null": "unknown, not false",
+    "sampling_is_success_conditioned": true
+  },
+  "budget": {
+    "placement_1200s_G": 3688,
+    "placement_rescue_3600s_G": 72,
+    "elapsed_scope": "selected attempt; earlier failures not included"
+  },
+  "metrics": {
+    "Aeval": {
+      "units": "um^2",
+      "meaning": "evaluation bounding-box area"
+    },
+    "Leq_signal": {
+      "units": "um-equivalent",
+      "meaning": "signal per-layer union metal area divided by frozen reference width, summed over layers"
+    },
+    "Leq_power": {
+      "units": "um-equivalent",
+      "meaning": "power/ground per-layer union metal area divided by frozen reference width, summed over layers"
+    },
+    "Ncut_intermetal": {
+      "units": "count",
+      "meaning": "deduplicated intermetal cut shapes, excluding contacts/V0"
+    }
+  },
+  "pdks": {
+    "14nm": {
+      "archive": "common/14nm.tar.gz",
+      "kind": "ALIGN mock PDK",
+      "G": 1256,
+      "C": 750,
+      "L": 706,
+      "layers": "exact per-observation layers.json stored in sample.json",
+      "code_consistency": "shared models and generator sources checked against all included observations"
+    },
+    "65nm": {
+      "archive": "common/65nm.tar.gz",
+      "kind": "ALIGN mock PDK",
+      "G": 1011,
+      "C": 883,
+      "L": 419,
+      "layers": "exact per-observation layers.json stored in sample.json",
+      "code_consistency": "shared models and generator sources checked against all included observations"
+    },
+    "SKY130": {
+      "archive": "common/SKY130.tar.gz",
+      "kind": "fixed ALIGN SKY130 plugin snapshot",
+      "G": 1493,
+      "C": 731,
+      "L": 344,
+      "layers": "exact per-observation layers.json stored in sample.json",
+      "code_consistency": "shared models and generator sources checked against all included observations"
+    }
+  },
+  "circuits": {
+    "b3177018eb7d2653": {
+      "circuit": "TEST_VGA",
+      "lineage_id": "topology:096d9f2eeb7c34d8d682867c03652607",
+      "upstream_repository": "https://github.com/ALIGN-analoglayout/ALIGN-public",
+      "source_family_label": "ALIGN-analoglayout/ALIGN-public",
+      "upstream_path": "examples/test_vga/test_vga.sp",
+      "source_file_sha256": "92a4093db69d2eeaa742a3d6ffe6ea8731bd8134232b9994ce129c2285583185",
+      "upstream_checkout_revision_observed": "aa1c52d1e7453d38e0ccaafc79e360ed6049d70b",
+      "revision_note": "observed checkout identity; source hash identifies actual input, not proof of clean upstream tree",
+      "input_included": true,
+      "function": "差分可变增益放大器（VGA）",
+      "scale": {
+        "source_logical_MOS": "156",
+        "source_total_devices": "156",
+        "source_flat_nets": "143",
+        "source_module_definitions": "7",
+        "source_module_occurrences": "30",
+        "source_hierarchy_depth": "2",
+        "source_signal_terminal_incidence": "547",
+        "source_signal_branch_excess": "263",
+        "source_graph_reconstructed": "true"
+      },
+      "upstream_license": "BSD-3-Clause"
+    },
+    "e990b8955da09c30": {
+      "circuit": "VCO_DTYPE_12_HIERARCHICAL",
+      "lineage_id": "align/vco_type2_core",
+      "upstream_repository": "https://github.com/ALIGN-analoglayout/ALIGN-public",
+      "source_family_label": "ALIGN-analoglayout/ALIGN-public",
+      "upstream_path": "examples/vco_dtype_12_hierarchical/vco_dtype_12_hierarchical.sp",
+      "source_file_sha256": "b0ebc6bcc4643dccd1e930deb31733eaa8b86c33f69a6b0d9c3b54a0df20f445",
+      "upstream_checkout_revision_observed": "aa1c52d1e7453d38e0ccaafc79e360ed6049d70b",
+      "revision_note": "observed checkout identity; source hash identifies actual input, not proof of clean upstream tree",
+      "input_included": true,
+      "function": "带偏置控制与差转单输出的多相环形 VCO 核",
+      "scale": {
+        "source_logical_MOS": "144",
+        "source_total_devices": "144",
+        "source_flat_nets": "115",
+        "source_module_definitions": "4",
+        "source_module_occurrences": "27",
+        "source_hierarchy_depth": "2",
+        "source_signal_terminal_incidence": "360",
+        "source_signal_branch_excess": "134",
+        "source_graph_reconstructed": "true"
+      },
+      "upstream_license": "BSD-3-Clause"
+    },
+    "d1b038ee39c122ea": {
+      "circuit": "res_amp_lin_prog",
+      "lineage_id": "topology:f59baaa7670333ca6f9ba2c07b2fb50c",
+      "upstream_repository": "https://github.com/fredysolis/caravel_analog_fulgor",
+      "source_family_label": "fredysolis/caravel_analog_fulgor",
+      "upstream_path": "xschem/simulations/res_amp_lin_prog.spice",
+      "source_file_sha256": "62ccc69b881c897717d1231632e0635da09950bd829c845fcb981af8feb555ef",
+      "upstream_checkout_revision_observed": "9e169177187e5c56a2b2e58c40884fea74f3c4c0",
+      "revision_note": "observed checkout identity; source hash identifies actual input, not proof of clean upstream tree",
+      "input_included": true,
+      "function": "带可编程偏置和时序的动态残差放大器",
+      "scale": {
+        "source_logical_MOS": "128",
+        "source_total_devices": "128",
+        "source_flat_nets": "71",
+        "source_module_definitions": "9",
+        "source_module_occurrences": "62",
+        "source_hierarchy_depth": "3",
+        "source_signal_terminal_incidence": "295",
+        "source_signal_branch_excess": "162",
+        "source_graph_reconstructed": "true"
+      },
+      "upstream_license": "Apache-2.0"
+    },
+    "51d778f23f1a20f5": {
+      "circuit": "RRR1",
+      "lineage_id": "topology:71055adeefd8db19a3eaf2f78fee044b",
+      "upstream_repository": "https://github.com/magical-eda/MAGICAL",
+      "source_family_label": "MAGICAL/circuit-benchmark-family",
+      "upstream_path": "examples/adc1/CTDSM_TOP.sp",
+      "source_file_sha256": "a7e5f5f49bdf1c12e0a16574a1e44e149c994d90b0984b00f2cfd5b2ba3a01d3",
+      "upstream_checkout_revision_observed": "199ab0719f85f74c79bf85a556118b132988a5fe",
+      "revision_note": "observed checkout identity; source hash identifies actual input, not proof of clean upstream tree",
+      "input_included": true,
+      "function": "连续时间 ΔΣ ADC 中的输出锁存/重定时子块",
+      "scale": {
+        "source_logical_MOS": "62",
+        "source_total_devices": "62",
+        "source_flat_nets": "27",
+        "source_module_definitions": "5",
+        "source_module_occurrences": "6",
+        "source_hierarchy_depth": "2",
+        "source_signal_terminal_incidence": "137",
+        "source_signal_branch_excess": "87",
+        "source_graph_reconstructed": "true"
+      },
+      "upstream_license": "BSD-3-Clause"
+    },
+    "0f9753ef86edb14c": {
+      "circuit": "1001_full",
+      "lineage_id": "topology:e00f349e68c6c183a2eaaecf17ce10d3",
+      "upstream_repository": "https://github.com/Seungmin0825/AnalogToBi",
+      "source_family_label": "Seungmin0825/AnalogToBi",
+      "upstream_path": "Dataset/1001/1001_full.cir",
+      "source_file_sha256": "a52fb98b8d6e970a5e41ee64d5665e95532fa0af0b6d08a821e54fe77fc06f3d",
+      "upstream_checkout_revision_observed": "e2033e9e5347dd0b702d24a8809de0c0f5470f87",
+      "revision_note": "observed checkout identity; source hash identifies actual input, not proof of clean upstream tree",
+      "input_included": true,
+      "function": "两相开关电容差分输入、单端输出放大结构",
+      "scale": {
+        "source_logical_MOS": "56",
+        "source_total_devices": "60",
+        "source_flat_nets": "32",
+        "source_module_definitions": "3",
+        "source_module_occurrences": "25",
+        "source_hierarchy_depth": "2",
+        "source_signal_terminal_incidence": "148",
+        "source_signal_branch_excess": "88",
+        "source_graph_reconstructed": "true"
+      },
+      "upstream_license": "not_found_in_selected_repository_license_file",
+      "redistribution_basis": "Redistributor explicitly confirmed permission to include these netlists; no general upstream dataset license is inferred."
+    },
+    "baedf61c276a441c": {
+      "circuit": "PFD",
+      "lineage_id": "topology:cc79bf234856f45ca44204a8f8f10111",
+      "upstream_repository": "https://github.com/fredysolis/caravel_analog_fulgor",
+      "source_family_label": "fredysolis/caravel_analog_fulgor",
+      "upstream_path": "xschem/simulations/PFD.spice",
+      "source_file_sha256": "edbf0f0e31d0ae4f9d8939d9506c5e306edbbf087fe2980cd03aec4ad4946c82",
+      "upstream_checkout_revision_observed": "9e169177187e5c56a2b2e58c40884fea74f3c4c0",
+      "revision_note": "observed checkout identity; source hash identifies actual input, not proof of clean upstream tree",
+      "input_included": true,
+      "function": "带公共复位的鉴相鉴频器（PFD）",
+      "scale": {
+        "source_logical_MOS": "56",
+        "source_total_devices": "56",
+        "source_flat_nets": "32",
+        "source_module_definitions": "4",
+        "source_module_occurrences": "12",
+        "source_hierarchy_depth": "2",
+        "source_signal_terminal_incidence": "130",
+        "source_signal_branch_excess": "70",
+        "source_graph_reconstructed": "true"
+      },
+      "upstream_license": "Apache-2.0"
+    },
+    "27ff5d4128c24794": {
+      "circuit": "1067_full",
+      "lineage_id": "topology:95f4bb4d29442c16e86abaf2db3a67f8",
+      "upstream_repository": "https://github.com/Seungmin0825/AnalogToBi",
+      "source_family_label": "Seungmin0825/AnalogToBi",
+      "upstream_path": "Dataset/1067/1067_full.cir",
+      "source_file_sha256": "4fb18e8721047f890be787e964d641facc47fd75f030fb16fb3f4e813e0ba2a5",
+      "upstream_checkout_revision_observed": "e2033e9e5347dd0b702d24a8809de0c0f5470f87",
+      "revision_note": "observed checkout identity; source hash identifies actual input, not proof of clean upstream tree",
+      "input_included": true,
+      "function": "四组输入的动态 CMOS 数字相等比较器",
+      "scale": {
+        "source_logical_MOS": "53",
+        "source_total_devices": "53",
+        "source_flat_nets": "40",
+        "source_module_definitions": "2",
+        "source_module_occurrences": "11",
+        "source_hierarchy_depth": "1",
+        "source_signal_terminal_incidence": "128",
+        "source_signal_branch_excess": "52",
+        "source_graph_reconstructed": "true"
+      },
+      "upstream_license": "not_found_in_selected_repository_license_file",
+      "redistribution_basis": "Redistributor explicitly confirmed permission to include these netlists; no general upstream dataset license is inferred."
+    },
+    "6ab700aa82c62135": {
+      "circuit": "UNITY_GAIN_BUFFERS",
+      "lineage_id": "topology:d3d697999b7231ab7baec4423cb9f77c",
+      "upstream_repository": "https://github.com/ALIGN-analoglayout/ALIGN-public",
+      "source_family_label": "ALIGN-analoglayout/ALIGN-public",
+      "upstream_path": "examples/unity_gain_buffers/unity_gain_buffers.sp",
+      "source_file_sha256": "e1cf2ce867bccfd30f4fcd5169ea05901c97e05cd80f68620b7698e7ae62a00a",
+      "upstream_checkout_revision_observed": "aa1c52d1e7453d38e0ccaafc79e360ed6049d70b",
+      "revision_note": "observed checkout identity; source hash identifies actual input, not proof of clean upstream tree",
+      "input_included": true,
+      "function": "高/低参考电平的双电压跟随缓冲器",
+      "scale": {
+        "source_logical_MOS": "50",
+        "source_total_devices": "50",
+        "source_flat_nets": "49",
+        "source_module_definitions": "5",
+        "source_module_occurrences": "16",
+        "source_hierarchy_depth": "1",
+        "source_signal_terminal_incidence": "138",
+        "source_signal_branch_excess": "44",
+        "source_graph_reconstructed": "true"
+      },
+      "upstream_license": "BSD-3-Clause"
+    },
+    "569ab71a823d42b4": {
+      "circuit": "TWO_STAGE_FULLY_DIFFERENTIAL_OP_AMP_40_12",
+      "lineage_id": "acst/first_stage/fully_differential/40",
+      "upstream_repository": "https://github.com/inga000/acst",
+      "source_family_label": "ACST/synthesis-generated-opamps",
+      "upstream_path": "InputFileExamples/TopologyLibraryGeneration/Netlists/FullyDifferentialOpAmps/two_stage_fully_differential_op_amp_40_12.ckt",
+      "source_file_sha256": "d123172f69f89024a9afa760c8d19f33e689c774e3aa807d2ce540cdbf5fb5a3",
+      "upstream_checkout_revision_observed": "8ef1a399dee132f667e231781f143a3147bfb888",
+      "revision_note": "observed checkout identity; source hash identifies actual input, not proof of clean upstream tree",
+      "input_included": true,
+      "function": "两级全差分运算放大器，拓扑变体40_12",
+      "scale": {
+        "source_logical_MOS": "46",
+        "source_total_devices": "50",
+        "source_flat_nets": "35",
+        "source_module_definitions": "1",
+        "source_module_occurrences": "1",
+        "source_hierarchy_depth": "0",
+        "source_signal_terminal_incidence": "138",
+        "source_signal_branch_excess": "74",
+        "source_graph_reconstructed": "true"
+      },
+      "upstream_license": "MIT-style notice"
+    },
+    "42b37352bdecb658": {
+      "circuit": "440_full",
+      "lineage_id": "topology:42a369ed037791c771e5d6198baf3540",
+      "upstream_repository": "https://github.com/Seungmin0825/AnalogToBi",
+      "source_family_label": "Seungmin0825/AnalogToBi",
+      "upstream_path": "Dataset/440/440_full.cir",
+      "source_file_sha256": "c7eea0417a40c9f621e50d3108c6ea5bab09e4215208e8a7ea6a77de0cc03196",
+      "upstream_checkout_revision_observed": "e2033e9e5347dd0b702d24a8809de0c0f5470f87",
+      "revision_note": "observed checkout identity; source hash identifies actual input, not proof of clean upstream tree",
+      "input_included": true,
+      "function": "PFD 加电荷泵的控制电压前端",
+      "scale": {
+        "source_logical_MOS": "46",
+        "source_total_devices": "47",
+        "source_flat_nets": "30",
+        "source_module_definitions": "5",
+        "source_module_occurrences": "13",
+        "source_hierarchy_depth": "2",
+        "source_signal_terminal_incidence": "104",
+        "source_signal_branch_excess": "50",
+        "source_graph_reconstructed": "true"
+      },
+      "upstream_license": "not_found_in_selected_repository_license_file",
+      "redistribution_basis": "Redistributor explicitly confirmed permission to include these netlists; no general upstream dataset license is inferred."
+    },
+    "577f0fc419ff9d03": {
+      "circuit": "TWO_STAGE_FULLY_DIFFERENTIAL_OP_AMP_48_6",
+      "lineage_id": "acst/first_stage/fully_differential/48",
+      "upstream_repository": "https://github.com/inga000/acst",
+      "source_family_label": "ACST/synthesis-generated-opamps",
+      "upstream_path": "InputFileExamples/TopologyLibraryGeneration/Netlists/FullyDifferentialOpAmps/two_stage_fully_differential_op_amp_48_6.ckt",
+      "source_file_sha256": "0bfa3413d393cce3f44cbfecbaec3952762336d35f13b7b47c9db27b41a217f7",
+      "upstream_checkout_revision_observed": "8ef1a399dee132f667e231781f143a3147bfb888",
+      "revision_note": "observed checkout identity; source hash identifies actual input, not proof of clean upstream tree",
+      "input_included": true,
+      "function": "两级全差分运算放大器，拓扑变体48_6",
+      "scale": {
+        "source_logical_MOS": "45",
+        "source_total_devices": "49",
+        "source_flat_nets": "36",
+        "source_module_definitions": "1",
+        "source_module_occurrences": "1",
+        "source_hierarchy_depth": "0",
+        "source_signal_terminal_incidence": "140",
+        "source_signal_branch_excess": "74",
+        "source_graph_reconstructed": "true"
+      },
+      "upstream_license": "MIT-style notice"
+    },
+    "a8123330bcb248aa": {
+      "circuit": "TWO_STAGE_FULLY_DIFFERENTIAL_OP_AMP_36_12",
+      "lineage_id": "acst/first_stage/fully_differential/36",
+      "upstream_repository": "https://github.com/inga000/acst",
+      "source_family_label": "ACST/synthesis-generated-opamps",
+      "upstream_path": "InputFileExamples/TopologyLibraryGeneration/Netlists/FullyDifferentialOpAmps/two_stage_fully_differential_op_amp_36_12.ckt",
+      "source_file_sha256": "ec018ada2f2b28c6ad7c0be6a247f3bd645650cbea398380a727b290f656dc18",
+      "upstream_checkout_revision_observed": "8ef1a399dee132f667e231781f143a3147bfb888",
+      "revision_note": "observed checkout identity; source hash identifies actual input, not proof of clean upstream tree",
+      "input_included": true,
+      "function": "两级全差分运算放大器，拓扑变体36_12",
+      "scale": {
+        "source_logical_MOS": "44",
+        "source_total_devices": "48",
+        "source_flat_nets": "33",
+        "source_module_definitions": "1",
+        "source_module_occurrences": "1",
+        "source_hierarchy_depth": "0",
+        "source_signal_terminal_incidence": "130",
+        "source_signal_branch_excess": "70",
+        "source_graph_reconstructed": "true"
+      },
+      "upstream_license": "MIT-style notice"
+    },
+    "1c3ca208a6d2febe": {
+      "circuit": "TWO_STAGE_FULLY_DIFFERENTIAL_OP_AMP_44_6",
+      "lineage_id": "acst/first_stage/fully_differential/44",
+      "upstream_repository": "https://github.com/inga000/acst",
+      "source_family_label": "ACST/synthesis-generated-opamps",
+      "upstream_path": "InputFileExamples/TopologyLibraryGeneration/Netlists/FullyDifferentialOpAmps/two_stage_fully_differential_op_amp_44_6.ckt",
+      "source_file_sha256": "7f7de95de9aec619a903dd0cf2a01441da5ece1d684200ab6dbc5837c8ee3f56",
+      "upstream_checkout_revision_observed": "8ef1a399dee132f667e231781f143a3147bfb888",
+      "revision_note": "observed checkout identity; source hash identifies actual input, not proof of clean upstream tree",
+      "input_included": true,
+      "function": "两级全差分运算放大器，拓扑变体44_6",
+      "scale": {
+        "source_logical_MOS": "43",
+        "source_total_devices": "47",
+        "source_flat_nets": "34",
+        "source_module_definitions": "1",
+        "source_module_occurrences": "1",
+        "source_hierarchy_depth": "0",
+        "source_signal_terminal_incidence": "132",
+        "source_signal_branch_excess": "70",
+        "source_graph_reconstructed": "true"
+      },
+      "upstream_license": "MIT-style notice"
+    },
+    "ef172a61a190aa6f": {
+      "circuit": "TWO_STAGE_FULLY_DIFFERENTIAL_OP_AMP_12_12",
+      "lineage_id": "acst/first_stage/fully_differential/12",
+      "upstream_repository": "https://github.com/inga000/acst",
+      "source_family_label": "ACST/synthesis-generated-opamps",
+      "upstream_path": "InputFileExamples/TopologyLibraryGeneration/Netlists/FullyDifferentialOpAmps/two_stage_fully_differential_op_amp_12_12.ckt",
+      "source_file_sha256": "aec87b565c9f5a16a52a20f2b1eab7e7f97d54666804fb0c4752aa6c5ded1f8b",
+      "upstream_checkout_revision_observed": "8ef1a399dee132f667e231781f143a3147bfb888",
+      "revision_note": "observed checkout identity; source hash identifies actual input, not proof of clean upstream tree",
+      "input_included": true,
+      "function": "两级全差分运算放大器，拓扑变体12_12",
+      "scale": {
+        "source_logical_MOS": "42",
+        "source_total_devices": "46",
+        "source_flat_nets": "33",
+        "source_module_definitions": "1",
+        "source_module_occurrences": "1",
+        "source_hierarchy_depth": "0",
+        "source_signal_terminal_incidence": "128",
+        "source_signal_branch_excess": "68",
+        "source_graph_reconstructed": "true"
+      },
+      "upstream_license": "MIT-style notice"
+    },
+    "344e6a7d2d1f9290": {
+      "circuit": "TWO_STAGE_FULLY_DIFFERENTIAL_OP_AMP_45_12",
+      "lineage_id": "acst/first_stage/fully_differential/45",
+      "upstream_repository": "https://github.com/inga000/acst",
+      "source_family_label": "ACST/synthesis-generated-opamps",
+      "upstream_path": "InputFileExamples/TopologyLibraryGeneration/Netlists/FullyDifferentialOpAmps/two_stage_fully_differential_op_amp_45_12.ckt",
+      "source_file_sha256": "e1c02e4d9032fa6ca226f161ad33771488b7111c410dc8a03d74c182b964dfa0",
+      "upstream_checkout_revision_observed": "8ef1a399dee132f667e231781f143a3147bfb888",
+      "revision_note": "observed checkout identity; source hash identifies actual input, not proof of clean upstream tree",
+      "input_included": true,
+      "function": "两级全差分运算放大器，拓扑变体45_12",
+      "scale": {
+        "source_logical_MOS": "41",
+        "source_total_devices": "45",
+        "source_flat_nets": "32",
+        "source_module_definitions": "1",
+        "source_module_occurrences": "1",
+        "source_hierarchy_depth": "0",
+        "source_signal_terminal_incidence": "124",
+        "source_signal_branch_excess": "66",
+        "source_graph_reconstructed": "true"
+      },
+      "upstream_license": "MIT-style notice"
+    },
+    "a8d0bd197ec9d1fe": {
+      "circuit": "TWO_STAGE_FULLY_DIFFERENTIAL_OP_AMP_42_6",
+      "lineage_id": "acst/first_stage/fully_differential/42",
+      "upstream_repository": "https://github.com/inga000/acst",
+      "source_family_label": "ACST/synthesis-generated-opamps",
+      "upstream_path": "InputFileExamples/TopologyLibraryGeneration/Netlists/FullyDifferentialOpAmps/two_stage_fully_differential_op_amp_42_6.ckt",
+      "source_file_sha256": "8d29fedceac0bdfc51cc37dc522f02874e4cc3a55df4070cbcea934c7d8e44d6",
+      "upstream_checkout_revision_observed": "8ef1a399dee132f667e231781f143a3147bfb888",
+      "revision_note": "observed checkout identity; source hash identifies actual input, not proof of clean upstream tree",
+      "input_included": true,
+      "function": "两级全差分运算放大器，拓扑变体42_6",
+      "scale": {
+        "source_logical_MOS": "40",
+        "source_total_devices": "44",
+        "source_flat_nets": "32",
+        "source_module_definitions": "1",
+        "source_module_occurrences": "1",
+        "source_hierarchy_depth": "0",
+        "source_signal_terminal_incidence": "124",
+        "source_signal_branch_excess": "66",
+        "source_graph_reconstructed": "true"
+      },
+      "upstream_license": "MIT-style notice"
+    },
+    "f5d6033e0190e109": {
+      "circuit": "TWO_STAGE_FULLY_DIFFERENTIAL_OP_AMP_28_6",
+      "lineage_id": "acst/first_stage/fully_differential/28",
+      "upstream_repository": "https://github.com/inga000/acst",
+      "source_family_label": "ACST/synthesis-generated-opamps",
+      "upstream_path": "InputFileExamples/TopologyLibraryGeneration/Netlists/FullyDifferentialOpAmps/two_stage_fully_differential_op_amp_28_6.ckt",
+      "source_file_sha256": "cd1487b94bbe5952cc45af853dde7d1c0a7bd2821a59777ba9efc328825c0a11",
+      "upstream_checkout_revision_observed": "8ef1a399dee132f667e231781f143a3147bfb888",
+      "revision_note": "observed checkout identity; source hash identifies actual input, not proof of clean upstream tree",
+      "input_included": true,
+      "function": "两级全差分运算放大器，拓扑变体28_6",
+      "scale": {
+        "source_logical_MOS": "39",
+        "source_total_devices": "43",
+        "source_flat_nets": "31",
+        "source_module_definitions": "1",
+        "source_module_occurrences": "1",
+        "source_hierarchy_depth": "0",
+        "source_signal_terminal_incidence": "118",
+        "source_signal_branch_excess": "62",
+        "source_graph_reconstructed": "true"
+      },
+      "upstream_license": "MIT-style notice"
+    },
+    "f31e78ad0bb46333": {
+      "circuit": "REFERENCE_BUFFER_CORE",
+      "lineage_id": "magical/reference_buffer_family",
+      "upstream_repository": "https://github.com/magical-eda/MAGICAL-CIRCUITS",
+      "source_family_label": "MAGICAL/circuit-benchmark-family",
+      "upstream_path": "benchmark_circuits/Vcm_Buffer/Reference_buffer_core.sp",
+      "source_file_sha256": "59229a43d27c6f61f5de11aca62f976926b58da7448304b60177f07dc1e469c6",
+      "upstream_checkout_revision_observed": "b2d7ed1dbf3245cff156e897a4ceba6acc065384",
+      "revision_note": "observed checkout identity; source hash identifies actual input, not proof of clean upstream tree",
+      "input_included": true,
+      "function": "带参考 OTA 和反馈接口的参考电压缓冲核心",
+      "scale": {
+        "source_logical_MOS": "39",
+        "source_total_devices": "39",
+        "source_flat_nets": "19",
+        "source_module_definitions": "2",
+        "source_module_occurrences": "2",
+        "source_hierarchy_depth": "1",
+        "source_signal_terminal_incidence": "75",
+        "source_signal_branch_excess": "44",
+        "source_graph_reconstructed": "true"
+      },
+      "upstream_license": "BSD-3-Clause"
+    },
+    "faf371bf1822b053": {
+      "circuit": "SONG_DACFC_PIN_3",
+      "lineage_id": "topology:f5aa88b1182431b2d614587fb860dab4",
+      "upstream_repository": "https://github.com/jialinlu/opensource-analog-circuits",
+      "source_family_label": "jialinlu/opensource-analog-circuits",
+      "upstream_path": "circuits/song_dacfc/circuit.cir",
+      "source_file_sha256": "e53260aefe300a3d8600abcc4ef9357434cc4fca8e5077d06b3bbad5bae178e6",
+      "upstream_checkout_revision_observed": "e8308aa273c1a6737a5dee89178c4d48270ff87e",
+      "revision_note": "observed checkout identity; source hash identifies actual input, not proof of clean upstream tree",
+      "input_included": true,
+      "function": "Song DACFC 单端多级运算放大器",
+      "scale": {
+        "source_logical_MOS": "37",
+        "source_total_devices": "39",
+        "source_flat_nets": "26",
+        "source_module_definitions": "3",
+        "source_module_occurrences": "38",
+        "source_hierarchy_depth": "1",
+        "source_signal_terminal_incidence": "95",
+        "source_signal_branch_excess": "47",
+        "source_graph_reconstructed": "true"
+      },
+      "upstream_license": "not_found_in_selected_repository_license_file",
+      "source_chain": {
+        "original_repository": "https://github.com/CODA-Team/AnalogGym",
+        "license": "BSD-3-Clause",
+        "basis": "immediate upstream README attribution of song_dacfc / amp_nmcf to AnalogGym; full license retained",
+        "license_blob_sha1": "6725437ed4d4222cec684ebcf759231f90199693"
+      }
+    },
+    "181160088003ec76": {
+      "circuit": "TELESCOPIC_OTA_WITH_BIAS",
+      "lineage_id": "align/telescopic_core",
+      "upstream_repository": "https://github.com/ALIGN-analoglayout/ALIGN-public",
+      "source_family_label": "ALIGN-analoglayout/ALIGN-public",
+      "upstream_path": "examples/telescopic_ota_with_bias/telescopic_ota_with_bias.sp",
+      "source_file_sha256": "ead091d250d1a23bca7b58259a2572a7051060a80d45d73d7eea28db305cc93d",
+      "upstream_checkout_revision_observed": "aa1c52d1e7453d38e0ccaafc79e360ed6049d70b",
+      "revision_note": "observed checkout identity; source hash identifies actual input, not proof of clean upstream tree",
+      "input_included": true,
+      "function": "带偏置生成支路的套筒式 OTA",
+      "scale": {
+        "source_logical_MOS": "36",
+        "source_total_devices": "36",
+        "source_flat_nets": "35",
+        "source_module_definitions": "1",
+        "source_module_occurrences": "1",
+        "source_hierarchy_depth": "0",
+        "source_signal_terminal_incidence": "99",
+        "source_signal_branch_excess": "33",
+        "source_graph_reconstructed": "true"
+      },
+      "upstream_license": "BSD-3-Clause"
+    },
+    "c00556172b0ae903": {
+      "circuit": "div_by_2",
+      "lineage_id": "topology:878bf6745ea15669618e8c0981bc04f0",
+      "upstream_repository": "https://github.com/fredysolis/caravel_analog_fulgor",
+      "source_family_label": "fredysolis/caravel_analog_fulgor",
+      "upstream_path": "xschem/simulations/div_by_2.spice",
+      "source_file_sha256": "92536a87a2027ee9a4ad57c7148c9295ec993934fd3b76c301e7e6d914ecbc25",
+      "upstream_checkout_revision_observed": "9e169177187e5c56a2b2e58c40884fea74f3c4c0",
+      "revision_note": "observed checkout identity; source hash identifies actual input, not proof of clean upstream tree",
+      "input_included": true,
+      "function": "带互补输出缓冲的二分频器",
+      "scale": {
+        "source_logical_MOS": "34",
+        "source_total_devices": "34",
+        "source_flat_nets": "21",
+        "source_module_definitions": "8",
+        "source_module_occurrences": "18",
+        "source_hierarchy_depth": "3",
+        "source_signal_terminal_incidence": "72",
+        "source_signal_branch_excess": "34",
+        "source_graph_reconstructed": "true"
+      },
+      "upstream_license": "Apache-2.0"
+    },
+    "e7b82c875d60283d": {
+      "circuit": "Netlist",
+      "lineage_id": "topology:8c8cb6ace0c1d89bae3537e555d8d34c",
+      "upstream_repository": "https://github.com/ALIGN-analoglayout/ALIGN-public",
+      "source_family_label": "ALIGN-analoglayout/ALIGN-public",
+      "upstream_path": "CircuitsDatabase/Sized_Netlists/Power_management/Charge_pump/Netlist",
+      "source_file_sha256": "1e2b68c6f4db3d1b03a9f114603bd347e586f33e188cc21a54c46efb633d3d1b",
+      "upstream_checkout_revision_observed": "aa1c52d1e7453d38e0ccaafc79e360ed6049d70b",
+      "revision_note": "observed checkout identity; source hash identifies actual input, not proof of clean upstream tree",
+      "input_included": true,
+      "function": "能量采集控制用电荷泵/充放电控制节点",
+      "scale": {
+        "source_logical_MOS": "30",
+        "source_total_devices": "35",
+        "source_flat_nets": "23",
+        "source_module_definitions": "4",
+        "source_module_occurrences": "5",
+        "source_hierarchy_depth": "1",
+        "source_signal_terminal_incidence": "75",
+        "source_signal_branch_excess": "33",
+        "source_graph_reconstructed": "true"
+      },
+      "upstream_license": "BSD-3-Clause"
+    },
+    "51920d82fbfc8a07": {
+      "circuit": "COMPLEMENTARY_OP_AMP32",
+      "lineage_id": "acst/complementary/32",
+      "upstream_repository": "https://github.com/inga000/acst",
+      "source_family_label": "ACST/synthesis-generated-opamps",
+      "upstream_path": "InputFileExamples/TopologyLibraryGeneration/Netlists/CommplementaryOpAmps/complementary_op_amp32.ckt",
+      "source_file_sha256": "a0fc78f9ead3fde78329cbc1ad79bc3ad817233467ca38f1a227fa64ca201382",
+      "upstream_checkout_revision_observed": "8ef1a399dee132f667e231781f143a3147bfb888",
+      "revision_note": "observed checkout identity; source hash identifies actual input, not proof of clean upstream tree",
+      "input_included": true,
+      "function": "互补 NMOS/PMOS 输入的单端运算放大器，变体32",
+      "scale": {
+        "source_logical_MOS": "28",
+        "source_total_devices": "29",
+        "source_flat_nets": "22",
+        "source_module_definitions": "1",
+        "source_module_occurrences": "1",
+        "source_hierarchy_depth": "0",
+        "source_signal_terminal_incidence": "83",
+        "source_signal_branch_excess": "43",
+        "source_graph_reconstructed": "true"
+      },
+      "upstream_license": "MIT-style notice"
+    },
+    "17857624a23f96fc": {
+      "circuit": "COMPARATOR_1TO7_0P7_LVT",
+      "lineage_id": "magical/comparator_family",
+      "upstream_repository": "https://github.com/magical-eda/MAGICAL-CIRCUITS",
+      "source_family_label": "MAGICAL/circuit-benchmark-family",
+      "upstream_path": "benchmark_circuits/Comparator/Comparator_1to7_0p7_lvt.sp",
+      "source_file_sha256": "e9212e75310c3e5c3d610e20bc07bcc3356a9924fde625584d7ead9a4d374c26",
+      "upstream_checkout_revision_observed": "b2d7ed1dbf3245cff156e897a4ceba6acc065384",
+      "revision_note": "observed checkout identity; source hash identifies actual input, not proof of clean upstream tree",
+      "input_included": true,
+      "function": "差分输入、互补输出的时钟比较器",
+      "scale": {
+        "source_logical_MOS": "28",
+        "source_total_devices": "28",
+        "source_flat_nets": "15",
+        "source_module_definitions": "1",
+        "source_module_occurrences": "1",
+        "source_hierarchy_depth": "0",
+        "source_signal_terminal_incidence": "50",
+        "source_signal_branch_excess": "24",
+        "source_graph_reconstructed": "true"
+      },
+      "upstream_license": "BSD-3-Clause"
+    },
+    "49e4835ff2047f6e": {
+      "circuit": "COMPLEMENTARY_OP_AMP16",
+      "lineage_id": "acst/complementary/16",
+      "upstream_repository": "https://github.com/inga000/acst",
+      "source_family_label": "ACST/synthesis-generated-opamps",
+      "upstream_path": "InputFileExamples/TopologyLibraryGeneration/Netlists/CommplementaryOpAmps/complementary_op_amp16.ckt",
+      "source_file_sha256": "1e9d736fc1ffe4f0ed5c365a976fbf32d0784c964989694f880683c80ad352e7",
+      "upstream_checkout_revision_observed": "8ef1a399dee132f667e231781f143a3147bfb888",
+      "revision_note": "observed checkout identity; source hash identifies actual input, not proof of clean upstream tree",
+      "input_included": true,
+      "function": "互补 NMOS/PMOS 输入的单端运算放大器，变体16",
+      "scale": {
+        "source_logical_MOS": "27",
+        "source_total_devices": "28",
+        "source_flat_nets": "21",
+        "source_module_definitions": "1",
+        "source_module_occurrences": "1",
+        "source_hierarchy_depth": "0",
+        "source_signal_terminal_incidence": "79",
+        "source_signal_branch_excess": "41",
+        "source_graph_reconstructed": "true"
+      },
+      "upstream_license": "MIT-style notice"
+    },
+    "b03ca5afb2603286": {
+      "circuit": "COMPARATOR",
+      "lineage_id": "maherbenhouria/rail_to_rail_comparator_family",
+      "upstream_repository": "https://github.com/maherbenhouria/caravel_user_project_analog",
+      "source_family_label": "maherbenhouria/caravel_user_project_analog",
+      "upstream_path": "xschem/comparator.spice",
+      "source_file_sha256": "6361e330c5c749dd2dfdac678ca453ede01c1832bbd0348bf15db43215632561",
+      "upstream_checkout_revision_observed": "58371fc1a28d00b23ef44898c2353b66d53499cf",
+      "revision_note": "observed checkout identity; source hash identifies actual input, not proof of clean upstream tree",
+      "input_included": true,
+      "function": "带互补输入对与输出缓冲的连续时间比较器",
+      "scale": {
+        "source_logical_MOS": "26",
+        "source_total_devices": "26",
+        "source_flat_nets": "17",
+        "source_module_definitions": "1",
+        "source_module_occurrences": "1",
+        "source_hierarchy_depth": "0",
+        "source_signal_terminal_incidence": "50",
+        "source_signal_branch_excess": "22",
+        "source_graph_reconstructed": "true"
+      },
+      "upstream_license": "Apache-2.0"
+    },
+    "5ac1f2d137a48c02": {
+      "circuit": "single_ended_current_mirror_pmos_LG_npmos_cr4_2",
+      "lineage_id": "align_unsized_core/single_ended_current_mirror_pmos",
+      "upstream_repository": "https://github.com/ALIGN-analoglayout/ALIGN-public",
+      "source_family_label": "ALIGN/unsized-composed-OTA-library",
+      "upstream_path": "CircuitsDatabase/Unsized_Netlists/Low frequency analog/OTA_topologies/full_OTA/single_ended_OTA/single_ended_current_mirror_pmos_LG_npmos_cr4_2.sp",
+      "source_file_sha256": "20ef5c537b0a6660ad5d166d57b4d76d83d8f97f17a822cc4b7a21856fba6fe1",
+      "upstream_checkout_revision_observed": "aa1c52d1e7453d38e0ccaafc79e360ed6049d70b",
+      "revision_note": "observed checkout identity; source hash identifies actual input, not proof of clean upstream tree",
+      "input_included": true,
+      "function": "PMOS 输入、电流镜型单端 OTA，附偏置网络",
+      "scale": {
+        "source_logical_MOS": "25",
+        "source_total_devices": "25",
+        "source_flat_nets": "19",
+        "source_module_definitions": "4",
+        "source_module_occurrences": "4",
+        "source_hierarchy_depth": "1",
+        "source_signal_terminal_incidence": "58",
+        "source_signal_branch_excess": "26",
+        "source_graph_reconstructed": "true"
+      },
+      "upstream_license": "BSD-3-Clause"
+    },
+    "3c0b22a977c35961": {
+      "circuit": "SINGLE_ENDED_CURRENT_MIRROR_LG_NPMOS_CR4_2",
+      "lineage_id": "align_unsized_core/single_ended_current_mirror",
+      "upstream_repository": "https://github.com/ALIGN-analoglayout/ALIGN-public",
+      "source_family_label": "ALIGN/unsized-composed-OTA-library",
+      "upstream_path": "CircuitsDatabase/Unsized_Netlists/Low frequency analog/OTA_topologies/full_OTA/single_ended_OTA/single_ended_current_mirror_LG_npmos_cr4_2.sp",
+      "source_file_sha256": "1be6db034d02f0bc060dd86ff45eb7b3c0771d86abed049d7f9a3867057aa731",
+      "upstream_checkout_revision_observed": "aa1c52d1e7453d38e0ccaafc79e360ed6049d70b",
+      "revision_note": "observed checkout identity; source hash identifies actual input, not proof of clean upstream tree",
+      "input_included": true,
+      "function": "NMOS 输入、电流镜型单端 OTA，附偏置网络",
+      "scale": {
+        "source_logical_MOS": "25",
+        "source_total_devices": "25",
+        "source_flat_nets": "18",
+        "source_module_definitions": "4",
+        "source_module_occurrences": "4",
+        "source_hierarchy_depth": "1",
+        "source_signal_terminal_incidence": "56",
+        "source_signal_branch_excess": "26",
+        "source_graph_reconstructed": "true"
+      },
+      "upstream_license": "BSD-3-Clause"
+    },
+    "46e16a15be59e084": {
+      "circuit": "LEUNG_NMCF_PIN_3",
+      "lineage_id": "topology:7df6c76b069c86d8c9ee4bc0854dbbdb",
+      "upstream_repository": "https://github.com/jialinlu/opensource-analog-circuits",
+      "source_family_label": "jialinlu/opensource-analog-circuits",
+      "upstream_path": "circuits/amp_nmcf/circuit.cir",
+      "source_file_sha256": "94531bc32d607609e0f27f773e4da8f9ed3f7b33e4d8364af13fe9d3f6a169dd",
+      "upstream_checkout_revision_observed": "e8308aa273c1a6737a5dee89178c4d48270ff87e",
+      "revision_note": "observed checkout identity; source hash identifies actual input, not proof of clean upstream tree",
+      "input_included": true,
+      "function": "Leung NMCF 单端多级运算放大器",
+      "scale": {
+        "source_logical_MOS": "24",
+        "source_total_devices": "30",
+        "source_flat_nets": "22",
+        "source_module_definitions": "4",
+        "source_module_occurrences": "27",
+        "source_hierarchy_depth": "1",
+        "source_signal_terminal_incidence": "68",
+        "source_signal_branch_excess": "30",
+        "source_graph_reconstructed": "true"
+      },
+      "upstream_license": "not_found_in_selected_repository_license_file",
+      "source_chain": {
+        "original_repository": "https://github.com/CODA-Team/AnalogGym",
+        "license": "BSD-3-Clause",
+        "basis": "immediate upstream README attribution of song_dacfc / amp_nmcf to AnalogGym; full license retained",
+        "license_blob_sha1": "6725437ed4d4222cec684ebcf759231f90199693"
+      }
+    },
+    "aad3afd256a11a39": {
+      "circuit": "SYMMETRICAL_OP_AMP151",
+      "lineage_id": "topology:3cc5c8278eb028a7d7d99a09b09fda90",
+      "upstream_repository": "https://github.com/inga000/acst",
+      "source_family_label": "ACST/synthesis-generated-opamps",
+      "upstream_path": "InputFileExamples/Synthesis/HspiceNetlist/symmetrical_op_amp151.ckt",
+      "source_file_sha256": "665880028ce7a6ba16fb841ecb3f499bdcfa1d2358bd8c36d824dbcfaec73de8",
+      "upstream_checkout_revision_observed": "8ef1a399dee132f667e231781f143a3147bfb888",
+      "revision_note": "observed checkout identity; source hash identifies actual input, not proof of clean upstream tree",
+      "input_included": true,
+      "function": "对称首级、互补后级的单端运算放大器，变体151",
+      "scale": {
+        "source_logical_MOS": "24",
+        "source_total_devices": "25",
+        "source_flat_nets": "21",
+        "source_module_definitions": "1",
+        "source_module_occurrences": "1",
+        "source_hierarchy_depth": "0",
+        "source_signal_terminal_incidence": "69",
+        "source_signal_branch_excess": "33",
+        "source_graph_reconstructed": "true"
+      },
+      "upstream_license": "MIT-style notice"
+    },
+    "b87a361a5fbc23b2": {
+      "circuit": "DCDC_CONV2TO1",
+      "lineage_id": "topology:fd048828db517e4d053d735533b456d4",
+      "upstream_repository": "https://github.com/idea-fasoc/OpenFASOC",
+      "source_family_label": "idea-fasoc/OpenFASOC",
+      "upstream_path": "openfasoc/generators/NON_CLK_GEN/blocks/sky130hs/spice/auxcell.cdl",
+      "source_file_sha256": "54c8e54bd3e984727f71fd5663cec45057c354abaf7cef7c3cb8c792ee58a5a4",
+      "upstream_checkout_revision_observed": "426c17025c7c01d6e7d4d259fb7f9e7d741cc5c4",
+      "revision_note": "observed checkout identity; source hash identifies actual input, not proof of clean upstream tree",
+      "input_included": true,
+      "function": "2:1 开关电容 DC–DC 级的 MOS 开关核心",
+      "scale": {
+        "source_logical_MOS": "24",
+        "source_total_devices": "24",
+        "source_flat_nets": "21",
+        "source_module_definitions": "4",
+        "source_module_occurrences": "7",
+        "source_hierarchy_depth": "2",
+        "source_signal_terminal_incidence": "80",
+        "source_signal_branch_excess": "42",
+        "source_graph_reconstructed": "true"
+      },
+      "upstream_license": "Apache-2.0"
+    },
+    "27c6c53cce92a4fe": {
+      "circuit": "SYMMETRICAL_OP_AMP144",
+      "lineage_id": "topology:4e30ceb0d7aa93e69b94ebb45445dfba",
+      "upstream_repository": "https://github.com/inga000/acst",
+      "source_family_label": "ACST/synthesis-generated-opamps",
+      "upstream_path": "InputFileExamples/Synthesis/HspiceNetlist/symmetrical_op_amp144.ckt",
+      "source_file_sha256": "c301df58458fd64be08d220343b9db5517126b05d489d294f5e5c2aac4e45d15",
+      "upstream_checkout_revision_observed": "8ef1a399dee132f667e231781f143a3147bfb888",
+      "revision_note": "observed checkout identity; source hash identifies actual input, not proof of clean upstream tree",
+      "input_included": true,
+      "function": "对称首级、互补后级的单端运算放大器，变体144",
+      "scale": {
+        "source_logical_MOS": "23",
+        "source_total_devices": "24",
+        "source_flat_nets": "20",
+        "source_module_definitions": "1",
+        "source_module_occurrences": "1",
+        "source_hierarchy_depth": "0",
+        "source_signal_terminal_incidence": "65",
+        "source_signal_branch_excess": "31",
+        "source_graph_reconstructed": "true"
+      },
+      "upstream_license": "MIT-style notice"
+    },
+    "de789d88cfd3be86": {
+      "circuit": "single_ended_miller_compensated_pmos_LG_npmos_cr4_2",
+      "lineage_id": "align_unsized_core/single_ended_miller_compensated_pmos",
+      "upstream_repository": "https://github.com/ALIGN-analoglayout/ALIGN-public",
+      "source_family_label": "ALIGN/unsized-composed-OTA-library",
+      "upstream_path": "CircuitsDatabase/Unsized_Netlists/Low frequency analog/OTA_topologies/full_OTA/single_ended_OTA/single_ended_miller_compensated_pmos_LG_npmos_cr4_2.sp",
+      "source_file_sha256": "59ae23eeceb6d3059731c5e42e7cc742e8eaf99bd68c82f29e0f292fdc86e027",
+      "upstream_checkout_revision_observed": "aa1c52d1e7453d38e0ccaafc79e360ed6049d70b",
+      "revision_note": "observed checkout identity; source hash identifies actual input, not proof of clean upstream tree",
+      "input_included": true,
+      "function": "PMOS 输入、Miller 补偿的两级单端 OTA，附偏置网络",
+      "scale": {
+        "source_logical_MOS": "23",
+        "source_total_devices": "24",
+        "source_flat_nets": "18",
+        "source_module_definitions": "4",
+        "source_module_occurrences": "4",
+        "source_hierarchy_depth": "1",
+        "source_signal_terminal_incidence": "56",
+        "source_signal_branch_excess": "26",
+        "source_graph_reconstructed": "true"
+      },
+      "upstream_license": "BSD-3-Clause"
+    },
+    "712faad79bf6c23c": {
+      "circuit": "SINGLE_ENDED_MILLER_COMPENSATED_LG_NPMOS_CR4_2",
+      "lineage_id": "align_unsized_core/single_ended_miller_compensated",
+      "upstream_repository": "https://github.com/ALIGN-analoglayout/ALIGN-public",
+      "source_family_label": "ALIGN/unsized-composed-OTA-library",
+      "upstream_path": "CircuitsDatabase/Unsized_Netlists/Low frequency analog/OTA_topologies/full_OTA/single_ended_OTA/single_ended_miller_compensated_LG_npmos_cr4_2.sp",
+      "source_file_sha256": "481013be806129dd6aabcaedabe8e1265497da6c750ac74c09d041d9a835395b",
+      "upstream_checkout_revision_observed": "aa1c52d1e7453d38e0ccaafc79e360ed6049d70b",
+      "revision_note": "observed checkout identity; source hash identifies actual input, not proof of clean upstream tree",
+      "input_included": true,
+      "function": "NMOS 输入、Miller 补偿的两级单端 OTA，附偏置网络",
+      "scale": {
+        "source_logical_MOS": "23",
+        "source_total_devices": "24",
+        "source_flat_nets": "17",
+        "source_module_definitions": "4",
+        "source_module_occurrences": "4",
+        "source_hierarchy_depth": "1",
+        "source_signal_terminal_incidence": "54",
+        "source_signal_branch_excess": "26",
+        "source_graph_reconstructed": "true"
+      },
+      "upstream_license": "BSD-3-Clause"
+    },
+    "949857508c4e48a1": {
+      "circuit": "single_ended_low_voltage_cascode_pmos_LG_npmos_cr4_2",
+      "lineage_id": "align_unsized_core/single_ended_low_voltage_cascode_pmos",
+      "upstream_repository": "https://github.com/ALIGN-analoglayout/ALIGN-public",
+      "source_family_label": "ALIGN/unsized-composed-OTA-library",
+      "upstream_path": "CircuitsDatabase/Unsized_Netlists/Low frequency analog/OTA_topologies/full_OTA/single_ended_OTA/single_ended_low_voltage_cascode_pmos_LG_npmos_cr4_2.sp",
+      "source_file_sha256": "6fbef0b7ebd8600218aa76112eb82f04edc6f3dce37768fdf29f09e361ca5f21",
+      "upstream_checkout_revision_observed": "aa1c52d1e7453d38e0ccaafc79e360ed6049d70b",
+      "revision_note": "observed checkout identity; source hash identifies actual input, not proof of clean upstream tree",
+      "input_included": true,
+      "function": "PMOS 输入、低压共源共栅型单端 OTA，附偏置网络",
+      "scale": {
+        "source_logical_MOS": "23",
+        "source_total_devices": "23",
+        "source_flat_nets": "20",
+        "source_module_definitions": "4",
+        "source_module_occurrences": "4",
+        "source_hierarchy_depth": "1",
+        "source_signal_terminal_incidence": "56",
+        "source_signal_branch_excess": "22",
+        "source_graph_reconstructed": "true"
+      },
+      "upstream_license": "BSD-3-Clause"
+    },
+    "873902ebcfc0e77c": {
+      "circuit": "SINGLE_ENDED_LOW_VOLTAGE_CASCODE_CURRENT_MIRROR_LG_NPMOS_CR4_2",
+      "lineage_id": "align_unsized_core/single_ended_low_voltage_cascode_current_mirror",
+      "upstream_repository": "https://github.com/ALIGN-analoglayout/ALIGN-public",
+      "source_family_label": "ALIGN/unsized-composed-OTA-library",
+      "upstream_path": "CircuitsDatabase/Unsized_Netlists/Low frequency analog/OTA_topologies/full_OTA/single_ended_OTA/single_ended_low_voltage_cascode_current_mirror_LG_npmos_cr4_2.sp",
+      "source_file_sha256": "c73cdc84a0bdd4f0196ef83005a8617e63436f4aa163f7533976d8771d5efccd",
+      "upstream_checkout_revision_observed": "aa1c52d1e7453d38e0ccaafc79e360ed6049d70b",
+      "revision_note": "observed checkout identity; source hash identifies actual input, not proof of clean upstream tree",
+      "input_included": true,
+      "function": "NMOS 输入、低压共源共栅电流镜型单端 OTA，附偏置网络",
+      "scale": {
+        "source_logical_MOS": "23",
+        "source_total_devices": "23",
+        "source_flat_nets": "19",
+        "source_module_definitions": "4",
+        "source_module_occurrences": "4",
+        "source_hierarchy_depth": "1",
+        "source_signal_terminal_incidence": "54",
+        "source_signal_branch_excess": "22",
+        "source_graph_reconstructed": "true"
+      },
+      "upstream_license": "BSD-3-Clause"
+    },
+    "d8ba2af6a9e0e2ab": {
+      "circuit": "SINGLE_ENDED_PMOS_LG_NPMOS_CR4_2",
+      "lineage_id": "align_unsized_core/single_ended_pmos",
+      "upstream_repository": "https://github.com/ALIGN-analoglayout/ALIGN-public",
+      "source_family_label": "ALIGN/unsized-composed-OTA-library",
+      "upstream_path": "CircuitsDatabase/Unsized_Netlists/Low frequency analog/OTA_topologies/full_OTA/single_ended_OTA/single_ended_pmos_LG_npmos_cr4_2.sp",
+      "source_file_sha256": "4e6c220ac1ca3d9a2bd31afefa256cca9e5c474979bbadbc645f0e6e871baa93",
+      "upstream_checkout_revision_observed": "aa1c52d1e7453d38e0ccaafc79e360ed6049d70b",
+      "revision_note": "observed checkout identity; source hash identifies actual input, not proof of clean upstream tree",
+      "input_included": true,
+      "function": "PMOS 输入的基本单端 OTA，附偏置网络",
+      "scale": {
+        "source_logical_MOS": "21",
+        "source_total_devices": "21",
+        "source_flat_nets": "17",
+        "source_module_definitions": "4",
+        "source_module_occurrences": "4",
+        "source_hierarchy_depth": "1",
+        "source_signal_terminal_incidence": "50",
+        "source_signal_branch_excess": "22",
+        "source_graph_reconstructed": "true"
+      },
+      "upstream_license": "BSD-3-Clause"
+    },
+    "fe6fb06ade59b142": {
+      "circuit": "FULLY_DIFFERENTIAL_LG_NPMOS_CR4_2",
+      "lineage_id": "align_unsized_core/fully_differential",
+      "upstream_repository": "https://github.com/ALIGN-analoglayout/ALIGN-public",
+      "source_family_label": "ALIGN/unsized-composed-OTA-library",
+      "upstream_path": "CircuitsDatabase/Unsized_Netlists/Low frequency analog/OTA_topologies/full_OTA/fully_differential_OTA/fully_differential_LG_npmos_cr4_2.sp",
+      "source_file_sha256": "bc226d7a11d90b481034b76a57fe286f228219954e237b737f5e13fadde1354c",
+      "upstream_checkout_revision_observed": "aa1c52d1e7453d38e0ccaafc79e360ed6049d70b",
+      "revision_note": "observed checkout identity; source hash identifies actual input, not proof of clean upstream tree",
+      "input_included": true,
+      "function": "NMOS 输入的全差分 OTA，附偏置网络",
+      "scale": {
+        "source_logical_MOS": "21",
+        "source_total_devices": "21",
+        "source_flat_nets": "16",
+        "source_module_definitions": "4",
+        "source_module_occurrences": "4",
+        "source_hierarchy_depth": "1",
+        "source_signal_terminal_incidence": "48",
+        "source_signal_branch_excess": "22",
+        "source_graph_reconstructed": "true"
+      },
+      "upstream_license": "BSD-3-Clause"
+    },
+    "9e2563db0166c545": {
+      "circuit": "CASCODE_CURRENT_MIRROR_OTA",
+      "lineage_id": "topology:23f867d931025307bfe94bc9e05c954d",
+      "upstream_repository": "https://github.com/ALIGN-analoglayout/ALIGN-public",
+      "source_family_label": "ALIGN-analoglayout/ALIGN-public",
+      "upstream_path": "examples/cascode_current_mirror_ota/cascode_current_mirror_ota.sp",
+      "source_file_sha256": "20fb177f5f030622c6554c2416890807a424766c116039bb5b20b824da581bc6",
+      "upstream_checkout_revision_observed": "aa1c52d1e7453d38e0ccaafc79e360ed6049d70b",
+      "revision_note": "observed checkout identity; source hash identifies actual input, not proof of clean upstream tree",
+      "input_included": true,
+      "function": "共源共栅电流镜单端 OTA",
+      "scale": {
+        "source_logical_MOS": "20",
+        "source_total_devices": "20",
+        "source_flat_nets": "20",
+        "source_module_definitions": "1",
+        "source_module_occurrences": "1",
+        "source_hierarchy_depth": "0",
+        "source_signal_terminal_incidence": "50",
+        "source_signal_branch_excess": "16",
+        "source_graph_reconstructed": "true"
+      },
+      "upstream_license": "BSD-3-Clause"
+    },
+    "ff28fc6cdb79bd3d": {
+      "circuit": "Netlist_comparator",
+      "lineage_id": "topology:ba5fce7c42dcbd0b1a7e3492b3a0faeb",
+      "upstream_repository": "https://github.com/ALIGN-analoglayout/ALIGN-public",
+      "source_family_label": "ALIGN-analoglayout/ALIGN-public",
+      "upstream_path": "CircuitsDatabase/Sized_Netlists/Low_frequency_analog/Comparator_clocked/Netlist_comparator",
+      "source_file_sha256": "8a58de8cd5162a172dce2fdba15a27532104e4fe1300d0b8d347c062a0eae2af",
+      "upstream_checkout_revision_observed": "aa1c52d1e7453d38e0ccaafc79e360ed6049d70b",
+      "revision_note": "observed checkout identity; source hash identifies actual input, not proof of clean upstream tree",
+      "input_included": true,
+      "function": "带交叉耦合再生与 NOR 锁存的时钟比较器",
+      "scale": {
+        "source_logical_MOS": "20",
+        "source_total_devices": "20",
+        "source_flat_nets": "14",
+        "source_module_definitions": "2",
+        "source_module_occurrences": "3",
+        "source_hierarchy_depth": "1",
+        "source_signal_terminal_incidence": "47",
+        "source_signal_branch_excess": "25",
+        "source_graph_reconstructed": "true"
+      },
+      "upstream_license": "BSD-3-Clause"
+    }
+  },
+  "runtime": {
+    "native_SHA256": "953242f473f836d0c4317a01a767f96fe3c44e7bbb351e9f4aaa0c8647fd7e52",
+    "native_binary_included": false,
+    "script_archive": "common/align_scripts.tar.gz",
+    "exported_script_role": "reference sources with local paths redacted; not a standalone runtime installation",
+    "full_replay_new_host_validated": false
+  },
+  "privacy": {
+    "archive_owner_and_timestamps_normalized": true,
+    "GDS_library_and_timestamps_normalized": true,
+    "GDS_other_record_bytes_preserved": true,
+    "personal_local_paths_removed": true,
+    "third_party_licenses_retained": true
+  },
+  "files": {
+    "README.md": {
+      "bytes": 4687,
+      "sha256": "6daad795b48fdeaee9b676acea9083bd91f4c59e27bf2abfca769541bd13c11f"
+    },
+    "THIRD_PARTY_NOTICES.md": {
+      "bytes": 45846,
+      "sha256": "1630b29fd6561bdec02bbe7bd7f999f1b2215e1639554c22407a4f21d67480b6"
+    },
+    "align_recipe.py": {
+      "bytes": 1221,
+      "sha256": "54531a737aaa6507db3df153497050c8ce9df625d0e60850ef9d8fa33158cf68"
+    },
+    "common/14nm.tar.gz": {
+      "bytes": 13214,
+      "sha256": "3a32c0867b9905a72b535a8dbaeb628595dae58c5b7ff11151e5c1ca279e0668"
+    },
+    "common/65nm.tar.gz": {
+      "bytes": 12604,
+      "sha256": "726f5c0d77f324694f32225cd7161f6873175322733cb1f51c3b0020a2b47342"
+    },
+    "common/SKY130.tar.gz": {
+      "bytes": 11381,
+      "sha256": "d51b6e3042d42e449dabf691175bda8cb21a86435c605160c0c2be21639f1339"
+    },
+    "common/align_scripts.tar.gz": {
+      "bytes": 197581,
+      "sha256": "296e066f8712b8cd298d3253b7d925191a67de94472e971a07058d6d65b1182b"
+    },
+    "data/0f9753ef86edb14c__14nm.tar.gz": {
+      "bytes": 5529134,
+      "sha256": "bab72961f2db6a073545f09a2b74760b16d3abb342a0960d65e8ea1ace2d8096"
+    },
+    "data/0f9753ef86edb14c__65nm.tar.gz": {
+      "bytes": 8869248,
+      "sha256": "34c7b4d0a395d72321e3bbcdc56245717ffe7c9831e51510ac5f0d46a65a71b4"
+    },
+    "data/0f9753ef86edb14c__SKY130.tar.gz": {
+      "bytes": 2050508,
+      "sha256": "2a65d564ac8b981d29a75f26468549f3c63fa18edfd7021b19614c74392e2d94"
+    },
+    "data/17857624a23f96fc__14nm.tar.gz": {
+      "bytes": 26221511,
+      "sha256": "0c896e98f4b6044bafd8184c44eb63902dc87bd3b3da34fd132252e7f380984d"
+    },
+    "data/17857624a23f96fc__65nm.tar.gz": {
+      "bytes": 20017935,
+      "sha256": "cbaf7537d5b5ffae31f101fd94c09efe27b3598a675a88b8545dba8f95304d77"
+    },
+    "data/17857624a23f96fc__SKY130.tar.gz": {
+      "bytes": 7566518,
+      "sha256": "24182b9f966c8c1bfaff9f4282192aa4978ffc9b95aba8104c7b169c6d6d69bb"
+    },
+    "data/181160088003ec76__14nm.tar.gz": {
+      "bytes": 3036559,
+      "sha256": "ea27f5f800d81cc101c0fbf1b2321f23d91a6155219cc706b6836235ed7d5141"
+    },
+    "data/181160088003ec76__65nm.tar.gz": {
+      "bytes": 4354370,
+      "sha256": "b8a7dbcd8167e8228bbc489bd4f1ebaf3c95881d8d9a7dbf019d28f65decd293"
+    },
+    "data/181160088003ec76__SKY130.tar.gz": {
+      "bytes": 1753304,
+      "sha256": "d63cc34d0d8c70884dc5dbdf7e1bf1c10de400ed3a35be5605100c8619f153a1"
+    },
+    "data/1c3ca208a6d2febe__14nm.tar.gz": {
+      "bytes": 2547666,
+      "sha256": "d95ec67b04854ac7072d04e89b76a7da469b2143d7e9e2c40ba087174ed6e899"
+    },
+    "data/1c3ca208a6d2febe__65nm.tar.gz": {
+      "bytes": 506662,
+      "sha256": "51665f7f06b99a389487d6ecef97adb2dac04f394888f1763db1d194b3784595"
+    },
+    "data/1c3ca208a6d2febe__SKY130.tar.gz": {
+      "bytes": 576525,
+      "sha256": "edd5e5df5e2bfa571524a0972f4dea955f2d0e93969689926ab19fa22ed3f49f"
+    },
+    "data/27c6c53cce92a4fe__14nm.tar.gz": {
+      "bytes": 15308839,
+      "sha256": "c10b727a31a7b679bbccb088e6f0aa65ef03c1439c476beebe780692de36f2e2"
+    },
+    "data/27c6c53cce92a4fe__65nm.tar.gz": {
+      "bytes": 8162821,
+      "sha256": "1cc97107f51c8b66afeff4644d743c5522d868c46c2a0d32b106bf71f892940e"
+    },
+    "data/27c6c53cce92a4fe__SKY130.tar.gz": {
+      "bytes": 14120743,
+      "sha256": "ee5dc391cbd5708136da6aa18ed55eb9e5ab535e4bcb33d5deef0f068fbd7766"
+    },
+    "data/27ff5d4128c24794__14nm.tar.gz": {
+      "bytes": 5058981,
+      "sha256": "81c51eeb10a1031e49e61bc8a4270515fc05bd2d5847b9e5f77cc0222116d820"
+    },
+    "data/27ff5d4128c24794__65nm.tar.gz": {
+      "bytes": 7796479,
+      "sha256": "9719e5de57e123eaafb526516bb80fb5dbf2fc9c5e07051e2c81e3575a0211ca"
+    },
+    "data/27ff5d4128c24794__SKY130.tar.gz": {
+      "bytes": 2712203,
+      "sha256": "d554a1c3198d6d5681b45c01e9160bfde0a03d9ad57b39696fb4493ca587e9ae"
+    },
+    "data/344e6a7d2d1f9290__14nm.tar.gz": {
+      "bytes": 2331777,
+      "sha256": "932ddfb14edba81e10905bfb41e69f64c76df6e0f8224d0c4f33def2ca717bac"
+    },
+    "data/344e6a7d2d1f9290__65nm.tar.gz": {
+      "bytes": 674706,
+      "sha256": "ad4b40364c38ab649aa6bb0a680b614360c249457e2add47fd6408890469c067"
+    },
+    "data/344e6a7d2d1f9290__SKY130.tar.gz": {
+      "bytes": 707101,
+      "sha256": "cf715d49178bdef0ae1829a6a50a2b3732cb76e4889068e55ecb7e81dff08f89"
+    },
+    "data/3c0b22a977c35961__14nm.tar.gz": {
+      "bytes": 1668989,
+      "sha256": "bc15eef7e25af47d78007f5b6a283badb5bba2679bd3d33cfbd264eb2ac3c2d8"
+    },
+    "data/3c0b22a977c35961__65nm.tar.gz": {
+      "bytes": 2590618,
+      "sha256": "bba60bbf45a3e23b71bea6168c66d026f571037c6db3a7aee2b334f03c8a5106"
+    },
+    "data/3c0b22a977c35961__SKY130.tar.gz": {
+      "bytes": 1200910,
+      "sha256": "63effb665b1a4ff35f7d700716df005b97c3bc0c8df939108c7d07e6bf4a3f68"
+    },
+    "data/42b37352bdecb658__14nm.tar.gz": {
+      "bytes": 6875389,
+      "sha256": "08b6e49e7b39e79fe795647e992f70d176371157b3771255883b622c71b6f368"
+    },
+    "data/42b37352bdecb658__65nm.tar.gz": {
+      "bytes": 6324591,
+      "sha256": "4d44c684bff3d16300bc8da0eb7ab97dffb95cb1b4616e151ec23a0e5464d26d"
+    },
+    "data/42b37352bdecb658__SKY130.tar.gz": {
+      "bytes": 2314986,
+      "sha256": "cb277398046ea7164cf832a5ca0adbcbc04d08d2ba218800ffffc60661cc8030"
+    },
+    "data/46e16a15be59e084__14nm.tar.gz": {
+      "bytes": 7689194,
+      "sha256": "d55359dcf61f61a3e6c5a5debf8efec55065139d153ff28f434a5b7a7ea60711"
+    },
+    "data/46e16a15be59e084__65nm.tar.gz": {
+      "bytes": 7179836,
+      "sha256": "8dbde36d6bb51585baa4bee52ebf6af9db2b230d5082a767ded208865f2b0e67"
+    },
+    "data/46e16a15be59e084__SKY130.tar.gz": {
+      "bytes": 1365493,
+      "sha256": "2e5d23b678cdcce76ee3ec8de4229e70810ebd7d7b8be47af6e491e49e1a381f"
+    },
+    "data/49e4835ff2047f6e__14nm.tar.gz": {
+      "bytes": 2612176,
+      "sha256": "2a710ab098e716dde210e9934c13150a84f3bcb9ca2c9de5e26e706fba9bf09c"
+    },
+    "data/49e4835ff2047f6e__65nm.tar.gz": {
+      "bytes": 1340142,
+      "sha256": "30d2cf2b62d9b5e3f29ddf3ede3c5225f4461c86d6d32312fd4c643a91e6cd05"
+    },
+    "data/49e4835ff2047f6e__SKY130.tar.gz": {
+      "bytes": 1055189,
+      "sha256": "6ec426a990ff3531e9e501d48a772f5ddb4289cfc5da01dbefefbe5e2d385553"
+    },
+    "data/51920d82fbfc8a07__14nm.tar.gz": {
+      "bytes": 1254747,
+      "sha256": "ff193b799a5221c8e50c656149018e1d73be831019624e8de40d5b6f3d005893"
+    },
+    "data/51920d82fbfc8a07__65nm.tar.gz": {
+      "bytes": 644814,
+      "sha256": "2deb765ae9d7b3ffd3fd3f181596dbe929f5476555880a0e1ed33017ab7e1b33"
+    },
+    "data/51920d82fbfc8a07__SKY130.tar.gz": {
+      "bytes": 573227,
+      "sha256": "a185a1dce8c4255b733014ab7662be8378ffd149e76395cfb124d735a841b58d"
+    },
+    "data/51d778f23f1a20f5__14nm.tar.gz": {
+      "bytes": 5750655,
+      "sha256": "111b9ee0072f0a8421e67d6dab8751329c783bd164d9a1a42b3aec10540dbefb"
+    },
+    "data/51d778f23f1a20f5__65nm.tar.gz": {
+      "bytes": 3180421,
+      "sha256": "05e7eb1f247be4519703bb7179fdc377c6e5e6dde07ef5cf064d447794a757e7"
+    },
+    "data/51d778f23f1a20f5__SKY130.tar.gz": {
+      "bytes": 3161398,
+      "sha256": "c1b3c570f5d5d2cdc2a712590cd4db81fd8112ced94a516a3304cbfe17bc7887"
+    },
+    "data/569ab71a823d42b4__14nm.tar.gz": {
+      "bytes": 3102633,
+      "sha256": "090b9d70bf3034f015952a4a5850bae62ada2544b005dd066b0c647a756dc1bf"
+    },
+    "data/569ab71a823d42b4__65nm.tar.gz": {
+      "bytes": 1544162,
+      "sha256": "b34c46d94b28853a4be75c129ed055ee5736db34676df7fc8c1e7d81f80bb91a"
+    },
+    "data/569ab71a823d42b4__SKY130.tar.gz": {
+      "bytes": 590872,
+      "sha256": "52e4a7f084e5f09057a09050736f9541f13b79c2df0558b055dc65ad9dc13a1d"
+    },
+    "data/577f0fc419ff9d03__14nm.tar.gz": {
+      "bytes": 1982911,
+      "sha256": "9c02fe953a65938373667b5216b4d9c65c6800609e9f354756200de9661a34f6"
+    },
+    "data/577f0fc419ff9d03__65nm.tar.gz": {
+      "bytes": 235709,
+      "sha256": "3c53a5c3b754750dc794653f07b27ce97f29c0099667493eb620783bc5c454dd"
+    },
+    "data/577f0fc419ff9d03__SKY130.tar.gz": {
+      "bytes": 647155,
+      "sha256": "e27837793892aee764af768fca4d4a280ff4483d8c783475f16ef69a170d83d8"
+    },
+    "data/5ac1f2d137a48c02__14nm.tar.gz": {
+      "bytes": 1952901,
+      "sha256": "bc0e19a1100fd0c0ec69878c061fceffca76bff08eb32b09f493484d4ae08914"
+    },
+    "data/5ac1f2d137a48c02__65nm.tar.gz": {
+      "bytes": 3255941,
+      "sha256": "a94beed887d74d91f3ea7f36dd74b6f12befcebfa03157bd12d53ca27e7c0de5"
+    },
+    "data/5ac1f2d137a48c02__SKY130.tar.gz": {
+      "bytes": 1454903,
+      "sha256": "f1e08cd6371fbfa5d977b6ae09359712a76ef3d9c8014232ec67999f426c99b8"
+    },
+    "data/6ab700aa82c62135__14nm.tar.gz": {
+      "bytes": 3651744,
+      "sha256": "6d834ea82845882ebb8632bf2cda88a07a09df3a563a488cd5acb16c16bcc787"
+    },
+    "data/6ab700aa82c62135__65nm.tar.gz": {
+      "bytes": 3472384,
+      "sha256": "39820b586aee93e60dcf3fb17ab25121443ef1f933a1db18dad30c7dd536bc07"
+    },
+    "data/6ab700aa82c62135__SKY130.tar.gz": {
+      "bytes": 1853797,
+      "sha256": "1e8bd9c54f630d3d647366f8aa583933b7b188d5eac26460026d34a3f6ac1a6b"
+    },
+    "data/712faad79bf6c23c__14nm.tar.gz": {
+      "bytes": 2076491,
+      "sha256": "495f7fe9ce449c50d4dac5f7c7c1dda4a2c3d7e4fc682cac885120cec64d0537"
+    },
+    "data/712faad79bf6c23c__65nm.tar.gz": {
+      "bytes": 3569330,
+      "sha256": "e923cd665d362a0be64093990e0303e8f040b060043f8009e38e0518ec7dcda3"
+    },
+    "data/712faad79bf6c23c__SKY130.tar.gz": {
+      "bytes": 1298160,
+      "sha256": "f573fd39acb44d1b1ec544ddf26689b6e05919132024acef82040412cae38ccb"
+    },
+    "data/873902ebcfc0e77c__14nm.tar.gz": {
+      "bytes": 1038832,
+      "sha256": "e8e791af333ff6e8cf6ff04eabe77613b5444a9537f15b8d6ff9e7197a5c591b"
+    },
+    "data/873902ebcfc0e77c__65nm.tar.gz": {
+      "bytes": 1789125,
+      "sha256": "bcdc8c02057c78089dead4463531735fd25a856727a73b3642fa2ed1a6600984"
+    },
+    "data/873902ebcfc0e77c__SKY130.tar.gz": {
+      "bytes": 700488,
+      "sha256": "9018aca45662f0fa1f99fb5b38d12fccc3bd0227d00c25fa7b2f5eeaed3f66a0"
+    },
+    "data/949857508c4e48a1__14nm.tar.gz": {
+      "bytes": 2043044,
+      "sha256": "9336dd8b64baff41b5d353e2c87060b76f1071fae5ef4966bc6761fecaef8cd5"
+    },
+    "data/949857508c4e48a1__65nm.tar.gz": {
+      "bytes": 3663351,
+      "sha256": "b95f083a0eb5126753746d846ca114bf7f483a750d1281d619cf840516436925"
+    },
+    "data/949857508c4e48a1__SKY130.tar.gz": {
+      "bytes": 1428827,
+      "sha256": "2ba8dc564d5b3dcf0cdf4fa84b06c2394f14eee1deb8b3af6bb97bf42cf0613e"
+    },
+    "data/9e2563db0166c545__14nm.tar.gz": {
+      "bytes": 1429498,
+      "sha256": "ae9e1f5f1e03dd608b57ac4bfa359aac49ce9091032cb1e41fd92958b5c5de8b"
+    },
+    "data/9e2563db0166c545__65nm.tar.gz": {
+      "bytes": 3307624,
+      "sha256": "c748feb1228a9f20c0a10447f94488bedc5f4631235054bc3a0d64ab681b1c32"
+    },
+    "data/9e2563db0166c545__SKY130.tar.gz": {
+      "bytes": 1408088,
+      "sha256": "6eb38903103867591613a9802768baa169b57a7d1807e22c68f0fdc1adc9e1f7"
+    },
+    "data/a8123330bcb248aa__14nm.tar.gz": {
+      "bytes": 2693914,
+      "sha256": "6f985cdab8f31b6863f48e980068afd9abeb90690f5ba62d852971cef1a9b907"
+    },
+    "data/a8123330bcb248aa__65nm.tar.gz": {
+      "bytes": 511816,
+      "sha256": "147ba1a6459c91ce1f5b4b2d5c7648d59b1e297fc93403e8fd4c3fcec748dea6"
+    },
+    "data/a8123330bcb248aa__SKY130.tar.gz": {
+      "bytes": 673805,
+      "sha256": "1421f2a8f857cc2857e89bb4e607ec0ed0e9cd4d928665507770ac59df6bca45"
+    },
+    "data/a8d0bd197ec9d1fe__14nm.tar.gz": {
+      "bytes": 1606592,
+      "sha256": "eb79c546230e985045337c81f097de02b75c994454257066e34d0b5f056636a4"
+    },
+    "data/a8d0bd197ec9d1fe__65nm.tar.gz": {
+      "bytes": 234456,
+      "sha256": "a39822b4c32e5fb4a9b1d6eac54fcc767266dfc6c0887ab4d3edcffef43d0240"
+    },
+    "data/a8d0bd197ec9d1fe__SKY130.tar.gz": {
+      "bytes": 501831,
+      "sha256": "36a7171747773bb040aa94ec664f75a0c651c70a646ce3d9f2afb426495adb63"
+    },
+    "data/aad3afd256a11a39__14nm.tar.gz": {
+      "bytes": 28282265,
+      "sha256": "ec84a0d7b2007335f7e414b42aba0ee53949ba15b4e500fdf813629679fb7b3d"
+    },
+    "data/aad3afd256a11a39__65nm.tar.gz": {
+      "bytes": 12460684,
+      "sha256": "dca351bf2fe7f40ba6bd56d15cb4f0d88d1683cd4c231b09890efb7b6e38ce90"
+    },
+    "data/aad3afd256a11a39__SKY130.tar.gz": {
+      "bytes": 4796425,
+      "sha256": "b1fba8c36c1e7760370f5931e6271444b1f17c12c7f1dd152cb080cf32360ac2"
+    },
+    "data/b03ca5afb2603286__14nm.tar.gz": {
+      "bytes": 8902484,
+      "sha256": "a6253151a4ece0756afe3ebaebde307a22fe41745bb24e53d27d343fd4b3bb32"
+    },
+    "data/b03ca5afb2603286__65nm.tar.gz": {
+      "bytes": 16192478,
+      "sha256": "dbd7f7c7ae6be6fe874aa8bf04c75aadd79dcb784193d36b7802b089d61a2b52"
+    },
+    "data/b03ca5afb2603286__SKY130.tar.gz": {
+      "bytes": 2234998,
+      "sha256": "57ae79e259b032fb098b3c675123a6204331bb283a8acba198c0176d3fde0322"
+    },
+    "data/b3177018eb7d2653__14nm.tar.gz": {
+      "bytes": 7662463,
+      "sha256": "9b9d3606d961133388a0e5c48f2729ab55f471f88963f597485181b44ac2558a"
+    },
+    "data/b3177018eb7d2653__65nm.tar.gz": {
+      "bytes": 11373226,
+      "sha256": "1107265cc5141db4b5c248e6ea9fb0b4a134a7d4c6b6573401b88ddd79d60119"
+    },
+    "data/b3177018eb7d2653__SKY130.tar.gz": {
+      "bytes": 2935174,
+      "sha256": "e0784b0054a724e54237d3c1af5916ff57542c09b86055aa6d6ac5a288d2e7dd"
+    },
+    "data/b87a361a5fbc23b2__14nm.tar.gz": {
+      "bytes": 3733470,
+      "sha256": "0c388068b9e99d5809047a56b348a4e249d1e9558b8f3f9d6f39027448bdafd5"
+    },
+    "data/b87a361a5fbc23b2__65nm.tar.gz": {
+      "bytes": 18457574,
+      "sha256": "b05aa757cf52c498a18fd4f84df4f180fb35cf8bcbcb0938b3e331effc35a142"
+    },
+    "data/b87a361a5fbc23b2__SKY130.tar.gz": {
+      "bytes": 1408018,
+      "sha256": "c5b8e8da298fb98e5b7fadf99c4ce9b4119e213ff783d7b0e6a5d7670ed8fcfa"
+    },
+    "data/baedf61c276a441c__14nm.tar.gz": {
+      "bytes": 3705754,
+      "sha256": "e080ae66abd0e03dca3de0e618602c4b4360ce4a70067728481d20a11ae4c129"
+    },
+    "data/baedf61c276a441c__65nm.tar.gz": {
+      "bytes": 7831974,
+      "sha256": "a159e579b3483c89cb033fa37a472c248ce89caeacabe6ed6335d3bfce329e7e"
+    },
+    "data/baedf61c276a441c__SKY130.tar.gz": {
+      "bytes": 2067841,
+      "sha256": "d7ed97feef6d15cf854e3d129374c5b751da059a5b80180dd6f3c65d7f2c6894"
+    },
+    "data/c00556172b0ae903__14nm.tar.gz": {
+      "bytes": 4576611,
+      "sha256": "b2e2ccd8b8faf9cf18168ae7870368c4ff3c88b0f754cbaaac2058d0f1cb3076"
+    },
+    "data/c00556172b0ae903__65nm.tar.gz": {
+      "bytes": 2372687,
+      "sha256": "c5c71bdd9d8dea67509e379cee8e8bfcc7f662f8b45a92e056e2c0d7d0d09ce1"
+    },
+    "data/c00556172b0ae903__SKY130.tar.gz": {
+      "bytes": 1939202,
+      "sha256": "7cd2cad4cd7e07ea65d964afde8d31b93cb8be81ebc13a494e1fe84c090a8df3"
+    },
+    "data/d1b038ee39c122ea__14nm.tar.gz": {
+      "bytes": 17519822,
+      "sha256": "8e7df40953718d3aa2560d264220fc3a211c03ad91b39790328264012d6ec18d"
+    },
+    "data/d1b038ee39c122ea__65nm.tar.gz": {
+      "bytes": 42074341,
+      "sha256": "33a065215073836730392bd8830dafda5a3cf6fed6befdbf466d94d2b2d9a496"
+    },
+    "data/d1b038ee39c122ea__SKY130.tar.gz": {
+      "bytes": 7821068,
+      "sha256": "cf59767e9040c7ca8d5eb7c8ebed6b1df4b9ffee7ae99ffd1a90960956af87c1"
+    },
+    "data/d8ba2af6a9e0e2ab__14nm.tar.gz": {
+      "bytes": 1909841,
+      "sha256": "6b3fcca92bfb38deff2bcece1ae2b11b017d3d8c1c705d97015902f818d4747c"
+    },
+    "data/d8ba2af6a9e0e2ab__65nm.tar.gz": {
+      "bytes": 2470435,
+      "sha256": "2565ce3d8dcb74d8c30a5569d3f18094a71815c594d6b097a7737225953c0317"
+    },
+    "data/d8ba2af6a9e0e2ab__SKY130.tar.gz": {
+      "bytes": 1228281,
+      "sha256": "d4a2bf6760c7a9644c4b278dd1acac29de11f1474c720d3157c0ccb51ccfaedb"
+    },
+    "data/de789d88cfd3be86__14nm.tar.gz": {
+      "bytes": 3449094,
+      "sha256": "51c3c43bf78f388d9b3f8b8436b968b5f816993badb6ab396bd27717e67cdd38"
+    },
+    "data/de789d88cfd3be86__65nm.tar.gz": {
+      "bytes": 5265191,
+      "sha256": "470db8689646cb339480388df82b601f524d7bc020ce20ebb0e5ffecb17ae237"
+    },
+    "data/de789d88cfd3be86__SKY130.tar.gz": {
+      "bytes": 1179924,
+      "sha256": "5e60a6920322d2ed7b93cc8ebc5f3e5212b15e2f73b8fbdba4bfff3a35cddf3e"
+    },
+    "data/e7b82c875d60283d__14nm.tar.gz": {
+      "bytes": 10591744,
+      "sha256": "512fcaab777fce59790a9bdcde37de89d132a2e32f8d97c33ecd8fa3fca7829f"
+    },
+    "data/e7b82c875d60283d__65nm.tar.gz": {
+      "bytes": 3903162,
+      "sha256": "9fd784a66f07df8d1f98fd45163ec61cd57197e711681de0e9cf2251f933c528"
+    },
+    "data/e7b82c875d60283d__SKY130.tar.gz": {
+      "bytes": 1749389,
+      "sha256": "53394b9aeb6584009ee217f94a6f07610925ac98c4eac1a9ea4438cd69938031"
+    },
+    "data/e990b8955da09c30__14nm.tar.gz": {
+      "bytes": 19608286,
+      "sha256": "435a3df71cdfbc991306d63c7fad97323b4e0178fa0379d1df1809f33de03f0b"
+    },
+    "data/e990b8955da09c30__65nm.tar.gz": {
+      "bytes": 35403173,
+      "sha256": "7d00bdb0c4772af73d83b052117ec2cae492a8889b5d09742dce1663034b75ec"
+    },
+    "data/e990b8955da09c30__SKY130.tar.gz": {
+      "bytes": 5270022,
+      "sha256": "f7b257ca6fac8591f330a531765e9b41c6c1ae7aeeb8163caf87e5e0a2350687"
+    },
+    "data/ef172a61a190aa6f__14nm.tar.gz": {
+      "bytes": 2553163,
+      "sha256": "c880ca59f46748d41099fbfca4a477058172e97cb13242d620239f34f2329646"
+    },
+    "data/ef172a61a190aa6f__65nm.tar.gz": {
+      "bytes": 480086,
+      "sha256": "7cfe5ec8bc0a24ee8b8b23632e75fa5973c696a5bc1b8ebf760ac6571abd8e89"
+    },
+    "data/ef172a61a190aa6f__SKY130.tar.gz": {
+      "bytes": 766053,
+      "sha256": "ad6bf9255b0e56609443f629146995f4969c882eb999aa09a0fb3fb6ab5e35b1"
+    },
+    "data/f31e78ad0bb46333__14nm.tar.gz": {
+      "bytes": 6784551,
+      "sha256": "5d6867bd56417a0a82c2ce978e5b4446ab124a7fdee22e7543a90e60ea8c2c61"
+    },
+    "data/f31e78ad0bb46333__65nm.tar.gz": {
+      "bytes": 15663213,
+      "sha256": "b97a2dc65c98f2fc5677597a31eb09c4f99a97bd461eb09858c30979fa1068dc"
+    },
+    "data/f31e78ad0bb46333__SKY130.tar.gz": {
+      "bytes": 2159295,
+      "sha256": "1427d9a89c4ad5783502bdb59d80b5b689c0ce96dbc009e0e7e377491cf81ec9"
+    },
+    "data/f5d6033e0190e109__14nm.tar.gz": {
+      "bytes": 2174744,
+      "sha256": "e76c845b5509f398f109e31f4dfbbecd644add8bb1b51df81c8d3133b18cc667"
+    },
+    "data/f5d6033e0190e109__65nm.tar.gz": {
+      "bytes": 1056560,
+      "sha256": "23084b01c665241f36bafea45980cf6372255b25b744e6877ef8899a5d25a8d2"
+    },
+    "data/f5d6033e0190e109__SKY130.tar.gz": {
+      "bytes": 570973,
+      "sha256": "c33752ca6a0f913d7f5fa1e2dcb7172515d0f56b6673600cec4c65721723c222"
+    },
+    "data/faf371bf1822b053__14nm.tar.gz": {
+      "bytes": 19400879,
+      "sha256": "521c20200d9a6dcfbea56c06e82f31870520a2e2b8e66d19ad7899baa315bffb"
+    },
+    "data/faf371bf1822b053__65nm.tar.gz": {
+      "bytes": 17996433,
+      "sha256": "098285f9adc406b5a3dd75ff86d4b1db7e4d7bb158561baae98c5c7ae1700bd3"
+    },
+    "data/faf371bf1822b053__SKY130.tar.gz": {
+      "bytes": 5628693,
+      "sha256": "9777c9c25813fd1260e833b2b166f8924a9a8f85ea9522cef7b356f6eb57a768"
+    },
+    "data/fe6fb06ade59b142__14nm.tar.gz": {
+      "bytes": 1969210,
+      "sha256": "506557f685848abe543c9459e740486b027f77db6319423d02f7b46ab931cb25"
+    },
+    "data/fe6fb06ade59b142__65nm.tar.gz": {
+      "bytes": 1280270,
+      "sha256": "0220dc2177b3081c09d3e55e75b2e2731754685dd77f69a4790c4d8c88245ee3"
+    },
+    "data/fe6fb06ade59b142__SKY130.tar.gz": {
+      "bytes": 1395402,
+      "sha256": "2a99cdff24f75d54e446e9fe659ad01428b33e4f88ebf5a72ba9561c507901c9"
+    },
+    "data/ff28fc6cdb79bd3d__14nm.tar.gz": {
+      "bytes": 2588665,
+      "sha256": "d2ed62f742fbb06ab2b77e0cb2fcbde25641bb51df64a82230ba51f903602213"
+    },
+    "data/ff28fc6cdb79bd3d__65nm.tar.gz": {
+      "bytes": 26591142,
+      "sha256": "22104f127bc73d83c93055765ae71f4d899afd12cc2cd5c5de8b541efd69c49e"
+    },
+    "data/ff28fc6cdb79bd3d__SKY130.tar.gz": {
+      "bytes": 1740722,
+      "sha256": "59b0f7312a85014be2ea615b5e6126ac81ce86460b24fd4f09134c465e2e63c2"
+    },
+    "dataset.py": {
+      "bytes": 3426,
+      "sha256": "5561e94f31b4be31eba355a9244c40915417dc4049f6ddbfe02fced52c26c7ec"
+    },
+    "formal35.json": {
+      "bytes": 14515,
+      "sha256": "6c99396ffc5f1f5788898b5aedec0d3866938b61c5bafd5797c1c27121478d87"
+    },
+    "index.csv": {
+      "bytes": 9025400,
+      "sha256": "fd747733c73ad23062d4f94bfb7ee47ecd758998253ac23de6bbc09067c05fd5"
+    }
+  }
+}
