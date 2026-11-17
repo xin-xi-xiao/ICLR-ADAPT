@@ -1,0 +1,1387 @@
+// Calibre
+//
+//        Copyright Mentor Graphics Corporation 1996-2015
+//                       All Rights Reserved.
+//   THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+//      WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION
+//        OR ITS LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+//
+//
+//
+//
+//
+//
+//
+
+--- CALIBRE::DRC-H
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+-----          STANDARD VERIFICATION RULE FILE COMPILATION MODULE          -----
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+--- RULE FILE = drc.svrf
+
+// Independent research translation, NOT a foundry deck. No waivers.
+PRECISION 1000
+RESOLUTION 1
+UNIT LENGTH U
+LAYOUT SYSTEM GDSII
+LAYOUT PATH "layout.gds"
+LAYOUT PRIMARY CLK-CMP
+DRC RESULTS DATABASE "drc.rdb" ASCII
+DRC SUMMARY REPORT "drc.summary" REPLACE
+DRC MAXIMUM RESULTS ALL
+LAYER MAP 1 DATATYPE 0 1000
+LAYER Poly 1000
+LAYER MAP 3 DATATYPE 0 1001
+LAYER Fin 1001
+LAYER MAP 13 DATATYPE 0 1002
+LAYER MAP 13 DATATYPE 1 1002
+LAYER MAP 13 DATATYPE 2 1002
+LAYER M1 1002
+LAYER MAP 15 DATATYPE 0 1003
+LAYER MAP 15 DATATYPE 1 1003
+LAYER MAP 15 DATATYPE 2 1003
+LAYER M2 1003
+LAYER MAP 19 DATATYPE 1 1004
+LAYER MAP 19 DATATYPE 2 1004
+LAYER MAP 19 DATATYPE 20 1004
+LAYER M3 1004
+LAYER MAP 21 DATATYPE 0 1005
+LAYER M4 1005
+LAYER MAP 23 DATATYPE 0 1006
+LAYER M5 1006
+LAYER MAP 25 DATATYPE 0 1007
+LAYER M6 1007
+LAYER MAP 12 DATATYPE 0 1008
+LAYER V0 1008
+LAYER MAP 14 DATATYPE 0 1009
+LAYER V1 1009
+LAYER MAP 16 DATATYPE 20 1010
+LAYER V2 1010
+LAYER MAP 17 DATATYPE 0 1011
+LAYER V3 1011
+LAYER MAP 22 DATATYPE 0 1012
+LAYER V4 1012
+LAYER MAP 24 DATATYPE 0 1013
+LAYER V5 1013
+Poly_HE = ANGLE Poly == 0
+Poly_VE = ANGLE Poly == 90
+Poly_WIDTH { INTERNAL Poly < 0.014000 }
+Fin_HE = ANGLE Fin == 0
+Fin_VE = ANGLE Fin == 90
+Fin_WIDTH { INTERNAL Fin < 0.010000 }
+M1_HE = ANGLE M1 == 0
+M1_VE = ANGLE M1 == 90
+M1_WIDTH { INTERNAL M1 < 0.032000 }
+M1_END { EXTERNAL M1_HE < 0.048000 PROJECTING > 0 }
+M1_SIDE { EXTERNAL M1_VE < 0.048000 PROJECTING > 0 }
+M2_HE = ANGLE M2 == 0
+M2_VE = ANGLE M2 == 90
+M2_WIDTH { INTERNAL M2 < 0.032000 }
+M2_END { EXTERNAL M2_VE < 0.048000 PROJECTING > 0 }
+M2_SIDE { EXTERNAL M2_HE < 0.052000 PROJECTING > 0 }
+M3_HE = ANGLE M3 == 0
+M3_VE = ANGLE M3 == 90
+M3_WIDTH { INTERNAL M3 < 0.040000 }
+M3_END { EXTERNAL M3_HE < 0.048000 PROJECTING > 0 }
+M3_SIDE { EXTERNAL M3_VE < 0.040000 PROJECTING > 0 }
+M4_HE = ANGLE M4 == 0
+M4_VE = ANGLE M4 == 90
+M4_WIDTH { INTERNAL M4 < 0.040000 }
+M4_END { EXTERNAL M4_VE < 0.065000 PROJECTING > 0 }
+M4_SIDE { EXTERNAL M4_HE < 0.044000 PROJECTING > 0 }
+M5_HE = ANGLE M5 == 0
+M5_VE = ANGLE M5 == 90
+M5_WIDTH { INTERNAL M5 < 0.064000 }
+M5_END { EXTERNAL M5_HE < 0.065000 PROJECTING > 0 }
+M5_SIDE { EXTERNAL M5_VE < 0.080000 PROJECTING > 0 }
+M6_HE = ANGLE M6 == 0
+M6_VE = ANGLE M6 == 90
+M6_WIDTH { INTERNAL M6 < 0.064000 }
+M6_END { EXTERNAL M6_VE < 0.070000 PROJECTING > 0 }
+M6_SIDE { EXTERNAL M6_HE < 0.080000 PROJECTING > 0 }
+V0_SIZE { NOT RECTANGLE V0 == 0.032000 BY == 0.032000 }
+V0_XE = ANGLE V0 == 90
+V0_SPACE_X { EXTERNAL V0_XE < 0.046000 PROJECTING > 0 }
+V0_YE = ANGLE V0 == 0
+V0_SPACE_Y { EXTERNAL V0_YE < 0.052000 PROJECTING > 0 }
+V0_H_REQUIRED = GROW V0 RIGHT BY 0.000000 LEFT BY 0.000000 TOP BY 0.020000 BOTTOM BY 0.020000
+V0_ENC_M1 { V0_H_REQUIRED NOT M1 }
+V1_SIZE { NOT RECTANGLE V1 == 0.032000 BY == 0.032000 }
+V1_XE = ANGLE V1 == 90
+V1_SPACE_X { EXTERNAL V1_XE < 0.048000 PROJECTING > 0 }
+V1_YE = ANGLE V1 == 0
+V1_SPACE_Y { EXTERNAL V1_YE < 0.052000 PROJECTING > 0 }
+V1_L_REQUIRED = GROW V1 RIGHT BY 0.000000 LEFT BY 0.000000 TOP BY 0.020000 BOTTOM BY 0.020000
+V1_ENC_M1 { V1_L_REQUIRED NOT M1 }
+V1_H_REQUIRED = GROW V1 RIGHT BY 0.020000 LEFT BY 0.020000 TOP BY 0.000000 BOTTOM BY 0.000000
+V1_ENC_M2 { V1_H_REQUIRED NOT M2 }
+V2_SIZE { NOT RECTANGLE V2 == 0.032000 BY == 0.032000 }
+V2_XE = ANGLE V2 == 90
+V2_SPACE_X { EXTERNAL V2_XE < 0.048000 PROJECTING > 0 }
+V2_YE = ANGLE V2 == 0
+V2_SPACE_Y { EXTERNAL V2_YE < 0.040000 PROJECTING > 0 }
+V2_L_REQUIRED = GROW V2 RIGHT BY 0.020000 LEFT BY 0.020000 TOP BY 0.000000 BOTTOM BY 0.000000
+V2_ENC_M2 { V2_L_REQUIRED NOT M2 }
+V2_H_REQUIRED = GROW V2 RIGHT BY 0.004000 LEFT BY 0.004000 TOP BY 0.020000 BOTTOM BY 0.020000
+V2_ENC_M3 { V2_H_REQUIRED NOT M3 }
+V3_SIZE { NOT RECTANGLE V3 == 0.040000 BY == 0.040000 }
+V3_XE = ANGLE V3 == 90
+V3_SPACE_X { EXTERNAL V3_XE < 0.040000 PROJECTING > 0 }
+V3_YE = ANGLE V3 == 0
+V3_SPACE_Y { EXTERNAL V3_YE < 0.044000 PROJECTING > 0 }
+V3_L_REQUIRED = GROW V3 RIGHT BY 0.000000 LEFT BY 0.000000 TOP BY 0.020000 BOTTOM BY 0.020000
+V3_ENC_M3 { V3_L_REQUIRED NOT M3 }
+V3_H_REQUIRED = GROW V3 RIGHT BY 0.020000 LEFT BY 0.020000 TOP BY 0.000000 BOTTOM BY 0.000000
+V3_ENC_M4 { V3_H_REQUIRED NOT M4 }
+V4_SIZE { NOT RECTANGLE V4 == 0.040000 BY == 0.040000 }
+V4_XE = ANGLE V4 == 90
+V4_SPACE_X { EXTERNAL V4_XE < 0.104000 PROJECTING > 0 }
+V4_YE = ANGLE V4 == 0
+V4_SPACE_Y { EXTERNAL V4_YE < 0.044000 PROJECTING > 0 }
+V4_L_REQUIRED = GROW V4 RIGHT BY 0.020000 LEFT BY 0.020000 TOP BY 0.000000 BOTTOM BY 0.000000
+V4_ENC_M4 { V4_L_REQUIRED NOT M4 }
+V4_H_REQUIRED = GROW V4 RIGHT BY 0.012000 LEFT BY 0.012000 TOP BY 0.020000 BOTTOM BY 0.020000
+V4_ENC_M5 { V4_H_REQUIRED NOT M5 }
+V5_SIZE { NOT RECTANGLE V5 == 0.064000 BY == 0.064000 }
+V5_XE = ANGLE V5 == 90
+V5_SPACE_X { EXTERNAL V5_XE < 0.080000 PROJECTING > 0 }
+V5_YE = ANGLE V5 == 0
+V5_SPACE_Y { EXTERNAL V5_YE < 0.080000 PROJECTING > 0 }
+V5_L_REQUIRED = GROW V5 RIGHT BY 0.000000 LEFT BY 0.000000 TOP BY 0.020000 BOTTOM BY 0.020000
+V5_ENC_M5 { V5_L_REQUIRED NOT M5 }
+V5_H_REQUIRED = GROW V5 RIGHT BY 0.020000 LEFT BY 0.020000 TOP BY 0.000000 BOTTOM BY 0.000000
+V5_ENC_M6 { V5_H_REQUIRED NOT M6 }
+
+
+--- STANDARD VERIFICATION RULE FILE COMPILATION MODULE COMPLETED.
+
+
+
+--- SELECTED RULE CHECKS:
+    Poly_WIDTH
+    Fin_WIDTH
+    M1_WIDTH
+    M1_END
+    M1_SIDE
+    M2_WIDTH
+    M2_END
+    M2_SIDE
+    M3_WIDTH
+    M3_END
+    M3_SIDE
+    M4_WIDTH
+    M4_END
+    M4_SIDE
+    M5_WIDTH
+    M5_END
+    M5_SIDE
+    M6_WIDTH
+    M6_END
+    M6_SIDE
+    V0_SIZE
+    V0_SPACE_X
+    V0_SPACE_Y
+    V0_ENC_M1
+    V1_SIZE
+    V1_SPACE_X
+    V1_SPACE_Y
+    V1_ENC_M1
+    V1_ENC_M2
+    V2_SIZE
+    V2_SPACE_X
+    V2_SPACE_Y
+    V2_ENC_M2
+    V2_ENC_M3
+    V3_SIZE
+    V3_SPACE_X
+    V3_SPACE_Y
+    V3_ENC_M3
+    V3_ENC_M4
+    V4_SIZE
+    V4_SPACE_X
+    V4_SPACE_Y
+    V4_ENC_M4
+    V4_ENC_M5
+    V5_SIZE
+    V5_SPACE_X
+    V5_SPACE_Y
+    V5_ENC_M5
+    V5_ENC_M6
+
+--- UNSELECTED RULE CHECKS:
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+-----                  CALIBRE::DRC-H - LICENSING MODULE                   -----
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+
+//  Applying licensing policy...
+//  mgc_s license acquired (calibrehdrc requested).
+//  mgc_s license acquired (calibredrc requested).
+
+//  Licensed Products
+//  -----------------
+//  - DRC (Hierarchical)
+
+--- CALIBRE::DRC-H LICENSING MODULE COMPLETED.
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+-----                   CALIBRE LAYOUT DATA INPUT MODULE                   -----
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+--- LAYOUT SYSTEM = GDS
+--- LAYOUT MAGNIFICATION = 1
+
+--------------------------------------------------------------------------------
+-----                     GDS FILE SUMMARY INFORMATION                     -----
+--------------------------------------------------------------------------------
+
+GDS FILENAME:        layout.gds
+LIBRARY NAME:        test
+DATABASE PRECISION:  0.001 user units per database unit
+PHYSICAL PRECISION:  1e-09 meters per database unit
+MAGNIFICATION:       1
+
+--------------------------------------------------------------------------------
+-----                 GDS INPUT DATA FOR INDIVIDUAL CELLS                  -----
+--------------------------------------------------------------------------------
+     CELL NAME                  PLACEMENTS   ARRAYS   POLYGONS    PATHS    TEXTS
+--------------------------------------------------------------------------------
+CELL_N
+                                         0        0        104        0        0
+CELL_T
+                                         0        0        116        0        0
+CELL_M            2        0         27        0        0
+CELL_O
+                                         0        0        104        0        0
+CELL_R
+                                         0        0        110        0        0
+CELL_S
+                                         0        0        119        0        0
+CELL_U
+                                         0        0        297        0        0
+CELL_V
+                                         4        0        100        0        0
+CELL_A
+                                         0        0       2814        0        0
+CELL_B
+                                         0        0       2038        0        0
+CELL_C
+                                         0        0        179        0        0
+CELL_D
+                                         0        0        129        0        0
+CELL_E
+                                         0        0        587        0        0
+CELL_F
+                                         0        0        111        0        0
+CELL_G
+                                         0        0        148        0        0
+CELL_H
+                                         0        0        105        0        0
+CELL_I
+                                         0        0        296        0        0
+CELL_J
+                                         0        0        120        0        0
+CELL_K
+                                         0        0        138        0        0
+CELL_L
+                                         0        0        510        0        0
+CELL_P         0        0        281        0        0
+CELL_Q         0        0        113        0        0
+CLK-CMP               17        0       2586        0      100
+
+NOTE: UNUSED geometric data is present on the following layer/datatype pairs:
+    LAYER = 2 DATATYPE = 0
+    LAYER = 5 DATATYPE = 0
+    LAYER = 7 DATATYPE = 0
+    LAYER = 8 DATATYPE = 0
+    LAYER = 11 DATATYPE = 0
+    LAYER = 98 DATATYPE = 0
+    LAYER = 99 DATATYPE = 0
+    LAYER = 100 DATATYPE = 5
+    LAYER = 104 DATATYPE = 0
+    LAYER = 150 DATATYPE = 0
+    LAYER = 235 DATATYPE = 5
+
+NOTE: USED geometric data is present on the following layer/datatype pairs:
+    SIMPLE LAYER = 1000
+        LAYER = 1 DATATYPE = 0
+    SIMPLE LAYER = 1001
+        LAYER = 3 DATATYPE = 0
+    SIMPLE LAYER = 1002
+        LAYER = 13 DATATYPE = 0
+    SIMPLE LAYER = 1003
+        LAYER = 15 DATATYPE = 0
+    SIMPLE LAYER = 1004
+        LAYER = 19 DATATYPE = 20
+    SIMPLE LAYER = 1005
+        LAYER = 21 DATATYPE = 0
+    SIMPLE LAYER = 1006
+        LAYER = 23 DATATYPE = 0
+    SIMPLE LAYER = 1007
+        LAYER = 25 DATATYPE = 0
+    SIMPLE LAYER = 1008
+        LAYER = 12 DATATYPE = 0
+    SIMPLE LAYER = 1009
+        LAYER = 14 DATATYPE = 0
+    SIMPLE LAYER = 1010
+        LAYER = 16 DATATYPE = 20
+    SIMPLE LAYER = 1011
+        LAYER = 17 DATATYPE = 0
+    SIMPLE LAYER = 1012
+        LAYER = 22 DATATYPE = 0
+    SIMPLE LAYER = 1013
+        LAYER = 24 DATATYPE = 0
+
+NOTE: The following required simple layers are EMPTY:
+
+--- LAYOUT DATABASE CONSTRUCTOR COMPLETED.
+
+CONSTRUCTING HIERARCHICAL DATABASE
+    COPYING LAYOUT DATABASE
+    PROCESSING TEXT
+    ELIMINATING DUPLICATE TEXT
+    ELIMINATING EMPTY CELLS
+    COMPUTING RECTANGULAR EXTENTS
+    ELIMINATING DUPLICATE PLACEMENTS
+    IDENTIFYING TOP LAYER CELLS
+    IDENTIFYING ADDITIONAL TOP LAYER CELLS
+    IDENTIFYING VERY SMALL CELLS
+    CHECKING ACUTE/SKEW/ANGLED/OFFGRID
+    FLATTENING SELECTED LAYERS
+    EXPANDING UNIQUE VERY SMALL CELL PLACEMENTS
+    EXPANDING UNIQUE TOP LAYER CELL PLACEMENTS
+    EXPANDING UNIQUE MONO-GEOMETRIC CELL PLACEMENTS
+    COMPUTING RECTILINEAR EXTENTS
+    SORTING PLACEMENTS
+    ELIMINATING DUPLICATE PLACEMENTS
+    EXPANDING UNIQUE TRANSPARENT CELL PLACEMENTS
+    EXPANDING UNIQUE LIGHT-WEIGHT CELL PLACEMENTS
+        CELL_T in CELL_M at (0,2.772)
+        CELL_N in CELL_M at (0,0.037)
+        CELL_S in CELL_V at (1.04,2.772)
+        CELL_O in CELL_V at (1.04,0.037)
+        CELL_R in CELL_V at (0.16,0.037)
+        CELL_U in CELL_V at (0,2.772)
+        CELL_G in CLK-CMP at (24.16,0)
+        CELL_F in CLK-CMP at (23.44,0)
+        CELL_J in CLK-CMP at (22.72,0)
+        CELL_V in CLK-CMP at (18.48,3.145)
+        CELL_P in CLK-CMP at (16.8,7.429)
+        CELL_K in CLK-CMP at (14.96,7.345)
+        CELL_D in CLK-CMP at (14.96,2.473)
+        CELL_C in CLK-CMP at (14.8,4.909)
+        CELL_L in CLK-CMP at (14,9.744)
+        CELL_Q in CLK-CMP at (13.36,6.841)
+        CELL_H in CLK-CMP at (1.36,7.056)
+        CELL_I in CLK-CMP at (1.36,2.436)
+        CELL_E in CLK-CMP at (0,2.436)
+    EXPANDING UNIQUE ROW CELL PLACEMENTS
+    EXPANDING TRIVIAL CELL PLACEMENTS
+    EXPANDING VERY SPARSE ARRAY PLACEMENTS
+    EXPANDING LARGE CELL ARRAY PLACEMENTS
+    EXPANDING VERY SPARSE CELL PLACEMENTS
+    ELIMINATING DUPLICATE SUPER-HIERARCHICAL PLACEMENTS
+    EXPANDING DENSE OVERLAPS
+    EXPANDING UNIQUE META-CELL PLACEMENTS
+    ANALYZING HIERARCHY FOR AUTOMATIC TURBO FLEX
+    INJECTING HIERARCHY
+    COMPUTING RECTANGULAR EXTENTS
+    SORTING PLACEMENTS
+    PUSHING VERY SMALL CELL PLACEMENTS
+    PUSHING TOP LAYER CELL PLACEMENTS
+    COMPUTING CELL-TO-WORLD TRANSFORMS
+    SORTING PLACEMENTS
+    PACKING HIERARCHY
+    COMPUTING PLACEMENT OVERLAP RECORDS
+    COMPUTING CELL OVERLAP AREAS
+    INTERSECTING PLACEMENTS AND OVERLAP AREAS
+HIERARCHICAL DATABASE CONSTRUCTOR COMPLETE.
+
+--------------------------------------------------------------------------------
+-----               TEXT OBJECTS FOR CONNECTIVITY EXTRACTION               -----
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+-----                TEXT OBJECTS FOR WITH TEXT OPERATIONS                 -----
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+-----               TEXT OBJECTS FOR EXPAND TEXT OPERATIONS                -----
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+-----                  TEXT OBJECTS FOR CAPI OPERATIONS                    -----
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+-----             LAYER READ SUMMARY (SIMPLE LAYER GEOMETRIES)             -----
+--------------------------------------------------------------------------------
+SIMPLE LAYER      GEOMETRIES                                                    
+--------------------------------------------------------------------------------
+
+  1000                 776
+  1001                1384
+  1002                 899
+  1003                 267
+  1004                 324
+  1005                 372
+  1006                 877
+  1007                 355
+  1008                3142
+  1009                 895
+  1010                 181
+  1011                 155
+  1012                 189
+  1013                 121
+
+--------------------------------------------------------------------------------
+-----            LAYER READ SUMMARY (ORIGINAL LAYER GEOMETRIES)            -----
+--------------------------------------------------------------------------------
+ORIGINAL LAYER       INITIAL GEOMETRIES                 FINAL GEOMETRIES        
+--------------------------------------------------------------------------------
+
+Poly                     776 (792)                        776 (792)             
+Fin                     1384 (1518)                      1384 (1518)            
+M1                       899 (914)                        899 (914)             
+M2                       267 (283)                        267 (283)             
+M3                       324 (331)                        324 (331)             
+M4                       372 (372)                        372 (372)             
+M5                       877 (877)                        877 (877)             
+M6                       355 (355)                        355 (355)             
+V0                      3142 (3155)                      3142 (3155)            
+V1                       895 (909)                        895 (909)             
+V2                       181 (189)                        181 (189)             
+V3                       155 (155)                        155 (155)             
+V4                       189 (189)                        189 (189)             
+V5                       121 (121)                        121 (121)             
+
+--------------------------------------------------------------------------------
+-----         LAYER READ SUMMARY (TEXT FOR CONNECTIVITY EXTRACTION)        -----
+--------------------------------------------------------------------------------
+SIMPLE LAYER              TEXTS                                                 
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+-----          LAYER READ SUMMARY (TEXT FOR WITH TEXT OPERATIONS)          -----
+--------------------------------------------------------------------------------
+SIMPLE LAYER              TEXTS                                                 
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+-----         LAYER READ SUMMARY (TEXT FOR EXPAND TEXT OPERATIONS)         -----
+--------------------------------------------------------------------------------
+SIMPLE LAYER              TEXTS                                                 
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+-----            LAYER READ SUMMARY (TEXT FOR CAPI OPERATIONS)             -----
+--------------------------------------------------------------------------------
+SIMPLE LAYER              TEXTS                                                 
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+-----                      CELL AND PLACEMENT SUMMARY                      -----
+--------------------------------------------------------------------------------
+CELL TYPE                 CELLS           PLACEMENTS       FLAT PLACEMENTS      
+--------------------------------------------------------------------------------
+
+USER                          4                    4                     4
+ VERY SMALL                   0                    0                     0
+ TOP LAYER                    0                    0                     0
+  VERY SMALL                  0                    0                     0
+PSEUDO                        0                    0                     0
+TOTAL                         4                    4                     4
+
+--------------------------------------------------------------------------------
+-----                   LAYOUT DATA INPUT MODULE SUMMARY                   -----
+--------------------------------------------------------------------------------
+
+--- TOTAL GEOMETRIES READ FROM SIMPLE LAYERS = 9937
+--- TOTAL GEOMETRIES READ FROM ORIGINAL LAYERS = 9937 (10160)
+--- TOTAL GEOMETRIES WRITTEN TO ORIGINAL LAYERS = 9937 (10160)
+---
+--- DATABASE EXTENT = [ -0.052 , -0.052 ] -> [ 30.72 , 14.495 ]
+--- GEOMETRIC DEPTH = ALL
+--- TEXT DEPTH FOR CONNECTIVITY EXTRACTION = PRIMARY
+--- TOTAL TEXT OBJECTS FOR CONNECTIVITY EXTRACTION = 0 (0)
+--- TOTAL TEXT OBJECTS FOR WITH TEXT OPERATIONS = 0 (0)
+--- TOTAL TEXT OBJECTS FOR EXPAND TEXT OPERATIONS = 0 (0)
+--- TOTAL TEXT OBJECTS FOR CAPI OPERATIONS = 0 (0)
+--- GEOMETRY FLAGGING = ACUTE (NO)  SKEW (NO)  ANGLED (NO)  OFFGRID (NO)
+                        NONSIMPLE POLYGON (NO)  NONSIMPLE PATH (NO)
+--- PRIMARY CELL = CLK-CMP
+--- EXCLUDED CELLS =
+--- LAYOUT BASE LAYER = (NOT SPECIFIED)
+--- LAYOUT TOP LAYER = (NOT SPECIFIED)
+
+--- CALIBRE LAYOUT DATA INPUT MODULE COMPLETED.
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+-----        CALIBRE::DRC-H - RESULTS DATABASE INITIALIZATION MODULE       -----
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+--- GLOBAL DRC RESULTS DATABASE FILE = drc.rdb (ASCII)
+--- GLOBAL MAXIMUM RESULTS PER RULECHECK = ALL
+--- GLOBAL MAXIMUM VERTICES PER RESULT POLYGON = 4096
+--- CHECK TEXT MAPPING = COMMENTS + RULE FILE INFORMATION
+--- KEEP EMPTY RULE CHECKS = YES
+--- DRC RESULTS MAGNIFICATION = 1
+--- DRC RESULTS DATABASE PRECISION = 1000
+
+--------------------------------------------------------------------------------
+-----              DRC RULECHECK -> RESULTS DATABASE MAPPING               -----
+--------------------------------------------------------------------------------
+                                                          DATA        MAX    MAX
+RULECHECK            RESULTS DATABASE         TYPE LAYER  TYPE     RESULT VERTEX
+--------------------------------------------------------------------------------
+Poly_WIDTH           drc.rdb                 ASCII   N/A   N/A        ALL   4096
+Fin_WIDTH            drc.rdb                 ASCII   N/A   N/A        ALL   4096
+M1_WIDTH             drc.rdb                 ASCII   N/A   N/A        ALL   4096
+M1_END               drc.rdb                 ASCII   N/A   N/A        ALL   4096
+M1_SIDE              drc.rdb                 ASCII   N/A   N/A        ALL   4096
+M2_WIDTH             drc.rdb                 ASCII   N/A   N/A        ALL   4096
+M2_END               drc.rdb                 ASCII   N/A   N/A        ALL   4096
+M2_SIDE              drc.rdb                 ASCII   N/A   N/A        ALL   4096
+M3_WIDTH             drc.rdb                 ASCII   N/A   N/A        ALL   4096
+M3_END               drc.rdb                 ASCII   N/A   N/A        ALL   4096
+M3_SIDE              drc.rdb                 ASCII   N/A   N/A        ALL   4096
+M4_WIDTH             drc.rdb                 ASCII   N/A   N/A        ALL   4096
+M4_END               drc.rdb                 ASCII   N/A   N/A        ALL   4096
+M4_SIDE              drc.rdb                 ASCII   N/A   N/A        ALL   4096
+M5_WIDTH             drc.rdb                 ASCII   N/A   N/A        ALL   4096
+M5_END               drc.rdb                 ASCII   N/A   N/A        ALL   4096
+M5_SIDE              drc.rdb                 ASCII   N/A   N/A        ALL   4096
+M6_WIDTH             drc.rdb                 ASCII   N/A   N/A        ALL   4096
+M6_END               drc.rdb                 ASCII   N/A   N/A        ALL   4096
+M6_SIDE              drc.rdb                 ASCII   N/A   N/A        ALL   4096
+V0_SIZE              drc.rdb                 ASCII   N/A   N/A        ALL   4096
+V0_SPACE_X           drc.rdb                 ASCII   N/A   N/A        ALL   4096
+V0_SPACE_Y           drc.rdb                 ASCII   N/A   N/A        ALL   4096
+V0_ENC_M1            drc.rdb                 ASCII   N/A   N/A        ALL   4096
+V1_SIZE              drc.rdb                 ASCII   N/A   N/A        ALL   4096
+V1_SPACE_X           drc.rdb                 ASCII   N/A   N/A        ALL   4096
+V1_SPACE_Y           drc.rdb                 ASCII   N/A   N/A        ALL   4096
+V1_ENC_M1            drc.rdb                 ASCII   N/A   N/A        ALL   4096
+V1_ENC_M2            drc.rdb                 ASCII   N/A   N/A        ALL   4096
+V2_SIZE              drc.rdb                 ASCII   N/A   N/A        ALL   4096
+V2_SPACE_X           drc.rdb                 ASCII   N/A   N/A        ALL   4096
+V2_SPACE_Y           drc.rdb                 ASCII   N/A   N/A        ALL   4096
+V2_ENC_M2            drc.rdb                 ASCII   N/A   N/A        ALL   4096
+V2_ENC_M3            drc.rdb                 ASCII   N/A   N/A        ALL   4096
+V3_SIZE              drc.rdb                 ASCII   N/A   N/A        ALL   4096
+V3_SPACE_X           drc.rdb                 ASCII   N/A   N/A        ALL   4096
+V3_SPACE_Y           drc.rdb                 ASCII   N/A   N/A        ALL   4096
+V3_ENC_M3            drc.rdb                 ASCII   N/A   N/A        ALL   4096
+V3_ENC_M4            drc.rdb                 ASCII   N/A   N/A        ALL   4096
+V4_SIZE              drc.rdb                 ASCII   N/A   N/A        ALL   4096
+V4_SPACE_X           drc.rdb                 ASCII   N/A   N/A        ALL   4096
+V4_SPACE_Y           drc.rdb                 ASCII   N/A   N/A        ALL   4096
+V4_ENC_M4            drc.rdb                 ASCII   N/A   N/A        ALL   4096
+V4_ENC_M5            drc.rdb                 ASCII   N/A   N/A        ALL   4096
+V5_SIZE              drc.rdb                 ASCII   N/A   N/A        ALL   4096
+V5_SPACE_X           drc.rdb                 ASCII   N/A   N/A        ALL   4096
+V5_SPACE_Y           drc.rdb                 ASCII   N/A   N/A        ALL   4096
+V5_ENC_M5            drc.rdb                 ASCII   N/A   N/A        ALL   4096
+V5_ENC_M6            drc.rdb                 ASCII   N/A   N/A        ALL   4096
+
+--- CALIBRE::DRC-H RESULTS DATABASE INITIALIZATION MODULE COMPLETED.
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+-----                   CALIBRE::DRC-H - EXECUTIVE MODULE                  -----
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+Poly = OR Poly
+--------------
+Poly (HIER TYP=1 CFG=1 HGC=776 FGC=792 HEC=3104 FEC=3168 IGC=0 VHC=F VPC=F)
+
+Original Layer Poly DELETED --
+
+Poly_WIDTH::<1> = INT Poly < 0.014
+----------------------------------
+Poly_WIDTH::<1> (HIER TYP=3 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0)
+
+Layer Poly DELETED --
+
+Layer Poly_WIDTH::<1> DELETED --
+
+DRC RuleCheck Poly_WIDTH COMPLETED. Number of Results = 0 (0)
+
+Fin = OR Fin
+------------
+Fin (HIER TYP=1 CFG=1 HGC=1384 FGC=1518 HEC=5536 FEC=6072 IGC=0 VHC=F VPC=F)
+
+Original Layer Fin DELETED --
+
+Fin_WIDTH::<1> = INT Fin < 0.01
+-------------------------------
+Fin_WIDTH::<1> (HIER TYP=3 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0)
+
+Layer Fin DELETED --
+
+Layer Fin_WIDTH::<1> DELETED --
+
+DRC RuleCheck Fin_WIDTH COMPLETED. Number of Results = 0 (0)
+
+M1 = OR M1
+----------
+M1 (HIER TYP=1 CFG=1 HGC=871 FGC=882 HEC=3484 FEC=3528 IGC=0 VHC=F VPC=F)
+
+Original Layer M1 DELETED --
+
+M1_WIDTH::<1> = INT M1 < 0.032
+------------------------------
+M1_WIDTH::<1> (HIER TYP=3 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0)
+
+Layer M1_WIDTH::<1> DELETED --
+
+DRC RuleCheck M1_WIDTH COMPLETED. Number of Results = 0 (0)
+
+M1_HE = ANGLE M1 == 0
+M1_VE = ANGLE M1 == 90
+----------------------
+M1_HE (HIER-PMF TYP=2 CFG=1 HGC=1742 FGC=1764 HEC=1742 FEC=1764 IGC=0 VHC=F VPC=F)
+M1_VE (HIER-PMF TYP=2 CFG=1 HGC=1742 FGC=1764 HEC=1742 FEC=1764 IGC=0 VHC=F VPC=F)
+
+M1_END::<1> = EXT M1_HE < 0.048 PROJECTING > 0
+----------------------------------------------
+
+WARNING: PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+
+M1_END::<1> (HIER TYP=3 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0)
+
+Layer M1_HE DELETED --
+
+Layer M1_END::<1> DELETED --
+
+DRC RuleCheck M1_END COMPLETED. Number of Results = 0 (0)
+
+M1_SIDE::<1> = EXT M1_VE < 0.048 PROJECTING > 0
+-----------------------------------------------
+
+WARNING: PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+
+M1_SIDE::<1> (HIER TYP=3 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0)
+
+Layer M1_VE DELETED --
+
+Layer M1_SIDE::<1> DELETED --
+
+DRC RuleCheck M1_SIDE COMPLETED. Number of Results = 0 (0)
+
+M2 = OR M2
+----------
+M2 (HIER TYP=1 CFG=1 HGC=110 FGC=118 HEC=440 FEC=472 IGC=8 VHC=F VPC=F)
+
+Original Layer M2 DELETED --
+
+M2_WIDTH::<1> = INT M2 < 0.032
+------------------------------
+M2_WIDTH::<1> (HIER TYP=3 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0)
+
+Layer M2_WIDTH::<1> DELETED --
+
+DRC RuleCheck M2_WIDTH COMPLETED. Number of Results = 0 (0)
+
+M2_VE = ANGLE M2 == 90
+M2_HE = ANGLE M2 == 0
+----------------------
+M2_VE (HIER-PMF TYP=2 CFG=1 HGC=210 FGC=224 HEC=210 FEC=224 IGC=8 VHC=F VPC=F)
+M2_HE (HIER-PMF TYP=2 CFG=1 HGC=228 FGC=244 HEC=228 FEC=244 IGC=8 VHC=F VPC=F)
+
+M2_END::<1> = EXT M2_VE < 0.048 PROJECTING > 0
+----------------------------------------------
+
+WARNING: PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+
+M2_END::<1> (HIER TYP=3 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0)
+
+Layer M2_VE DELETED --
+
+Layer M2_END::<1> DELETED --
+
+DRC RuleCheck M2_END COMPLETED. Number of Results = 0 (0)
+
+M2_SIDE::<1> = EXT M2_HE < 0.052 PROJECTING > 0
+-----------------------------------------------
+
+WARNING: PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+
+M2_SIDE::<1> (HIER TYP=3 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0)
+
+Layer M2_HE DELETED --
+
+Layer M2_SIDE::<1> DELETED --
+
+DRC RuleCheck M2_SIDE COMPLETED. Number of Results = 0 (0)
+
+M3 = OR M3
+----------
+M3 (HIER TYP=1 CFG=1 HGC=51 FGC=54 HEC=204 FEC=216 IGC=13 VHC=F VPC=F)
+
+Original Layer M3 DELETED --
+
+M3_WIDTH::<1> = INT M3 < 0.04
+-----------------------------
+M3_WIDTH::<1> (HIER TYP=3 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0)
+
+Layer M3_WIDTH::<1> DELETED --
+
+DRC RuleCheck M3_WIDTH COMPLETED. Number of Results = 0 (0)
+
+M3_HE = ANGLE M3 == 0
+M3_VE = ANGLE M3 == 90
+----------------------
+M3_HE (HIER-PMF TYP=2 CFG=1 HGC=82 FGC=86 HEC=82 FEC=86 IGC=13 VHC=F VPC=F)
+M3_VE (HIER-PMF TYP=2 CFG=1 HGC=116 FGC=128 HEC=116 FEC=128 IGC=13 VHC=F VPC=F)
+
+M3_END::<1> = EXT M3_HE < 0.048 PROJECTING > 0
+----------------------------------------------
+
+WARNING: PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+
+M3_END::<1> (HIER TYP=3 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0)
+
+Layer M3_HE DELETED --
+
+Layer M3_END::<1> DELETED --
+
+DRC RuleCheck M3_END COMPLETED. Number of Results = 0 (0)
+
+M3_SIDE::<1> = EXT M3_VE < 0.04 PROJECTING > 0
+----------------------------------------------
+
+WARNING: PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+
+M3_SIDE::<1> (HIER TYP=3 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0)
+
+Layer M3_VE DELETED --
+
+Layer M3_SIDE::<1> DELETED --
+
+DRC RuleCheck M3_SIDE COMPLETED. Number of Results = 0 (0)
+
+M4 = OR M4
+----------
+M4 (HIER TYP=1 CFG=1 HGC=28 FGC=28 HEC=112 FEC=112 IGC=8 VHC=F VPC=F)
+
+Original Layer M4 DELETED --
+
+M4_WIDTH::<1> = INT M4 < 0.04
+-----------------------------
+M4_WIDTH::<1> (HIER TYP=3 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0)
+
+Layer M4_WIDTH::<1> DELETED --
+
+DRC RuleCheck M4_WIDTH COMPLETED. Number of Results = 0 (0)
+
+M4_VE = ANGLE M4 == 90
+M4_HE = ANGLE M4 == 0
+----------------------
+M4_VE (HIER-PMF TYP=2 CFG=1 HGC=56 FGC=56 HEC=56 FEC=56 IGC=8 VHC=F VPC=F)
+M4_HE (HIER-PMF TYP=2 CFG=1 HGC=56 FGC=56 HEC=56 FEC=56 IGC=8 VHC=F VPC=F)
+
+M4_END::<1> = EXT M4_VE < 0.065 PROJECTING > 0
+----------------------------------------------
+
+WARNING: PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+
+M4_END::<1> (HIER TYP=3 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0)
+
+Layer M4_VE DELETED --
+
+Layer M4_END::<1> DELETED --
+
+DRC RuleCheck M4_END COMPLETED. Number of Results = 0 (0)
+
+M4_SIDE::<1> = EXT M4_HE < 0.044 PROJECTING > 0
+-----------------------------------------------
+
+WARNING: PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+
+M4_SIDE::<1> (HIER TYP=3 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0)
+
+Layer M4_HE DELETED --
+
+Layer M4_SIDE::<1> DELETED --
+
+DRC RuleCheck M4_SIDE COMPLETED. Number of Results = 0 (0)
+
+M5 = OR M5
+----------
+M5 (HIER TYP=1 CFG=1 HGC=27 FGC=27 HEC=108 FEC=108 IGC=41 VHC=F VPC=F)
+
+Original Layer M5 DELETED --
+
+M5_WIDTH::<1> = INT M5 < 0.064
+------------------------------
+M5_WIDTH::<1> (HIER TYP=3 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0)
+
+Layer M5_WIDTH::<1> DELETED --
+
+DRC RuleCheck M5_WIDTH COMPLETED. Number of Results = 0 (0)
+
+M5_HE = ANGLE M5 == 0
+M5_VE = ANGLE M5 == 90
+----------------------
+M5_HE (HIER-PMF TYP=2 CFG=1 HGC=54 FGC=54 HEC=54 FEC=54 IGC=41 VHC=F VPC=F)
+M5_VE (HIER-PMF TYP=2 CFG=1 HGC=54 FGC=54 HEC=54 FEC=54 IGC=41 VHC=F VPC=F)
+
+M5_END::<1> = EXT M5_HE < 0.065 PROJECTING > 0
+----------------------------------------------
+
+WARNING: PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+
+M5_END::<1> (HIER TYP=3 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0)
+
+Layer M5_HE DELETED --
+
+Layer M5_END::<1> DELETED --
+
+DRC RuleCheck M5_END COMPLETED. Number of Results = 0 (0)
+
+M5_SIDE::<1> = EXT M5_VE < 0.08 PROJECTING > 0
+----------------------------------------------
+
+WARNING: PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+
+M5_SIDE::<1> (HIER TYP=3 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0)
+
+Layer M5_VE DELETED --
+
+Layer M5_SIDE::<1> DELETED --
+
+DRC RuleCheck M5_SIDE COMPLETED. Number of Results = 0 (0)
+
+M6 = OR M6
+----------
+M6 (HIER TYP=1 CFG=1 HGC=9 FGC=9 HEC=36 FEC=36 IGC=6 VHC=F VPC=F)
+
+Original Layer M6 DELETED --
+
+M6_WIDTH::<1> = INT M6 < 0.064
+------------------------------
+M6_WIDTH::<1> (HIER TYP=3 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0)
+
+Layer M6_WIDTH::<1> DELETED --
+
+DRC RuleCheck M6_WIDTH COMPLETED. Number of Results = 0 (0)
+
+M6_VE = ANGLE M6 == 90
+M6_HE = ANGLE M6 == 0
+----------------------
+M6_VE (HIER-PMF TYP=2 CFG=1 HGC=18 FGC=18 HEC=18 FEC=18 IGC=6 VHC=F VPC=F)
+M6_HE (HIER-PMF TYP=2 CFG=1 HGC=18 FGC=18 HEC=18 FEC=18 IGC=6 VHC=F VPC=F)
+
+M6_END::<1> = EXT M6_VE < 0.07 PROJECTING > 0
+---------------------------------------------
+
+WARNING: PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+
+M6_END::<1> (HIER TYP=3 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0)
+
+Layer M6_VE DELETED --
+
+Layer M6_END::<1> DELETED --
+
+DRC RuleCheck M6_END COMPLETED. Number of Results = 0 (0)
+
+M6_SIDE::<1> = EXT M6_HE < 0.08 PROJECTING > 0
+----------------------------------------------
+
+WARNING: PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+
+M6_SIDE::<1> (HIER TYP=3 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0)
+
+Layer M6_HE DELETED --
+
+Layer M6_SIDE::<1> DELETED --
+
+DRC RuleCheck M6_SIDE COMPLETED. Number of Results = 0 (0)
+
+V0 = OR V0
+----------
+V0 (HIER TYP=1 CFG=1 HGC=2488 FGC=2501 HEC=9952 FEC=10004 IGC=0 VHC=F VPC=F)
+
+Original Layer V0 DELETED --
+
+V0_SIZE::<1> = NOT RECTANGLE V0 == 0.032 BY == 0.032
+----------------------------------------------------
+V0_SIZE::<1> (HIER TYP=1 CFG=1 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+
+Layer V0_SIZE::<1> DELETED --
+
+DRC RuleCheck V0_SIZE COMPLETED. Number of Results = 0 (0)
+
+V0_XE = ANGLE V0 == 90
+V0_YE = ANGLE V0 == 0
+----------------------
+V0_XE (HIER-PMF TYP=2 CFG=1 HGC=4976 FGC=5002 HEC=4976 FEC=5002 IGC=0 VHC=F VPC=F)
+V0_YE (HIER-PMF TYP=2 CFG=1 HGC=4976 FGC=5002 HEC=4976 FEC=5002 IGC=0 VHC=F VPC=F)
+
+V0_SPACE_X::<1> = EXT V0_XE < 0.046 PROJECTING > 0
+--------------------------------------------------
+
+WARNING: PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+
+V0_SPACE_X::<1> (HIER TYP=3 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0)
+
+Layer V0_XE DELETED --
+
+Layer V0_SPACE_X::<1> DELETED --
+
+DRC RuleCheck V0_SPACE_X COMPLETED. Number of Results = 0 (0)
+
+V0_SPACE_Y::<1> = EXT V0_YE < 0.052 PROJECTING > 0
+--------------------------------------------------
+
+WARNING: PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+
+V0_SPACE_Y::<1> (HIER TYP=3 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0)
+
+Layer V0_YE DELETED --
+
+Layer V0_SPACE_Y::<1> DELETED --
+
+DRC RuleCheck V0_SPACE_Y COMPLETED. Number of Results = 0 (0)
+
+V0_H_REQUIRED = GROW V0 RIGHT BY 0 TOP BY 0.02 LEFT BY 0 BOTTOM BY 0.02
+-----------------------------------------------------------------------
+V0_H_REQUIRED (HIER TYP=1 CFG=0 HGC=2488 FGC=2501 HEC=9952 FEC=10004 IGC=0 VHC=F VPC=F)
+
+Layer V0 DELETED --
+
+V0_ENC_M1::<1> = V0_H_REQUIRED NOT M1
+-------------------------------------
+V0_ENC_M1::<1> (HIER TYP=1 CFG=1 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+
+Layer V0_H_REQUIRED DELETED --
+
+Layer V0_ENC_M1::<1> DELETED --
+
+DRC RuleCheck V0_ENC_M1 COMPLETED. Number of Results = 0 (0)
+
+V1 = OR V1
+----------
+V1 (HIER TYP=1 CFG=1 HGC=876 FGC=888 HEC=3504 FEC=3552 IGC=0 VHC=F VPC=F)
+
+Original Layer V1 DELETED --
+
+V1_SIZE::<1> = NOT RECTANGLE V1 == 0.032 BY == 0.032
+----------------------------------------------------
+V1_SIZE::<1> (HIER TYP=1 CFG=1 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+
+Layer V1_SIZE::<1> DELETED --
+
+DRC RuleCheck V1_SIZE COMPLETED. Number of Results = 0 (0)
+
+V1_XE = ANGLE V1 == 90
+V1_YE = ANGLE V1 == 0
+----------------------
+V1_XE (HIER-PMF TYP=2 CFG=1 HGC=1752 FGC=1776 HEC=1752 FEC=1776 IGC=0 VHC=F VPC=F)
+V1_YE (HIER-PMF TYP=2 CFG=1 HGC=1752 FGC=1776 HEC=1752 FEC=1776 IGC=0 VHC=F VPC=F)
+
+V1_SPACE_X::<1> = EXT V1_XE < 0.048 PROJECTING > 0
+--------------------------------------------------
+
+WARNING: PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+
+V1_SPACE_X::<1> (HIER TYP=3 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0)
+
+Layer V1_XE DELETED --
+
+Layer V1_SPACE_X::<1> DELETED --
+
+DRC RuleCheck V1_SPACE_X COMPLETED. Number of Results = 0 (0)
+
+V1_SPACE_Y::<1> = EXT V1_YE < 0.052 PROJECTING > 0
+--------------------------------------------------
+
+WARNING: PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+
+V1_SPACE_Y::<1> (HIER TYP=3 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0)
+
+Layer V1_YE DELETED --
+
+Layer V1_SPACE_Y::<1> DELETED --
+
+DRC RuleCheck V1_SPACE_Y COMPLETED. Number of Results = 0 (0)
+
+V1_L_REQUIRED = GROW V1 RIGHT BY 0 TOP BY 0.02 LEFT BY 0 BOTTOM BY 0.02
+-----------------------------------------------------------------------
+V1_L_REQUIRED (HIER TYP=1 CFG=0 HGC=876 FGC=888 HEC=3504 FEC=3552 IGC=0 VHC=F VPC=F)
+
+V1_ENC_M1::<1> = V1_L_REQUIRED NOT M1
+-------------------------------------
+V1_ENC_M1::<1> (HIER TYP=1 CFG=1 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+
+Layer V1_L_REQUIRED DELETED --
+
+Layer M1 DELETED --
+
+Layer V1_ENC_M1::<1> DELETED --
+
+DRC RuleCheck V1_ENC_M1 COMPLETED. Number of Results = 0 (0)
+
+V1_H_REQUIRED = GROW V1 RIGHT BY 0.02 TOP BY 0 LEFT BY 0.02 BOTTOM BY 0
+-----------------------------------------------------------------------
+V1_H_REQUIRED (HIER TYP=1 CFG=0 HGC=876 FGC=888 HEC=3504 FEC=3552 IGC=0 VHC=F VPC=F)
+
+Layer V1 DELETED --
+
+V1_ENC_M2::<1> = V1_H_REQUIRED NOT M2
+-------------------------------------
+V1_ENC_M2::<1> (HIER TYP=1 CFG=1 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+
+Layer V1_H_REQUIRED DELETED --
+
+Layer V1_ENC_M2::<1> DELETED --
+
+DRC RuleCheck V1_ENC_M2 COMPLETED. Number of Results = 0 (0)
+
+V2 = OR V2
+----------
+V2 (HIER TYP=1 CFG=1 HGC=102 FGC=108 HEC=408 FEC=432 IGC=5 VHC=F VPC=F)
+
+Original Layer V2 DELETED --
+
+V2_SIZE::<1> = NOT RECTANGLE V2 == 0.032 BY == 0.032
+----------------------------------------------------
+V2_SIZE::<1> (HIER TYP=1 CFG=1 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+
+Layer V2_SIZE::<1> DELETED --
+
+DRC RuleCheck V2_SIZE COMPLETED. Number of Results = 0 (0)
+
+V2_XE = ANGLE V2 == 90
+V2_YE = ANGLE V2 == 0
+----------------------
+V2_XE (HIER-PMF TYP=2 CFG=1 HGC=204 FGC=216 HEC=204 FEC=216 IGC=5 VHC=F VPC=F)
+V2_YE (HIER-PMF TYP=2 CFG=1 HGC=204 FGC=216 HEC=204 FEC=216 IGC=5 VHC=F VPC=F)
+
+V2_SPACE_X::<1> = EXT V2_XE < 0.048 PROJECTING > 0
+--------------------------------------------------
+
+WARNING: PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+
+V2_SPACE_X::<1> (HIER TYP=3 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0)
+
+Layer V2_XE DELETED --
+
+Layer V2_SPACE_X::<1> DELETED --
+
+DRC RuleCheck V2_SPACE_X COMPLETED. Number of Results = 0 (0)
+
+V2_SPACE_Y::<1> = EXT V2_YE < 0.04 PROJECTING > 0
+-------------------------------------------------
+
+WARNING: PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+
+V2_SPACE_Y::<1> (HIER TYP=3 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0)
+
+Layer V2_YE DELETED --
+
+Layer V2_SPACE_Y::<1> DELETED --
+
+DRC RuleCheck V2_SPACE_Y COMPLETED. Number of Results = 0 (0)
+
+V2_L_REQUIRED = GROW V2 RIGHT BY 0.02 TOP BY 0 LEFT BY 0.02 BOTTOM BY 0
+-----------------------------------------------------------------------
+V2_L_REQUIRED (HIER TYP=1 CFG=0 HGC=102 FGC=108 HEC=408 FEC=432 IGC=2 VHC=F VPC=F)
+
+V2_ENC_M2::<1> = V2_L_REQUIRED NOT M2
+-------------------------------------
+V2_ENC_M2::<1> (HIER TYP=1 CFG=1 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+
+Layer V2_L_REQUIRED DELETED --
+
+Layer M2 DELETED --
+
+Layer V2_ENC_M2::<1> DELETED --
+
+DRC RuleCheck V2_ENC_M2 COMPLETED. Number of Results = 0 (0)
+
+V2_H_REQUIRED = GROW V2 RIGHT BY 0.004 TOP BY 0.02 LEFT BY 0.004 BOTTOM BY 0.02
+-------------------------------------------------------------------------------
+V2_H_REQUIRED (HIER TYP=1 CFG=0 HGC=102 FGC=108 HEC=1224 FEC=1296 IGC=2 VHC=F VPC=F)
+
+Layer V2 DELETED --
+
+V2_ENC_M3::<1> = V2_H_REQUIRED NOT M3
+-------------------------------------
+V2_ENC_M3::<1> (HIER TYP=1 CFG=1 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+
+Layer V2_H_REQUIRED DELETED --
+
+Layer V2_ENC_M3::<1> DELETED --
+
+DRC RuleCheck V2_ENC_M3 COMPLETED. Number of Results = 0 (0)
+
+V3 = OR V3
+----------
+V3 (HIER TYP=1 CFG=1 HGC=28 FGC=28 HEC=112 FEC=112 IGC=5 VHC=F VPC=F)
+
+Original Layer V3 DELETED --
+
+V3_SIZE::<1> = NOT RECTANGLE V3 == 0.04 BY == 0.04
+--------------------------------------------------
+V3_SIZE::<1> (HIER TYP=1 CFG=1 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+
+Layer V3_SIZE::<1> DELETED --
+
+DRC RuleCheck V3_SIZE COMPLETED. Number of Results = 0 (0)
+
+V3_XE = ANGLE V3 == 90
+V3_YE = ANGLE V3 == 0
+----------------------
+V3_XE (HIER-PMF TYP=2 CFG=1 HGC=56 FGC=56 HEC=56 FEC=56 IGC=5 VHC=F VPC=F)
+V3_YE (HIER-PMF TYP=2 CFG=1 HGC=56 FGC=56 HEC=56 FEC=56 IGC=5 VHC=F VPC=F)
+
+V3_SPACE_X::<1> = EXT V3_XE < 0.04 PROJECTING > 0
+-------------------------------------------------
+
+WARNING: PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+
+V3_SPACE_X::<1> (HIER TYP=3 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0)
+
+Layer V3_XE DELETED --
+
+Layer V3_SPACE_X::<1> DELETED --
+
+DRC RuleCheck V3_SPACE_X COMPLETED. Number of Results = 0 (0)
+
+V3_SPACE_Y::<1> = EXT V3_YE < 0.044 PROJECTING > 0
+--------------------------------------------------
+
+WARNING: PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+
+V3_SPACE_Y::<1> (HIER TYP=3 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0)
+
+Layer V3_YE DELETED --
+
+Layer V3_SPACE_Y::<1> DELETED --
+
+DRC RuleCheck V3_SPACE_Y COMPLETED. Number of Results = 0 (0)
+
+V3_L_REQUIRED = GROW V3 RIGHT BY 0 TOP BY 0.02 LEFT BY 0 BOTTOM BY 0.02
+-----------------------------------------------------------------------
+V3_L_REQUIRED (HIER TYP=1 CFG=0 HGC=28 FGC=28 HEC=112 FEC=112 IGC=3 VHC=F VPC=F)
+
+V3_ENC_M3::<1> = V3_L_REQUIRED NOT M3
+-------------------------------------
+V3_ENC_M3::<1> (HIER TYP=1 CFG=1 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+
+Layer V3_L_REQUIRED DELETED --
+
+Layer M3 DELETED --
+
+Layer V3_ENC_M3::<1> DELETED --
+
+DRC RuleCheck V3_ENC_M3 COMPLETED. Number of Results = 0 (0)
+
+V3_H_REQUIRED = GROW V3 RIGHT BY 0.02 TOP BY 0 LEFT BY 0.02 BOTTOM BY 0
+-----------------------------------------------------------------------
+V3_H_REQUIRED (HIER TYP=1 CFG=0 HGC=28 FGC=28 HEC=112 FEC=112 IGC=3 VHC=F VPC=F)
+
+Layer V3 DELETED --
+
+V3_ENC_M4::<1> = V3_H_REQUIRED NOT M4
+-------------------------------------
+V3_ENC_M4::<1> (HIER TYP=1 CFG=1 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+
+Layer V3_H_REQUIRED DELETED --
+
+Layer V3_ENC_M4::<1> DELETED --
+
+DRC RuleCheck V3_ENC_M4 COMPLETED. Number of Results = 0 (0)
+
+V4 = OR V4
+----------
+V4 (HIER TYP=1 CFG=1 HGC=28 FGC=28 HEC=112 FEC=112 IGC=6 VHC=F VPC=F)
+
+Original Layer V4 DELETED --
+
+V4_SIZE::<1> = NOT RECTANGLE V4 == 0.04 BY == 0.04
+--------------------------------------------------
+V4_SIZE::<1> (HIER TYP=1 CFG=1 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+
+Layer V4_SIZE::<1> DELETED --
+
+DRC RuleCheck V4_SIZE COMPLETED. Number of Results = 0 (0)
+
+V4_XE = ANGLE V4 == 90
+V4_YE = ANGLE V4 == 0
+----------------------
+V4_XE (HIER-PMF TYP=2 CFG=1 HGC=56 FGC=56 HEC=56 FEC=56 IGC=6 VHC=F VPC=F)
+V4_YE (HIER-PMF TYP=2 CFG=1 HGC=56 FGC=56 HEC=56 FEC=56 IGC=6 VHC=F VPC=F)
+
+V4_SPACE_X::<1> = EXT V4_XE < 0.104 PROJECTING > 0
+--------------------------------------------------
+
+WARNING: PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+
+V4_SPACE_X::<1> (HIER TYP=3 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0)
+
+Layer V4_XE DELETED --
+
+Layer V4_SPACE_X::<1> DELETED --
+
+DRC RuleCheck V4_SPACE_X COMPLETED. Number of Results = 0 (0)
+
+V4_SPACE_Y::<1> = EXT V4_YE < 0.044 PROJECTING > 0
+--------------------------------------------------
+
+WARNING: PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+
+V4_SPACE_Y::<1> (HIER TYP=3 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0)
+
+Layer V4_YE DELETED --
+
+Layer V4_SPACE_Y::<1> DELETED --
+
+DRC RuleCheck V4_SPACE_Y COMPLETED. Number of Results = 0 (0)
+
+V4_L_REQUIRED = GROW V4 RIGHT BY 0.02 TOP BY 0 LEFT BY 0.02 BOTTOM BY 0
+-----------------------------------------------------------------------
+V4_L_REQUIRED (HIER TYP=1 CFG=0 HGC=28 FGC=28 HEC=112 FEC=112 IGC=3 VHC=F VPC=F)
+
+V4_ENC_M4::<1> = V4_L_REQUIRED NOT M4
+-------------------------------------
+V4_ENC_M4::<1> (HIER TYP=1 CFG=1 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+
+Layer V4_L_REQUIRED DELETED --
+
+Layer M4 DELETED --
+
+Layer V4_ENC_M4::<1> DELETED --
+
+DRC RuleCheck V4_ENC_M4 COMPLETED. Number of Results = 0 (0)
+
+V4_H_REQUIRED = GROW V4 RIGHT BY 0.012 TOP BY 0.02 LEFT BY 0.012 BOTTOM BY 0.02
+-------------------------------------------------------------------------------
+V4_H_REQUIRED (HIER TYP=1 CFG=0 HGC=28 FGC=28 HEC=336 FEC=336 IGC=3 VHC=F VPC=F)
+
+Layer V4 DELETED --
+
+V4_ENC_M5::<1> = V4_H_REQUIRED NOT M5
+-------------------------------------
+V4_ENC_M5::<1> (HIER TYP=1 CFG=1 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+
+Layer V4_H_REQUIRED DELETED --
+
+Layer V4_ENC_M5::<1> DELETED --
+
+DRC RuleCheck V4_ENC_M5 COMPLETED. Number of Results = 0 (0)
+
+V5 = OR V5
+----------
+V5 (HIER TYP=1 CFG=1 HGC=121 FGC=121 HEC=484 FEC=484 IGC=27 VHC=F VPC=F)
+
+Original Layer V5 DELETED --
+
+V5_SIZE::<1> = NOT RECTANGLE V5 == 0.064 BY == 0.064
+----------------------------------------------------
+V5_SIZE::<1> (HIER TYP=1 CFG=1 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+
+Layer V5_SIZE::<1> DELETED --
+
+DRC RuleCheck V5_SIZE COMPLETED. Number of Results = 0 (0)
+
+V5_XE = ANGLE V5 == 90
+V5_YE = ANGLE V5 == 0
+----------------------
+V5_XE (HIER-PMF TYP=2 CFG=1 HGC=242 FGC=242 HEC=242 FEC=242 IGC=27 VHC=F VPC=F)
+V5_YE (HIER-PMF TYP=2 CFG=1 HGC=242 FGC=242 HEC=242 FEC=242 IGC=27 VHC=F VPC=F)
+
+V5_SPACE_X::<1> = EXT V5_XE < 0.08 PROJECTING > 0
+-------------------------------------------------
+
+WARNING: PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+
+V5_SPACE_X::<1> (HIER TYP=3 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0)
+
+Layer V5_XE DELETED --
+
+Layer V5_SPACE_X::<1> DELETED --
+
+DRC RuleCheck V5_SPACE_X COMPLETED. Number of Results = 0 (0)
+
+V5_SPACE_Y::<1> = EXT V5_YE < 0.08 PROJECTING > 0
+-------------------------------------------------
+
+WARNING: PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+
+V5_SPACE_Y::<1> (HIER TYP=3 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0)
+
+Layer V5_YE DELETED --
+
+Layer V5_SPACE_Y::<1> DELETED --
+
+DRC RuleCheck V5_SPACE_Y COMPLETED. Number of Results = 0 (0)
+
+V5_L_REQUIRED = GROW V5 RIGHT BY 0 TOP BY 0.02 LEFT BY 0 BOTTOM BY 0.02
+-----------------------------------------------------------------------
+V5_L_REQUIRED (HIER TYP=1 CFG=0 HGC=128 FGC=128 HEC=514 FEC=514 IGC=8 VHC=F VPC=F)
+
+V5_ENC_M5::<1> = V5_L_REQUIRED NOT M5
+-------------------------------------
+V5_ENC_M5::<1> (HIER TYP=1 CFG=1 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+
+Layer V5_L_REQUIRED DELETED --
+
+Layer M5 DELETED --
+
+Layer V5_ENC_M5::<1> DELETED --
+
+DRC RuleCheck V5_ENC_M5 COMPLETED. Number of Results = 0 (0)
+
+V5_H_REQUIRED = GROW V5 RIGHT BY 0.02 TOP BY 0 LEFT BY 0.02 BOTTOM BY 0
+-----------------------------------------------------------------------
+V5_H_REQUIRED (HIER TYP=1 CFG=0 HGC=121 FGC=121 HEC=484 FEC=484 IGC=8 VHC=F VPC=F)
+
+Layer V5 DELETED --
+
+V5_ENC_M6::<1> = V5_H_REQUIRED NOT M6
+-------------------------------------
+V5_ENC_M6::<1> (HIER TYP=1 CFG=1 HGC=0 FGC=0 HEC=0 FEC=0 IGC=0 VHC=F VPC=F)
+
+Layer V5_H_REQUIRED DELETED --
+
+Layer M6 DELETED --
+
+Layer V5_ENC_M6::<1> DELETED --
+
+WRITE to ASCII DRC Results Database drc.rdb COMPLETED
+
+DRC RuleCheck V5_ENC_M6 COMPLETED. Number of Results = 0 (0)
+
+
+--- CALIBRE::DRC-H EXECUTIVE MODULE COMPLETED.
+--- TOTAL RULECHECKS EXECUTED = 49
+--- TOTAL RESULTS GENERATED = 0 (0)
+--- DRC RESULTS DATABASE FILE = drc.rdb (ASCII)
+
+--- CALIBRE::DRC-H COMPLETED
+--- TOTAL
+--- SUMMARY REPORT FILE = drc.summary
+

@@ -1,0 +1,295 @@
+{
+  "scope": "Settings of the archived five-design follow-up package, not later six-layout experiments or historical optimization-population validation.",
+  "report_role": "New descriptive documentation of existing archived runs; no new experiment or changed acceptance criterion.",
+  "common": {
+    "supply_V": 0.8,
+    "temperature_C": 27,
+    "nominal_model_temperature_C": 27,
+    "relative_tolerance": 1e-05,
+    "voltage_absolute_tolerance_V": 1e-08,
+    "current_absolute_tolerance_A": 1e-14,
+    "initialization": "Normal DC operating point; no forced initial state in the PT comparison.",
+    "output_save": "Selected explicit signals; simulator saved sample times are retained, not resampled for metrics.",
+    "models": {
+      "family": "Public PTM-MG 14 nm high-performance NFET and PFET predictive compact models",
+      "model_files": [
+        "14nfet.pm",
+        "14pfet.pm"
+      ],
+      "instance_channel_length_nm": 14,
+      "simulation_corner": "One nominal predictive-model condition; no process-corner distribution or mismatch sweep.",
+      "matched_to_mock14_fabrication_process": false,
+      "foundry_calibration": false,
+      "uncertainty_calibration": "unknown",
+      "provenance": "Model identity is established from the archived NFET/PFET files and their model-card comments. No transistor models are distributed in this results-only supplement."
+    },
+    "completion_interpretation": "A zero-error completed run supports its recorded numerical solution. It is not a claim that all electrical specifications pass. Each native log retains warnings and notices.",
+    "common_warning": "The model cards declare bulkmod twice, producing two SFE-32 warnings. The supplied cards are unchanged. Some transient logs additionally report trapezoidal ringing notices; these remain visible."
+  },
+  "network_conditions": {
+    "unit_collapse": "Ideal-interconnect control using the same positional/unit device decomposition and predictive models as the corresponding RC/RCC run. Unit terminals collapse to ideal source nets; geometry-derived R/C is absent. This is not the original long-channel schematic.",
+    "RC": "Unit-terminal distributed metal/via resistance and ground capacitance, including supply/ground interconnect. Device L/NFIN/NF/M, stimulus, load and bias match unit_collapse for each design.",
+    "RCC": "Same RC network plus a restricted nominal-track coupling sensitivity estimate; not a separately calibrated full coupling extraction.",
+    "resistance_formula": "R_ohm = UnitR_ohm_per_um * length_um * nominal_width_nm / actual_width_nm; physical via cuts contribute per-cut resistance.",
+    "ground_capacitance_formula": "C_fF = UnitC_fF_per_um * length_um; split equally between the two segment endpoints.",
+    "coupling_formula": "Ccouple_fF = 0.1 * parallel_overlap_um for the eligible same-layer nominal-width segments on adjacent tracks one layer pitch apart; different nets and no intermediate obstacle.",
+    "coupling_outside_eligibility": "Not modeled/unknown, not an assertion of zero coupling.",
+    "coupling_calibration": "Adding coupling to the ground-capacitance abstraction is a sensitivity construction; no measured ground/coupling partition calibration is established.",
+    "FEOL": "Active/poly device-interior conduction uses the declared ideal device connectivity; well/substrate/contact parasitics are not a calibrated foundry extraction.",
+    "technology_coefficients_origin": "ALIGN mock14 layer abstractions. A commercial simulator does not make these coefficients calibrated PEX.",
+    "calibrated_PEX": false
+  },
+  "designs": {
+    "CLK-CMP": {
+      "unit_MOS_instances": 205,
+      "stimulus": {
+        "clock_V": [
+          0,
+          0.8
+        ],
+        "clock_delay_ns": 5,
+        "clock_rise_fall_ps": 100,
+        "clock_width_ns": 4.9,
+        "clock_period_ns": 10,
+        "VIP_V": [
+          0.425,
+          0.375
+        ],
+        "VIM_V": [
+          0.375,
+          0.425
+        ],
+        "input_delay_ns": 20,
+        "input_rise_fall_ps": 100,
+        "input_width_ns": 19.9,
+        "input_period_ns": 40
+      },
+      "load": {
+        "out_fF": 10,
+        "outb_fF": 10
+      },
+      "analyses": {
+        "DC_operating_point": true,
+        "transient_stop_ns": 60,
+        "transient_maxstep_ps": 1
+      },
+      "recorded_probe": "Six fixed clocked comparisons at 9,19,29,39,49,59 ns; complementary 80/20-percent voltage levels.",
+      "specification_scope": "Selected clocked-comparison response, not exhaustive comparator timing/metastability characterization."
+    },
+    "CT-CMP": {
+      "unit_MOS_instances": 348,
+      "bias_V": {
+        "VBN": 0.25,
+        "VBP": 0.55
+      },
+      "bias_selection": {
+        "prior_VBN_VBP_V": [
+          0.3,
+          0.5
+        ],
+        "intermediate_VBN_VBP_V": [
+          0.28,
+          0.52
+        ],
+        "selected_VBN_VBP_V": [
+          0.25,
+          0.55
+        ],
+        "status": "Adaptive bounded follow-up after prior measured operating points; not an initially preregistered operating condition. The last candidate and stopping rule were fixed before its own results.",
+        "geometry_models_devices_unchanged_by_bias": true,
+        "RCC_rule": "RCC at the same final bias was added once after RC passed the fixed low<0.16/high>0.64 probe."
+      },
+      "stimulus": {
+        "VIP_V": [
+          0.375,
+          0.425
+        ],
+        "VIM_V": [
+          0.425,
+          0.375
+        ],
+        "input_common_mode_V": 0.4,
+        "differential_input_V": [
+          -0.05,
+          0.05
+        ],
+        "delay_ns": 5,
+        "rise_fall_ps": 100,
+        "width_ns": 10,
+        "period_ns": 20
+      },
+      "load": {
+        "out_fF": 10
+      },
+      "analyses": {
+        "DC_operating_point": true,
+        "differential_DC_sweep_V": {
+          "start": -0.05,
+          "stop": 0.05,
+          "step": 0.0025,
+          "points": 41
+        },
+        "transient_stop_ns": 60,
+        "transient_maxstep_ps": 1
+      },
+      "recorded_probe": "Settled low average at [18,24) ns <0.16 V and high average at [8,14) ns >0.64 V.",
+      "specification_scope": "A measured fixed response at the declared adjusted bias; not an unmodified nominal-bias result or PVT margin guarantee."
+    },
+    "DC-Switch": {
+      "unit_MOS_instances": 48,
+      "bias_V": {
+        "VHIGH": 0.8,
+        "VMID": 0.4,
+        "VLOW": 0
+      },
+      "stimulus": {
+        "clock_V": [
+          0,
+          0.8
+        ],
+        "complementary_clock_V": [
+          0.8,
+          0
+        ],
+        "phase0_delay_ns": 5,
+        "phase1_delay_ns": 10,
+        "rise_fall_ps": 100,
+        "width_ns": 4.7,
+        "period_ns": 10
+      },
+      "load": {
+        "each_of_four_outputs_fF": 10
+      },
+      "analyses": {
+        "DC_operating_point": true,
+        "transient_stop_ns": 60,
+        "transient_maxstep_ps": 1
+      },
+      "recorded_probe": "Four clamped-rail output nodes at five times; 20 voltage checks with absolute error below 0.1 V.",
+      "power_scope": "Reports VSUP and each externally driven rail separately. Ideal clock-driver energy is not included. VMID average power can be negative because energy returns to that source.",
+      "specification_scope": "Externally clamped switching-core rail transfer; not full DC-DC converter efficiency or regulation."
+    },
+    "PT-CMP": {
+      "unit_MOS_instances": 54,
+      "source_MOS_families": 53,
+      "prior_sizing_control_MOS_instances": 53,
+      "device_sizing_intervention": {
+        "kind": "New follow-up design, with two sensing-inverter transistor sizing changes; not a P&R-only repair of the historical experiment.",
+        "p_device": {
+          "NFIN_before": 10,
+          "NFIN_after": 12,
+          "NF_before": 2,
+          "NF_after": 4,
+          "M": 1,
+          "L_nm": 14
+        },
+        "n_device": {
+          "NFIN_before": 10,
+          "NFIN_after": 2,
+          "NF_before": 2,
+          "NF_after": 2,
+          "M": 1,
+          "L_nm": 14
+        },
+        "topology_families_retained": 53
+      },
+      "unit_decomposition": "The sized PMOS is represented by two parallel NF=2, NFIN=12 unit MOS devices in new-layout unit/RC/RCC, versus one NF=4, NFIN=12 device in the 53-instance prior sizing control. Other 52 family declarations agree. This declaration relation is not assumed to prove numerical compact-model equivalence.",
+      "stimulus": {
+        "bit_low_high_V": [
+          0,
+          0.8
+        ],
+        "words_in_input_order": [
+          "00000000",
+          "10000000",
+          "11111111",
+          "11101111",
+          "11001100",
+          "11000100",
+          "00111100",
+          "00111110"
+        ],
+        "word_hold_ns": 10,
+        "transition_rise_fall_ps": 100,
+        "initial_state": "Normal DC solution; no forced initialization."
+      },
+      "load": {
+        "out_fF": 10
+      },
+      "analyses": {
+        "DC_operating_point": true,
+        "transient_stop_ns": 80,
+        "transient_maxstep_ps": 2
+      },
+      "recorded_probe": "Eight fixed words; output high if all four adjacent bit pairs are equal, otherwise low. Sample at 9+10*i ns and require >=0.64 V or <=0.16 V.",
+      "plot_fourth_curve": "Prior sizing control, not original-source schematic. Its raw data are a separate existing simulation and are not one of the 15 new-layout unit/RC/RCC runs.",
+      "specification_scope": "Eight selected word responses after the declared sizing intervention; not a proof that all original historical layouts are electrically valid."
+    },
+    "REF-BUF": {
+      "unit_MOS_instances": 303,
+      "bias": {
+        "current_uA": 20,
+        "prior_current_uA": 80,
+        "reference_center_V": 0.6769230769230768,
+        "no_device_or_geometry_change_by_interface_adjustment": true,
+        "selection_scope": "New declared bias/reference-interface follow-up. It does not restore or certify an unspecified original precision-buffer application."
+      },
+      "stimulus": {
+        "input_low_V": 0.6669230769230768,
+        "input_high_V": 0.6869230769230769,
+        "step_mV": 20,
+        "delay_ns": 200,
+        "rise_fall_ns": 1,
+        "width_ns": 200,
+        "period_ns": 400
+      },
+      "load": {
+        "resistance_ohm": 100000,
+        "capacitance_pF": 1
+      },
+      "feedback": {
+        "VFB1": "Zero-volt source between out and fbin; local STB probe.",
+        "VFB2": "Zero-volt source between fb2 and vbp2; remains closed during VFB1 STB."
+      },
+      "analyses": {
+        "DC_operating_point": true,
+        "input_DC_sweep_V": {
+          "start": 0.6269230769230768,
+          "stop": 0.7269230769230769,
+          "step": 0.005,
+          "points": 21
+        },
+        "transient_stop_ns": 600,
+        "transient_maxstep_ps": 10,
+        "local_STB": {
+          "conditions": [
+            "unit_collapse",
+            "RC"
+          ],
+          "probe": "VFB1",
+          "other_loop": "VFB2 closed",
+          "start_Hz": 1,
+          "stop_Hz": 100000000000.0,
+          "points_per_decade": 50,
+          "samples": 551,
+          "RCC_STB_present": false
+        }
+      },
+      "observer_recovery": "One failed newly added wildcard operating-parameter observer was removed; the final selected-save run retains the same circuit/model/analysis/stimulus. Failed prior attempt is retained privately and is not a successful result.",
+      "recorded_probe": "Positive finite settled response (high>low) only; step gain, DC tracking error and settling times are measured without a precision-specification pass.",
+      "specification_scope": "No original full precision-buffer specification or global multi-loop/PVT stability pass is established by these data."
+    }
+  },
+  "excluded_from_results_only_release": [
+    "Circuit netlists",
+    "GDS or layout geometry",
+    "Device model bodies",
+    "Host/user/job identifiers"
+  ],
+  "unknown_fields": {
+    "foundry_model_deck_match": "unknown/not established",
+    "calibrated_interconnect_error": "unknown",
+    "PVT_and_mismatch_functional_yield": "unknown",
+    "original_long_channel_schematic_equivalence": "not established"
+  }
+}

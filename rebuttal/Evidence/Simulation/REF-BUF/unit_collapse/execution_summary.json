@@ -1,0 +1,14 @@
+{
+  "case": "REF-BUF",
+  "condition": "unit_collapse",
+  "reference_center_V": 0.6769230769230768,
+  "IBIAS_uA": 20,
+  "no_device_or_geometry_change": true,
+  "comparison_condition": "unit_collapse",
+  "model_scope": "Three newly declared bias/reference-interface conditions on the same REF device/geometry; predictive model, not calibrated PEX or restoration of original high-reference specification.",
+  "observer_fix": "Remove newly added wildcard device operating-parameter traces, returning to original selected save list; every circuit, model, analysis and stimulus statement unchanged.",
+  "prior_native_call_started": true,
+  "maximum_observer_retries": 1,
+  "returncode": 0,
+  "terminal_status": "complete"
+}

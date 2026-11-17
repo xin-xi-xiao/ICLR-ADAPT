@@ -1,0 +1,317 @@
+{
+  "scope": "Recorded mock14 abstraction coefficients used by the research extractor; not a calibrated foundry technology file.",
+  "metal_width_correction": "UnitR*length*nominal_width/actual_width",
+  "coupling_eligibility": "See SIMULATION_SETTINGS.json/network_conditions",
+  "layers": [
+    {
+      "layer": "Poly",
+      "width_nm": 14,
+      "pitch_nm": 80,
+      "UnitR_native_effective_ohm_per_um": 100,
+      "UnitC_native_effective_fF_per_um": 0.2,
+      "UnitCC_unconsumed_raw": 0.1,
+      "viaR_ohm_per_cut": null,
+      "coefficient_origin": "official mock PDK abstraction; no matched measured/table correlation located"
+    },
+    {
+      "layer": "M1",
+      "width_nm": 32,
+      "pitch_nm": 80,
+      "UnitR_native_effective_ohm_per_um": 50,
+      "UnitC_native_effective_fF_per_um": 0.2,
+      "UnitCC_unconsumed_raw": 0.1,
+      "viaR_ohm_per_cut": null,
+      "coefficient_origin": "official mock PDK abstraction; no matched measured/table correlation located"
+    },
+    {
+      "layer": "V0",
+      "width_nm": null,
+      "pitch_nm": null,
+      "UnitR_native_effective_ohm_per_um": null,
+      "UnitC_native_effective_fF_per_um": null,
+      "UnitCC_unconsumed_raw": null,
+      "viaR_ohm_per_cut": 25,
+      "coefficient_origin": "official mock PDK abstraction; no matched measured/table correlation located"
+    },
+    {
+      "layer": "M2",
+      "width_nm": 32,
+      "pitch_nm": 84,
+      "UnitR_native_effective_ohm_per_um": 50,
+      "UnitC_native_effective_fF_per_um": 0.2,
+      "UnitCC_unconsumed_raw": 0.1,
+      "viaR_ohm_per_cut": null,
+      "coefficient_origin": "official mock PDK abstraction; no matched measured/table correlation located"
+    },
+    {
+      "layer": "V1",
+      "width_nm": null,
+      "pitch_nm": null,
+      "UnitR_native_effective_ohm_per_um": null,
+      "UnitC_native_effective_fF_per_um": null,
+      "UnitCC_unconsumed_raw": null,
+      "viaR_ohm_per_cut": 25,
+      "coefficient_origin": "official mock PDK abstraction; no matched measured/table correlation located"
+    },
+    {
+      "layer": "M3",
+      "width_nm": 40,
+      "pitch_nm": 80,
+      "UnitR_native_effective_ohm_per_um": 50,
+      "UnitC_native_effective_fF_per_um": 0.2,
+      "UnitCC_unconsumed_raw": 0.1,
+      "viaR_ohm_per_cut": null,
+      "coefficient_origin": "official mock PDK abstraction; no matched measured/table correlation located"
+    },
+    {
+      "layer": "V2",
+      "width_nm": null,
+      "pitch_nm": null,
+      "UnitR_native_effective_ohm_per_um": null,
+      "UnitC_native_effective_fF_per_um": null,
+      "UnitCC_unconsumed_raw": null,
+      "viaR_ohm_per_cut": 25,
+      "coefficient_origin": "official mock PDK abstraction; no matched measured/table correlation located"
+    },
+    {
+      "layer": "M4",
+      "width_nm": 40,
+      "pitch_nm": 84,
+      "UnitR_native_effective_ohm_per_um": 50,
+      "UnitC_native_effective_fF_per_um": 0.2,
+      "UnitCC_unconsumed_raw": 0.1,
+      "viaR_ohm_per_cut": null,
+      "coefficient_origin": "official mock PDK abstraction; no matched measured/table correlation located"
+    },
+    {
+      "layer": "V3",
+      "width_nm": null,
+      "pitch_nm": null,
+      "UnitR_native_effective_ohm_per_um": null,
+      "UnitC_native_effective_fF_per_um": null,
+      "UnitCC_unconsumed_raw": null,
+      "viaR_ohm_per_cut": 25,
+      "coefficient_origin": "official mock PDK abstraction; no matched measured/table correlation located"
+    },
+    {
+      "layer": "M5",
+      "width_nm": 64,
+      "pitch_nm": 144,
+      "UnitR_native_effective_ohm_per_um": 25,
+      "UnitC_native_effective_fF_per_um": 0.2,
+      "UnitCC_unconsumed_raw": 0.1,
+      "viaR_ohm_per_cut": null,
+      "coefficient_origin": "official mock PDK abstraction; no matched measured/table correlation located"
+    },
+    {
+      "layer": "V4",
+      "width_nm": null,
+      "pitch_nm": null,
+      "UnitR_native_effective_ohm_per_um": null,
+      "UnitC_native_effective_fF_per_um": null,
+      "UnitCC_unconsumed_raw": null,
+      "viaR_ohm_per_cut": 25,
+      "coefficient_origin": "official mock PDK abstraction; no matched measured/table correlation located"
+    },
+    {
+      "layer": "M6",
+      "width_nm": 64,
+      "pitch_nm": 144,
+      "UnitR_native_effective_ohm_per_um": 25,
+      "UnitC_native_effective_fF_per_um": 0.2,
+      "UnitCC_unconsumed_raw": 0.1,
+      "viaR_ohm_per_cut": null,
+      "coefficient_origin": "official mock PDK abstraction; no matched measured/table correlation located"
+    },
+    {
+      "layer": "V5",
+      "width_nm": null,
+      "pitch_nm": null,
+      "UnitR_native_effective_ohm_per_um": null,
+      "UnitC_native_effective_fF_per_um": null,
+      "UnitCC_unconsumed_raw": null,
+      "viaR_ohm_per_cut": 12,
+      "coefficient_origin": "official mock PDK abstraction; no matched measured/table correlation located"
+    },
+    {
+      "layer": "M7",
+      "width_nm": 64,
+      "pitch_nm": 144,
+      "UnitR_native_effective_ohm_per_um": 25,
+      "UnitC_native_effective_fF_per_um": 0.2,
+      "UnitCC_unconsumed_raw": 0.1,
+      "viaR_ohm_per_cut": null,
+      "coefficient_origin": "official mock PDK abstraction; no matched measured/table correlation located"
+    },
+    {
+      "layer": "V6",
+      "width_nm": null,
+      "pitch_nm": null,
+      "UnitR_native_effective_ohm_per_um": null,
+      "UnitC_native_effective_fF_per_um": null,
+      "UnitCC_unconsumed_raw": null,
+      "viaR_ohm_per_cut": 12,
+      "coefficient_origin": "official mock PDK abstraction; no matched measured/table correlation located"
+    },
+    {
+      "layer": "M8",
+      "width_nm": 64,
+      "pitch_nm": 144,
+      "UnitR_native_effective_ohm_per_um": 25,
+      "UnitC_native_effective_fF_per_um": 0.2,
+      "UnitCC_unconsumed_raw": 0.1,
+      "viaR_ohm_per_cut": null,
+      "coefficient_origin": "official mock PDK abstraction; no matched measured/table correlation located"
+    },
+    {
+      "layer": "V7",
+      "width_nm": null,
+      "pitch_nm": null,
+      "UnitR_native_effective_ohm_per_um": null,
+      "UnitC_native_effective_fF_per_um": null,
+      "UnitCC_unconsumed_raw": null,
+      "viaR_ohm_per_cut": 12,
+      "coefficient_origin": "official mock PDK abstraction; no matched measured/table correlation located"
+    },
+    {
+      "layer": "M9",
+      "width_nm": 128,
+      "pitch_nm": 256,
+      "UnitR_native_effective_ohm_per_um": 12,
+      "UnitC_native_effective_fF_per_um": 0.2,
+      "UnitCC_unconsumed_raw": 0.1,
+      "viaR_ohm_per_cut": null,
+      "coefficient_origin": "official mock PDK abstraction; no matched measured/table correlation located"
+    },
+    {
+      "layer": "V8",
+      "width_nm": null,
+      "pitch_nm": null,
+      "UnitR_native_effective_ohm_per_um": null,
+      "UnitC_native_effective_fF_per_um": null,
+      "UnitCC_unconsumed_raw": null,
+      "viaR_ohm_per_cut": 12,
+      "coefficient_origin": "official mock PDK abstraction; no matched measured/table correlation located"
+    },
+    {
+      "layer": "M10",
+      "width_nm": 128,
+      "pitch_nm": 256,
+      "UnitR_native_effective_ohm_per_um": 12,
+      "UnitC_native_effective_fF_per_um": 0.2,
+      "UnitCC_unconsumed_raw": 0.1,
+      "viaR_ohm_per_cut": null,
+      "coefficient_origin": "official mock PDK abstraction; no matched measured/table correlation located"
+    },
+    {
+      "layer": "V9",
+      "width_nm": null,
+      "pitch_nm": null,
+      "UnitR_native_effective_ohm_per_um": null,
+      "UnitC_native_effective_fF_per_um": null,
+      "UnitCC_unconsumed_raw": null,
+      "viaR_ohm_per_cut": 6,
+      "coefficient_origin": "official mock PDK abstraction; no matched measured/table correlation located"
+    },
+    {
+      "layer": "M11",
+      "width_nm": 256,
+      "pitch_nm": 512,
+      "UnitR_native_effective_ohm_per_um": 6,
+      "UnitC_native_effective_fF_per_um": 0.2,
+      "UnitCC_unconsumed_raw": 0.1,
+      "viaR_ohm_per_cut": null,
+      "coefficient_origin": "official mock PDK abstraction; no matched measured/table correlation located"
+    },
+    {
+      "layer": "V10",
+      "width_nm": null,
+      "pitch_nm": null,
+      "UnitR_native_effective_ohm_per_um": null,
+      "UnitC_native_effective_fF_per_um": null,
+      "UnitCC_unconsumed_raw": null,
+      "viaR_ohm_per_cut": 6,
+      "coefficient_origin": "official mock PDK abstraction; no matched measured/table correlation located"
+    },
+    {
+      "layer": "M12",
+      "width_nm": 872,
+      "pitch_nm": 1128,
+      "UnitR_native_effective_ohm_per_um": 6,
+      "UnitC_native_effective_fF_per_um": 0.2,
+      "UnitCC_unconsumed_raw": 0.1,
+      "viaR_ohm_per_cut": null,
+      "coefficient_origin": "official mock PDK abstraction; no matched measured/table correlation located"
+    },
+    {
+      "layer": "V11",
+      "width_nm": null,
+      "pitch_nm": null,
+      "UnitR_native_effective_ohm_per_um": null,
+      "UnitC_native_effective_fF_per_um": null,
+      "UnitCC_unconsumed_raw": null,
+      "viaR_ohm_per_cut": 1.5,
+      "coefficient_origin": "official mock PDK abstraction; no matched measured/table correlation located"
+    },
+    {
+      "layer": "M13",
+      "width_nm": 3600,
+      "pitch_nm": 4800,
+      "UnitR_native_effective_ohm_per_um": 1.33,
+      "UnitC_native_effective_fF_per_um": 0.2,
+      "UnitCC_unconsumed_raw": 0.1,
+      "viaR_ohm_per_cut": null,
+      "coefficient_origin": "official mock PDK abstraction; no matched measured/table correlation located"
+    },
+    {
+      "layer": "V12",
+      "width_nm": null,
+      "pitch_nm": null,
+      "UnitR_native_effective_ohm_per_um": null,
+      "UnitC_native_effective_fF_per_um": null,
+      "UnitCC_unconsumed_raw": null,
+      "viaR_ohm_per_cut": 0.5,
+      "coefficient_origin": "official mock PDK abstraction; no matched measured/table correlation located"
+    },
+    {
+      "layer": "M14",
+      "width_nm": 3600,
+      "pitch_nm": 4800,
+      "UnitR_native_effective_ohm_per_um": 1.33,
+      "UnitC_native_effective_fF_per_um": 0.2,
+      "UnitCC_unconsumed_raw": 0.1,
+      "viaR_ohm_per_cut": null,
+      "coefficient_origin": "official mock PDK abstraction; no matched measured/table correlation located"
+    },
+    {
+      "layer": "V13",
+      "width_nm": null,
+      "pitch_nm": null,
+      "UnitR_native_effective_ohm_per_um": null,
+      "UnitC_native_effective_fF_per_um": null,
+      "UnitCC_unconsumed_raw": null,
+      "viaR_ohm_per_cut": 0.17,
+      "coefficient_origin": "official mock PDK abstraction; no matched measured/table correlation located"
+    },
+    {
+      "layer": "M15",
+      "width_nm": 3600,
+      "pitch_nm": 4800,
+      "UnitR_native_effective_ohm_per_um": 1.33,
+      "UnitC_native_effective_fF_per_um": 0.2,
+      "UnitCC_unconsumed_raw": 0.1,
+      "viaR_ohm_per_cut": null,
+      "coefficient_origin": "official mock PDK abstraction; no matched measured/table correlation located"
+    },
+    {
+      "layer": "V14",
+      "width_nm": null,
+      "pitch_nm": null,
+      "UnitR_native_effective_ohm_per_um": null,
+      "UnitC_native_effective_fF_per_um": null,
+      "UnitCC_unconsumed_raw": null,
+      "viaR_ohm_per_cut": 0.17,
+      "coefficient_origin": "official mock PDK abstraction; no matched measured/table correlation located"
+    }
+  ]
+}

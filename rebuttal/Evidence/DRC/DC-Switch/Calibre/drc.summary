@@ -1,0 +1,124 @@
+
+
+==================================================================================
+=== CALIBRE::DRC-H SUMMARY REPORT
+===
+Rule File Pathname:        drc.svrf
+Rule File Title:           
+Layout System:             GDS
+Layout Path(s):            layout.gds
+Layout Primary Cell:       DC-Switch
+Maximum Results/RuleCheck: ALL
+Maximum Result Vertices:   4096
+DRC Results Database:      drc.rdb (ASCII)
+Layout Depth:              ALL
+Text Depth:                PRIMARY
+Summary Report File:       drc.summary (REPLACE)
+Geometry Flagging:         ACUTE = NO  SKEW = NO  ANGLED = NO  OFFGRID = NO
+                           NONSIMPLE POLYGON = NO  NONSIMPLE PATH = NO
+Excluded Cells:           
+CheckText Mapping:         COMMENT TEXT + RULE FILE INFORMATION
+Layers:                    MEMORY-BASED
+Keep Empty Checks:         YES
+----------------------------------------------------------------------------------
+--- RUNTIME WARNINGS
+---
+PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+PROJECTING constraint only supported with PARALLEL ONLY - setting PARALLEL ONLY.
+----------------------------------------------------------------------------------
+--- ORIGINAL LAYER STATISTICS
+---
+LAYER Poly ... TOTAL Original Geometry Count = 72  (192)
+LAYER Fin .... TOTAL Original Geometry Count = 362 (944)
+LAYER M1 ..... TOTAL Original Geometry Count = 81  (214)
+LAYER M2 ..... TOTAL Original Geometry Count = 98  (193)
+LAYER M3 ..... TOTAL Original Geometry Count = 105 (169)
+LAYER M4 ..... TOTAL Original Geometry Count = 66  (74)
+LAYER M5 ..... TOTAL Original Geometry Count = 119 (119)
+LAYER M6 ..... TOTAL Original Geometry Count = 40  (40)
+LAYER V0 ..... TOTAL Original Geometry Count = 180 (528)
+LAYER V1 ..... TOTAL Original Geometry Count = 80  (212)
+LAYER V2 ..... TOTAL Original Geometry Count = 68  (132)
+LAYER V3 ..... TOTAL Original Geometry Count = 26  (32)
+LAYER V4 ..... TOTAL Original Geometry Count = 27  (27)
+LAYER V5 ..... TOTAL Original Geometry Count = 16  (16)
+----------------------------------------------------------------------------------
+--- RULECHECK RESULTS STATISTICS
+---
+RULECHECK Poly_WIDTH ... TOTAL Result Count = 0 (0)
+RULECHECK Fin_WIDTH .... TOTAL Result Count = 0 (0)
+RULECHECK M1_WIDTH ..... TOTAL Result Count = 0 (0)
+RULECHECK M1_END ....... TOTAL Result Count = 0 (0)
+RULECHECK M1_SIDE ...... TOTAL Result Count = 0 (0)
+RULECHECK M2_WIDTH ..... TOTAL Result Count = 0 (0)
+RULECHECK M2_END ....... TOTAL Result Count = 0 (0)
+RULECHECK M2_SIDE ...... TOTAL Result Count = 0 (0)
+RULECHECK M3_WIDTH ..... TOTAL Result Count = 0 (0)
+RULECHECK M3_END ....... TOTAL Result Count = 0 (0)
+RULECHECK M3_SIDE ...... TOTAL Result Count = 0 (0)
+RULECHECK M4_WIDTH ..... TOTAL Result Count = 0 (0)
+RULECHECK M4_END ....... TOTAL Result Count = 0 (0)
+RULECHECK M4_SIDE ...... TOTAL Result Count = 0 (0)
+RULECHECK M5_WIDTH ..... TOTAL Result Count = 0 (0)
+RULECHECK M5_END ....... TOTAL Result Count = 0 (0)
+RULECHECK M5_SIDE ...... TOTAL Result Count = 0 (0)
+RULECHECK M6_WIDTH ..... TOTAL Result Count = 0 (0)
+RULECHECK M6_END ....... TOTAL Result Count = 0 (0)
+RULECHECK M6_SIDE ...... TOTAL Result Count = 0 (0)
+RULECHECK V0_SIZE ...... TOTAL Result Count = 0 (0)
+RULECHECK V0_SPACE_X ... TOTAL Result Count = 0 (0)
+RULECHECK V0_SPACE_Y ... TOTAL Result Count = 0 (0)
+RULECHECK V0_ENC_M1 .... TOTAL Result Count = 0 (0)
+RULECHECK V1_SIZE ...... TOTAL Result Count = 0 (0)
+RULECHECK V1_SPACE_X ... TOTAL Result Count = 0 (0)
+RULECHECK V1_SPACE_Y ... TOTAL Result Count = 0 (0)
+RULECHECK V1_ENC_M1 .... TOTAL Result Count = 0 (0)
+RULECHECK V1_ENC_M2 .... TOTAL Result Count = 0 (0)
+RULECHECK V2_SIZE ...... TOTAL Result Count = 0 (0)
+RULECHECK V2_SPACE_X ... TOTAL Result Count = 0 (0)
+RULECHECK V2_SPACE_Y ... TOTAL Result Count = 0 (0)
+RULECHECK V2_ENC_M2 .... TOTAL Result Count = 0 (0)
+RULECHECK V2_ENC_M3 .... TOTAL Result Count = 0 (0)
+RULECHECK V3_SIZE ...... TOTAL Result Count = 0 (0)
+RULECHECK V3_SPACE_X ... TOTAL Result Count = 0 (0)
+RULECHECK V3_SPACE_Y ... TOTAL Result Count = 0 (0)
+RULECHECK V3_ENC_M3 .... TOTAL Result Count = 0 (0)
+RULECHECK V3_ENC_M4 .... TOTAL Result Count = 0 (0)
+RULECHECK V4_SIZE ...... TOTAL Result Count = 0 (0)
+RULECHECK V4_SPACE_X ... TOTAL Result Count = 0 (0)
+RULECHECK V4_SPACE_Y ... TOTAL Result Count = 0 (0)
+RULECHECK V4_ENC_M4 .... TOTAL Result Count = 0 (0)
+RULECHECK V4_ENC_M5 .... TOTAL Result Count = 0 (0)
+RULECHECK V5_SIZE ...... TOTAL Result Count = 0 (0)
+RULECHECK V5_SPACE_X ... TOTAL Result Count = 0 (0)
+RULECHECK V5_SPACE_Y ... TOTAL Result Count = 0 (0)
+RULECHECK V5_ENC_M5 .... TOTAL Result Count = 0 (0)
+RULECHECK V5_ENC_M6 .... TOTAL Result Count = 0 (0)
+----------------------------------------------------------------------------------
+--- SUMMARY
+---
+TOTAL Original Layer Geometries: 1340 (2892)
+TOTAL DRC RuleChecks Executed:   49
+TOTAL DRC Results Generated:     0 (0)

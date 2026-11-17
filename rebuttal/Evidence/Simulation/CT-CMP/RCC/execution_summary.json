@@ -1,0 +1,16 @@
+{
+  "case": "CT-CMP",
+  "condition": "RCC",
+  "unit_model_count": 348,
+  "observer_only_change": null,
+  "model_scope": "Unit-terminal distributed interconnect research; devicecompactmodelnotcalibratedtophysicalmockPDK.",
+  "bias_voltages_after": {
+    "VBN": 0.25,
+    "VBP": 0.55
+  },
+  "reason": "Only conditional finalRCC afterRC .25/.55 measuredpassed originalrailcriterion. Source/model/layout unchanged; couplingmodel unchanged.",
+  "stop_rule": "Final bias-adaptation call; no additionalbias ormodelsearch.",
+  "selection_status": "New operatingpoint chosen adaptively after explicitfailedbias observations; do notreplaceoriginalcondition.",
+  "returncode": 0,
+  "terminal_status": "complete"
+}

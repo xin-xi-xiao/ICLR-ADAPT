@@ -1,0 +1,37 @@
+HEADER
+"simulator" "spectre"
+"design" "(no title)"
+"analysis type" "margin.stb"
+"analysis name" "localLoop"
+"analysis description" "Stability Analysis `localLoop': freq = (1 Hz -> 100 GHz)"
+"xVecSorted" "ascending"
+"tolerance.relative" 1.00000e-05
+"operating point producer" "op"
+"probe" "VFB1"
+"gainMargin" "9.625165e+00 dB"
+"gainMarginFrequency" "1.603338e+09 Hz"
+"phaseMargin" "6.179341e+01 Deg"
+"phaseMarginFrequency" "7.574572e+08 Hz"
+TYPE
+"dB" FLOAT DOUBLE PROP(
+"key" "gain"
+"units" "dB"
+)
+"Deg" FLOAT DOUBLE PROP(
+"key" "gain"
+"units" "Deg"
+)
+"Hz" FLOAT DOUBLE PROP(
+"key" "gain"
+"units" "Hz"
+)
+VALUE
+"gainMargin" "dB" 9.62517 PROP(
+"gainMarginInfo" "Gain margin = 9.625165e+00 dB at frequency = 1.603338e+09 Hz"
+)
+"gainMarginFreq" "Hz" 1.60334e+09
+"phaseMargin" "Deg" 61.7934 PROP(
+"phaseMarginInfo" "Phase margin = 6.179341e+01 Deg at frequency = 7.574572e+08 Hz"
+)
+"phaseMarginFreq" "Hz" 7.57457e+08
+END

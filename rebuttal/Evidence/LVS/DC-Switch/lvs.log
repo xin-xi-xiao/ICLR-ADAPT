@@ -1,0 +1,901 @@
+// Calibre
+//
+//        Copyright Mentor Graphics Corporation 1996-2015
+//                       All Rights Reserved.
+//   THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+//      WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION
+//        OR ITS LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+//
+//
+//
+//
+//
+//
+//
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+-----          STANDARD VERIFICATION RULE FILE COMPILATION MODULE          -----
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+--- RULE FILE = lvs.svrf
+
+PRECISION 1000
+UNIT LENGTH U
+RESOLUTION 1
+LAYOUT SYSTEM GDSII
+LAYOUT PATH "layout.gds"
+LAYOUT PRIMARY DC-Switch
+SOURCE SYSTEM SPICE
+SOURCE PATH "source.sp"
+SOURCE PRIMARY DC-Switch
+LVS REPORT "device_lvs.rep"
+LVS POWER NAME VDD VPWR
+LVS GROUND NAME VSS GND VGND
+LVS RECOGNIZE GATES NONE
+LAYER POLY 1
+LAYER NWELL 2
+LAYER FIN 3
+LAYER ACTIVE 5
+LAYER NSEL 7
+LAYER PSEL 8
+LAYER LISD 98
+LAYER PC 99
+LAYER PB 150
+LAYER V0 12
+LAYER M1 13
+LAYER V1 14
+LAYER M2 15
+LAYER V2 16
+LAYER M3 19
+LAYER V3 17
+LAYER M4 21
+LAYER V4 22
+LAYER M5 23
+LAYER V5 24
+LAYER M6 25
+BULK = EXTENT
+PSUB = BULK NOT NWELL
+BODY = ACTIVE AND PB
+N_BODY = BODY AND NSEL
+P_BODY = BODY AND PSEL
+A = ACTIVE NOT PB
+NA = A AND NSEL
+PA = A AND PSEL
+NG = POLY AND NA
+PG = POLY AND PA
+NSD = NA NOT POLY
+PSD = PA NOT POLY
+CONNECT M6 M5 BY V5
+CONNECT M5 M4 BY V4
+CONNECT M4 M3 BY V3
+CONNECT M3 M2 BY V2
+CONNECT M2 M1 BY V1
+CONNECT M1 LISD BY V0
+CONNECT M1 PC BY V0
+CONNECT PC POLY
+CONNECT LISD NSD
+CONNECT LISD PSD
+CONNECT LISD N_BODY
+CONNECT LISD P_BODY
+CONNECT N_BODY PSUB
+CONNECT P_BODY NWELL
+DEVICE MN(n) NG POLY NSD NSD PSUB
+DEVICE MP(p) PG POLY PSD PSD NWELL
+TEXT LAYER M1 M2 M3 M4 M5 M6
+PORT LAYER TEXT M1 M2 M3 M4 M5 M6
+TEXT DEPTH PRIMARY
+
+LVS INJECT LOGIC NO
+TRACE PROPERTY MN(n) L L 0
+TRACE PROPERTY MP(p) L L 0
+
+TRACE PROPERTY MN(n) W W 0
+TRACE PROPERTY MP(p) W W 0
+
+LVS CHECK PORT NAMES YES
+
+
+--- STANDARD VERIFICATION RULE FILE COMPILATION MODULE COMPLETED.
+
+
+
+--- CALIBRE::HIERARCHICAL CIRCUIT EXTRACTOR
+
+//  Applying licensing policy...
+//  mgc_s license acquired (calibrehlvs requested).
+//  mgc_s license acquired (calibrelvs requested).
+
+//  Licensed Products
+//  -----------------
+//  - LVS (Hierarchical)
+//  - LVS Extraction
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+-----                   CALIBRE LAYOUT DATA INPUT MODULE                   -----
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+--- LAYOUT SYSTEM = GDS
+--- LAYOUT MAGNIFICATION = 1
+
+--------------------------------------------------------------------------------
+-----                     GDS FILE SUMMARY INFORMATION                     -----
+--------------------------------------------------------------------------------
+
+GDS FILENAME:        layout.gds
+LIBRARY NAME:        test
+DATABASE PRECISION:  0.001 user units per database unit
+PHYSICAL PRECISION:  1e-09 meters per database unit
+MAGNIFICATION:       1
+
+--------------------------------------------------------------------------------
+-----                 GDS INPUT DATA FOR INDIVIDUAL CELLS                  -----
+--------------------------------------------------------------------------------
+     CELL NAME                  PLACEMENTS   ARRAYS   POLYGONS    PATHS    TEXTS
+--------------------------------------------------------------------------------
+CELL_A
+                                         0        0        136        0        0
+CELL_C
+                                         0        0        163        0        0
+CELL_H
+                                         0        0        168        0        0
+CELL_F
+                                         4        0         63        0        0
+CELL_B
+                                         0        0        121        0        0
+CELL_D
+                                         0        0        163        0        0
+CELL_I
+                                         0        0        189        0        0
+CELL_G
+                                         4        0         71        0        0
+CELL_E
+                                         2        0         27        0        0
+DC-Switch                          2        0        362        0       45
+
+NOTE: UNUSED geometric data is present on the following layer/datatype pairs:
+    LAYER = 3 DATATYPE = 0
+    LAYER = 11 DATATYPE = 0
+    LAYER = 100 DATATYPE = 5
+    LAYER = 104 DATATYPE = 0
+    LAYER = 235 DATATYPE = 5
+
+NOTE: USED geometric data is present on the following layer/datatype pairs:
+    SIMPLE LAYER = 1
+        LAYER = 1 DATATYPE = 0
+    SIMPLE LAYER = 2
+        LAYER = 2 DATATYPE = 0
+    SIMPLE LAYER = 5
+        LAYER = 5 DATATYPE = 0
+    SIMPLE LAYER = 7
+        LAYER = 7 DATATYPE = 0
+    SIMPLE LAYER = 8
+        LAYER = 8 DATATYPE = 0
+    SIMPLE LAYER = 12
+        LAYER = 12 DATATYPE = 0
+    SIMPLE LAYER = 13
+        LAYER = 13 DATATYPE = 0
+    SIMPLE LAYER = 14
+        LAYER = 14 DATATYPE = 0
+    SIMPLE LAYER = 15
+        LAYER = 15 DATATYPE = 0
+    SIMPLE LAYER = 16
+        LAYER = 16 DATATYPE = 20
+    SIMPLE LAYER = 17
+        LAYER = 17 DATATYPE = 0
+    SIMPLE LAYER = 19
+        LAYER = 19 DATATYPE = 20
+    SIMPLE LAYER = 21
+        LAYER = 21 DATATYPE = 0
+    SIMPLE LAYER = 22
+        LAYER = 22 DATATYPE = 0
+    SIMPLE LAYER = 23
+        LAYER = 23 DATATYPE = 0
+    SIMPLE LAYER = 24
+        LAYER = 24 DATATYPE = 0
+    SIMPLE LAYER = 25
+        LAYER = 25 DATATYPE = 0
+    SIMPLE LAYER = 98
+        LAYER = 98 DATATYPE = 0
+    SIMPLE LAYER = 99
+        LAYER = 99 DATATYPE = 0
+    SIMPLE LAYER = 150
+        LAYER = 150 DATATYPE = 0
+
+NOTE: The following required simple layers are EMPTY:
+
+--- LAYOUT DATABASE CONSTRUCTOR COMPLETED.
+
+CONSTRUCTING HIERARCHICAL DATABASE
+    COPYING LAYOUT DATABASE
+    PROCESSING TEXT
+    ELIMINATING DUPLICATE TEXT
+    ELIMINATING EMPTY CELLS
+    COMPUTING RECTANGULAR EXTENTS
+    ELIMINATING DUPLICATE PLACEMENTS
+    IDENTIFYING TOP LAYER CELLS
+    IDENTIFYING ADDITIONAL TOP LAYER CELLS
+    IDENTIFYING VERY SMALL CELLS
+    CHECKING ACUTE/SKEW/ANGLED/OFFGRID
+    FLATTENING VERY SMALL CELL PLACEMENTS
+    FLATTENING SELECTED TOP LAYER CELL PLACEMENTS
+    FLATTENING SELECTED LAYERS
+    EXPANDING UNIQUE VERY SMALL CELL PLACEMENTS
+    EXPANDING UNIQUE TOP LAYER CELL PLACEMENTS
+    EXPANDING UNIQUE MONO-GEOMETRIC CELL PLACEMENTS
+    EXPANDING LARGE TOP LAYER CELL PLACEMENTS
+    COMPUTING RECTILINEAR EXTENTS
+    SORTING PLACEMENTS
+    ELIMINATING DUPLICATE PLACEMENTS
+    EXPANDING UNIQUE TRANSPARENT CELL PLACEMENTS
+    EXPANDING UNIQUE LIGHT-WEIGHT CELL PLACEMENTS
+        CELL_A in CELL_F at (1.04,3.444)
+        CELL_H in CELL_F at (0.88,0.336)
+        CELL_B in CELL_G at (1.04,2.772)
+        CELL_I in CELL_G at (0.88,0.336)
+        CELL_F in CELL_E at (0,6.216)
+        CELL_G in CELL_E at (0,0.672)
+    EXPANDING UNIQUE ROW CELL PLACEMENTS
+    EXPANDING TRIVIAL CELL PLACEMENTS
+    EXPANDING VERY SPARSE ARRAY PLACEMENTS
+    EXPANDING LARGE CELL ARRAY PLACEMENTS
+    EXPANDING VERY SPARSE CELL PLACEMENTS
+    ELIMINATING DUPLICATE SUPER-HIERARCHICAL PLACEMENTS
+    PROCESSING LAYOUT BLOAT LAYERS (auto-detected)
+    PROCESSING LARGE CELL EXTENT-BLOATING LAYERS
+    EXPANDING DENSE OVERLAPS
+    EXPANDING UNIQUE META-CELL PLACEMENTS
+    INJECTING HIERARCHY
+    COMPUTING RECTANGULAR EXTENTS
+    FLATTENING REMAINING VERY SMALL CELL PLACEMENTS
+    SORTING PLACEMENTS
+    PUSHING VERY SMALL CELL PLACEMENTS
+    PUSHING TOP LAYER CELL PLACEMENTS
+    COMPUTING CELL-TO-WORLD TRANSFORMS
+    SORTING PLACEMENTS
+    PACKING HIERARCHY
+    COMPUTING PLACEMENT OVERLAP RECORDS
+    COMPUTING CELL OVERLAP AREAS
+    INTERSECTING PLACEMENTS AND OVERLAP AREAS
+HIERARCHICAL DATABASE CONSTRUCTOR COMPLETE.
+
+--------------------------------------------------------------------------------
+-----               TEXT OBJECTS FOR CONNECTIVITY EXTRACTION               -----
+--------------------------------------------------------------------------------
+
+CLK1 (0.56,3.108) 19 DC-Switch    CLK0B (0.56,11.256) 19 DC-Switch
+VLOW (1.44,4.368) 15 DC-Switch    Y1_BOT (1.44,10.08) 15 DC-Switch
+Y0_BOT (1.44,10.164) 15 DC-Switch
+CLK0 (2.32,3.108) 19 DC-Switch    CLK1B (2.32,11.256) 19 DC-Switch
+VGND (2.592,5.184) 25 DC-Switch
+VPWR (2.592,6.912) 25 DC-Switch
+VPWR (4.32,12.096) 19 DC-Switch
+VMID (4.4,4.368) 15 DC-Switch     VHIGH (4.4,9.996) 15 DC-Switch
+Y1_TOP (4.4,10.08) 15 DC-Switch
+Y0_TOP (4.4,10.164) 15 DC-Switch
+VGND (4.48,1.764) 19 DC-Switch
+
+--------------------------------------------------------------------------------
+-----                TEXT OBJECTS FOR WITH TEXT OPERATIONS                 -----
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+-----               TEXT OBJECTS FOR EXPAND TEXT OPERATIONS                -----
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+-----                  TEXT OBJECTS FOR CAPI OPERATIONS                    -----
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+-----                                PORTS                                 -----
+--------------------------------------------------------------------------------
+
+CLK1 (0.56,3.108) 19 DC-Switch    CLK0B (0.56,11.256) 19 DC-Switch
+VLOW (1.44,4.368) 15 DC-Switch    Y1_BOT (1.44,10.08) 15 DC-Switch
+Y0_BOT (1.44,10.164) 15 DC-Switch
+CLK0 (2.32,3.108) 19 DC-Switch    CLK1B (2.32,11.256) 19 DC-Switch
+VGND (2.592,5.184) 25 DC-Switch
+VPWR (2.592,6.912) 25 DC-Switch
+VPWR (4.32,12.096) 19 DC-Switch
+VMID (4.4,4.368) 15 DC-Switch     VHIGH (4.4,9.996) 15 DC-Switch
+Y1_TOP (4.4,10.08) 15 DC-Switch
+Y0_TOP (4.4,10.164) 15 DC-Switch
+VGND (4.48,1.764) 19 DC-Switch
+
+--------------------------------------------------------------------------------
+-----             LAYER READ SUMMARY (SIMPLE LAYER GEOMETRIES)             -----
+--------------------------------------------------------------------------------
+SIMPLE LAYER      GEOMETRIES                                                    
+--------------------------------------------------------------------------------
+
+  1                     72
+  2                      4
+  5                     12
+  7                      2
+  8                      4
+  12                   180
+  13                    81
+  14                    80
+  15                    98
+  16                    68
+  17                    26
+  19                   105
+  21                    66
+  22                    27
+  23                   119
+  24                    16
+  25                    40
+  98                    60
+  99                    18
+  150                    6
+
+--------------------------------------------------------------------------------
+-----            LAYER READ SUMMARY (ORIGINAL LAYER GEOMETRIES)            -----
+--------------------------------------------------------------------------------
+ORIGINAL LAYER       INITIAL GEOMETRIES                 FINAL GEOMETRIES        
+--------------------------------------------------------------------------------
+
+NWELL                      4 (12)                           4 (12)              
+PB                         6 (16)                           6 (16)              
+ACTIVE                    12 (32)                          12 (32)              
+NSEL                       2 (4)                            2 (4)               
+PSEL                       4 (12)                           4 (12)              
+POLY                      72 (192)                         72 (192)             
+V5                        16 (16)                          16 (16)              
+M6                        40 (40)                          40 (40)              
+M5                       119 (119)                        119 (119)             
+V4                        27 (27)                          27 (27)              
+M4                        66 (74)                          66 (74)              
+V3                        26 (32)                          26 (32)              
+M3                       105 (169)                        105 (169)             
+V2                        68 (132)                         68 (132)             
+M2                        98 (193)                         98 (193)             
+V1                        80 (212)                         80 (212)             
+M1                        81 (214)                         81 (214)             
+V0                       180 (528)                        180 (528)             
+LISD                      60 (160)                         60 (160)             
+PC                        18 (48)                          18 (48)              
+
+--------------------------------------------------------------------------------
+-----         LAYER READ SUMMARY (TEXT FOR CONNECTIVITY EXTRACTION)        -----
+--------------------------------------------------------------------------------
+SIMPLE LAYER              TEXTS                                                 
+--------------------------------------------------------------------------------
+
+  15                       7 (7)               
+  19                       6 (6)               
+  25                       2 (2)               
+
+--------------------------------------------------------------------------------
+-----          LAYER READ SUMMARY (TEXT FOR WITH TEXT OPERATIONS)          -----
+--------------------------------------------------------------------------------
+SIMPLE LAYER              TEXTS                                                 
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+-----         LAYER READ SUMMARY (TEXT FOR EXPAND TEXT OPERATIONS)         -----
+--------------------------------------------------------------------------------
+SIMPLE LAYER              TEXTS                                                 
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+-----            LAYER READ SUMMARY (TEXT FOR CAPI OPERATIONS)             -----
+--------------------------------------------------------------------------------
+SIMPLE LAYER              TEXTS                                                 
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+-----                      LAYER READ SUMMARY (PORTS)                      -----
+--------------------------------------------------------------------------------
+SIMPLE LAYER              TEXTS                                                 
+--------------------------------------------------------------------------------
+
+  15                       7 (7)               
+  19                       6 (6)               
+  25                       2 (2)               
+
+--------------------------------------------------------------------------------
+-----                      CELL AND PLACEMENT SUMMARY                      -----
+--------------------------------------------------------------------------------
+CELL TYPE                 CELLS           PLACEMENTS       FLAT PLACEMENTS      
+--------------------------------------------------------------------------------
+
+USER                          4                    6                    10
+ VERY SMALL                   0                    0                     0
+ TOP LAYER                    0                    0                     0
+  VERY SMALL                  0                    0                     0
+PSEUDO                        0                    0                     0
+TOTAL                         4                    6                    10
+
+--------------------------------------------------------------------------------
+-----                   LAYOUT DATA INPUT MODULE SUMMARY                   -----
+--------------------------------------------------------------------------------
+
+--- TOTAL GEOMETRIES READ FROM SIMPLE LAYERS = 1084
+--- TOTAL GEOMETRIES READ FROM ORIGINAL LAYERS = 1084 (2232)
+--- TOTAL GEOMETRIES WRITTEN TO ORIGINAL LAYERS = 1084 (2232)
+---
+--- DATABASE EXTENT = [ -0.052 , -0.052 ] -> [ 5.84 , 13.136 ]
+--- GEOMETRIC DEPTH = ALL
+--- TEXT DEPTH FOR CONNECTIVITY EXTRACTION = PRIMARY
+--- TOTAL TEXT OBJECTS FOR CONNECTIVITY EXTRACTION = 15 (15)
+--- TOTAL TEXT OBJECTS FOR WITH TEXT OPERATIONS = 0 (0)
+--- TOTAL TEXT OBJECTS FOR EXPAND TEXT OPERATIONS = 0 (0)
+--- TOTAL TEXT OBJECTS FOR CAPI OPERATIONS = 0 (0)
+--- TOTAL PORT OBJECTS = 15 (15)
+--- GEOMETRY FLAGGING = ACUTE (NO)  SKEW (NO)  ANGLED (NO)  OFFGRID (NO)
+                        NONSIMPLE POLYGON (NO)  NONSIMPLE PATH (NO)
+--- PRIMARY CELL = DC-Switch
+--- EXCLUDED CELLS =
+--- LAYOUT BASE LAYER = (NOT SPECIFIED)
+--- LAYOUT TOP LAYER = (NOT SPECIFIED)
+
+--- CALIBRE LAYOUT DATA INPUT MODULE COMPLETED.
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+-----      CALIBRE::HIERARCHICAL CIRCUIT EXTRACTOR - EXECUTIVE MODULE      -----
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+V5 = OR V5
+----------
+V5 (HIER TYP=1 CFG=1 HGC=16 FGC=16 HEC=64 FEC=64 IGC=20 VHC=F VPC=F)
+
+Original Layer V5 DELETED --
+
+M6 = OR M6
+----------
+M6 (HIER TYP=1 CFG=1 HGC=8 FGC=8 HEC=32 FEC=32 IGC=11 VHC=F VPC=F)
+
+Original Layer M6 DELETED --
+
+M5 = OR M5
+----------
+M5 (HIER TYP=1 CFG=1 HGC=4 FGC=4 HEC=16 FEC=16 IGC=10 VHC=F VPC=F)
+
+Original Layer M5 DELETED --
+
+V4 = OR V4
+----------
+V4 (HIER TYP=1 CFG=1 HGC=8 FGC=8 HEC=32 FEC=32 IGC=11 VHC=F VPC=F)
+
+Original Layer V4 DELETED --
+
+M4 = OR M4
+----------
+M4 (HIER TYP=1 CFG=1 HGC=13 FGC=15 HEC=52 FEC=60 IGC=16 VHC=F VPC=F)
+
+Original Layer M4 DELETED --
+
+V3 = OR V3
+----------
+V3 (HIER TYP=1 CFG=1 HGC=18 FGC=22 HEC=72 FEC=88 IGC=14 VHC=F VPC=F)
+
+Original Layer V3 DELETED --
+
+M3 = OR M3
+----------
+M3 (HIER TYP=1 CFG=1 HGC=29 FGC=45 HEC=116 FEC=180 IGC=17 VHC=F VPC=F)
+
+Original Layer M3 DELETED --
+
+V2 = OR V2
+----------
+V2 (HIER TYP=1 CFG=1 HGC=42 FGC=84 HEC=168 FEC=336 IGC=12 VHC=F VPC=F)
+
+Original Layer V2 DELETED --
+
+M2 = OR M2
+----------
+M2 (HIER TYP=1 CFG=1 HGC=48 FGC=101 HEC=192 FEC=404 IGC=14 VHC=F VPC=F)
+
+Original Layer M2 DELETED --
+
+V1 = OR V1
+----------
+V1 (HIER TYP=1 CFG=1 HGC=80 FGC=212 HEC=320 FEC=848 IGC=0 VHC=F VPC=F)
+
+Original Layer V1 DELETED --
+
+M1 = OR M1
+----------
+M1 (HIER TYP=1 CFG=1 HGC=79 FGC=210 HEC=316 FEC=840 IGC=0 VHC=F VPC=F)
+
+Original Layer M1 DELETED --
+
+V0 = OR V0
+----------
+V0 (HIER TYP=1 CFG=1 HGC=147 FGC=430 HEC=588 FEC=1720 IGC=0 VHC=F VPC=F)
+
+Original Layer V0 DELETED --
+
+LISD = OR LISD
+--------------
+LISD (HIER TYP=1 CFG=1 HGC=60 FGC=160 HEC=240 FEC=640 IGC=0 VHC=F VPC=F)
+
+Original Layer LISD DELETED --
+
+PC = OR PC
+----------
+PC (HIER TYP=1 CFG=1 HGC=18 FGC=48 HEC=72 FEC=192 IGC=0 VHC=F VPC=F)
+
+Original Layer PC DELETED --
+
+POLY = OR POLY
+--------------
+POLY (HIER TYP=1 CFG=3 HGC=72 FGC=192 HEC=288 FEC=768 IGC=0 VHC=F VPC=F)
+
+Original Layer POLY DELETED --
+
+ACTIVE = OR ACTIVE
+------------------
+ACTIVE (HIER TYP=1 CFG=0 HGC=12 FGC=32 HEC=48 FEC=128 IGC=0 VHC=F VPC=F)
+
+Original Layer ACTIVE DELETED --
+
+PB = OR PB
+----------
+PB (HIER TYP=1 CFG=0 HGC=6 FGC=16 HEC=24 FEC=64 IGC=0 VHC=F VPC=F)
+
+Original Layer PB DELETED --
+
+A = ACTIVE NOT PB
+-----------------
+A (HIER TYP=1 CFG=0 HGC=6 FGC=16 HEC=24 FEC=64 IGC=0 VHC=F VPC=F)
+
+NSEL = OR NSEL
+--------------
+NSEL (HIER TYP=1 CFG=0 HGC=2 FGC=4 HEC=8 FEC=16 IGC=0 VHC=F VPC=F)
+
+Original Layer NSEL DELETED --
+
+NA = A AND NSEL
+---------------
+NA (HIER TYP=1 CFG=0 HGC=2 FGC=4 HEC=8 FEC=16 IGC=0 VHC=F VPC=F)
+
+NSD = NA NOT POLY
+-----------------
+NSD (HIER TYP=1 CFG=3 HGC=14 FGC=28 HEC=56 FEC=112 IGC=0 VHC=F VPC=F)
+
+PSEL = OR PSEL
+--------------
+PSEL (HIER TYP=1 CFG=0 HGC=4 FGC=12 HEC=16 FEC=48 IGC=0 VHC=F VPC=F)
+
+Original Layer PSEL DELETED --
+
+PA = A AND PSEL
+---------------
+PA (HIER TYP=1 CFG=0 HGC=4 FGC=12 HEC=16 FEC=48 IGC=0 VHC=F VPC=F)
+
+Layer A DELETED --
+
+PSD = PA NOT POLY
+-----------------
+PSD (HIER TYP=1 CFG=3 HGC=28 FGC=84 HEC=112 FEC=336 IGC=0 VHC=F VPC=F)
+
+BODY = ACTIVE AND PB
+--------------------
+BODY (HIER TYP=1 CFG=0 HGC=6 FGC=16 HEC=24 FEC=64 IGC=0 VHC=F VPC=F)
+
+Layer ACTIVE DELETED --
+
+Layer PB DELETED --
+
+N_BODY = BODY AND NSEL
+----------------------
+N_BODY (HIER TYP=1 CFG=1 HGC=2 FGC=4 HEC=8 FEC=16 IGC=0 VHC=F VPC=F)
+
+Layer NSEL DELETED --
+
+P_BODY = BODY AND PSEL
+----------------------
+P_BODY (HIER TYP=1 CFG=1 HGC=4 FGC=12 HEC=16 FEC=48 IGC=0 VHC=F VPC=F)
+
+Layer BODY DELETED --
+
+Layer PSEL DELETED --
+
+BULK = EXTENT
+-------------
+BULK (HIER-LSL TYP=1 CFG=0 HGC=4 FGC=11 HEC=37 FEC=77 IGC=3 VHC=F VPC=F)
+
+NWELL = OR NWELL
+----------------
+NWELL (HIER TYP=1 CFG=3 HGC=4 FGC=12 HEC=16 FEC=48 IGC=0 VHC=F VPC=F)
+
+Original Layer NWELL DELETED --
+
+PSUB = BULK NOT NWELL
+---------------------
+PSUB (HIER TYP=1 CFG=3 HGC=2 FGC=3 HEC=38 FEC=63 IGC=3 VHC=F VPC=F)
+
+Layer BULK DELETED --
+
+CONNECTIVITY EXTRACTION TOTAL LAYER PREPARATION TIME:
+
+CONNECTIVITY EXTRACTION
+-----------------------
+NC = Net Count  IPC = Internal Pin Count
+CEC = Cell Edge Count  PEC = Promoted Edge Count
+
+CELL CELL_D
+     CELL_D (NC=8 IPC=0 CEC=204 PEC=0 CFGC=102)
+     CELL_D
+CELL CELL_C
+     CELL_C (NC=8 IPC=0 CEC=204 PEC=0 CFGC=102)
+     CELL_C
+CELL CELL_E
+     CELL_E (NC=39 IPC=8 CEC=790 PEC=16 CFGC=798)
+     CELL_E
+CELL DC-Switch
+     DC-Switch (NC=13 IPC=22 CEC=208 PEC=72 CFGC=1698)
+     DC-Switch
+TOTAL CEC=1406 PEC=88
+
+POST-PROCESSING CONNECTIVITY DATA STRUCTURE...
+    MARKING TRUE NETS AND EXTERNAL PINS...
+    DISCARDING FALSE VIRTUAL NETS, RESOLVING DEEP SHORTS AND PERFORMING VIRTUAL CONNECTIONS...
+    CREATING COMPACT PIN DATA STRUCTURE...
+    RESOLVING SHORT CIRCUIT TEXT...
+    PROCESSING HIGH SHORTS...
+    COMPUTING FINAL NET NAMES AND REPORTING TEXT WARNINGS...
+    REMOVING SCONNECT/HIGH SHORT REMOVAL TRIGGERED TRIVIAL PINS/NETS...
+POST-PROCESSING completed.
+
+CONNECTIVITY EXTRACTION completed.
+
+Layer V5 DELETED --
+
+Layer M6 DELETED --
+
+Layer V4 DELETED --
+
+Layer M5 DELETED --
+
+Layer V3 DELETED --
+
+Layer M4 DELETED --
+
+Layer V2 DELETED --
+
+Layer M3 DELETED --
+
+Layer V1 DELETED --
+
+Layer M2 DELETED --
+
+Layer V0 DELETED --
+
+Layer M1 DELETED --
+
+Layer PC DELETED --
+
+Layer LISD DELETED --
+
+Layer N_BODY DELETED --
+
+Layer P_BODY DELETED --
+
+DEVICE RECOGNITION
+------------------
+LVS PUSH DEVICES enabled.
+
+NG = POLY AND NA
+----------------
+NG (HIER TYP=1 CFG=1 HGC=16 FGC=32 HEC=64 FEC=128 IGC=0 VHC=F VPC=F)
+
+Layer NA DELETED --
+
+PG = POLY AND PA
+----------------
+PG (HIER TYP=1 CFG=1 HGC=32 FGC=96 HEC=128 FEC=384 IGC=0 VHC=F VPC=F)
+
+Layer PA DELETED --
+
+DEVICE RECOGNITION TOTAL LAYER PREPARATION TIME:
+
+DEVICE RECOGNITION PRECISE INTERACTION BEGINS.
+
+DEVICE RECOGNITION TOTAL PRECISE INTERACTION TIME:
+TENTATIVE SEED PROMOTIONS:   seed layer  seeds  cell : layers touched
+TENTATIVE SEED PROMOTIONS: ------------  -----  -----------------------------------------
+SEED PROMOTIONS: 
+SEED PROMOTIONS: ==============================================================
+SEED PROMOTIONS: 
+SEED PROMOTIONS:   seed layer  seeds  cell : layers touched
+SEED PROMOTIONS: ------------  -----  -----------------------------------------
+SEED PROMOTIONS: 
+SEED PROMOTIONS:       TOTAL:      0
+
+DEVICE RECOGNITION completed.
+
+Layer NG DELETED --
+
+Layer NSD DELETED --
+
+Layer PSUB DELETED --
+
+Layer PG DELETED --
+
+Layer POLY DELETED --
+
+Layer PSD DELETED --
+
+Layer NWELL DELETED --
+
+
+HIERARCHICAL SPICE NETLISTER
+----------------------------
+HIERARCHICAL SPICE NETLISTER completed.
+
+--- CALIBRE::HIERARCHICAL CIRCUIT EXTRACTOR COMPLETED
+--- TOTAL
+
+--- SPICE NETLIST FILE = extracted.sp
+--- CIRCUIT EXTRACTION REPORT FILE = device_lvs.rep.ext
+
+
+
+
+
+                         ###################
+                         ###################
+                         ###################
+                         ###################
+                         ###################
+                         ###################
+                         ###################
+
+
+
+
+
+
+--- CALIBRE::LVS-H
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+-----               CALIBRE::LVS/xRC - INITIALIZATION MODULE               -----
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+Performing global initialization ... 
+
+Initializing LVS ... 
+
+--- CALIBRE::LVS/xRC INITIALIZATION MODULE COMPLETED.
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+-----                 CALIBRE::LVS/xRC - EXECUTIVE MODULE                  -----
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+LVS started ... 
+
+//  Licensed Products
+//  -----------------
+//  - LVS (Hierarchical)
+
+READING layout ...
+Layout READ.
+
+READING source ...
+Source READ.
+
+Identifying CORRESPONDING cells ...
+CORRESPONDING Cells Identified.
+
+Reallocating Instance Pins...
+Instance Pins Reallocated.
+
+Adding GLOBAL elements ...
+GLOBAL elements added.
+
+Resolving DEEP SHORTS ...
+DEEP SHORTS resolved.
+
+FLATTENING non-corresponding cells and EXPANDING unbalanced cells ...
+Non-corresponding cells FLATTENED and unbalanced cells EXPANDED.
+
+Resolving HIGH SHORTS ...
+HIGH SHORTS resolved.
+
+Deleting TRIVIAL PINS ...
+TRIVIAL PINS deleted.
+
+TRANSFORMING and COMPARING corresponding cells ...
+
+Computing OPTIMAL TEMPLATE ORDER ...
+OPTIMAL TEMPLATE ORDER computed.
+
+TRANSFORMING layout and source top level cells to comparison ready form ...
+
+Reduce Parallel Mosfets.
+
+Reduce Split Gates.
+
+Reduce Parallel Mosfets.
+
+Reduce Split Gates.
+
+Cells TRANSFORMED.
+
+All cells TRANSFORMED.
+
+Assign Initial Net Ids.
+
+Assign Initial Net Ids.
+
+COMPARING layout and source top levels ...
+
+ANCHOR Points.  0 instances, 13 nets matched.
+
+Begin NBD ...
+NBD 2.  24 instances, 8 nets matched.
+
+      TOTAL:  24 instances,  21 nets  matched.
+
+Begin TPL ...
+TPL.  0 instances, 0 nets matched.
+
+      TOTAL:  24 instances,  21 nets  matched.
+
+Begin BIN ...
+BIN.  0 instances, 0 nets matched.
+
+      TOTAL:  24 instances,  21 nets  matched.
+
+Begin BIN ...
+BIN.  0 instances, 0 nets matched.
+
+      TOTAL:  24 instances,  21 nets  matched.
+
+Begin PRP ...
+PRP.  0 instances, 0 nets matched.
+
+      TOTAL:  24 instances,  21 nets  matched.
+
+Resolve AMBIGUITY.  32 instances, 32 nets matched.
+
+      TOTAL:  56 instances,  53 nets  matched.
+
+STATUSES.
+
+COMPARISON completed.
+
+All corresponding cells COMPARED.
+
+Corresponding cells TRANSFORMED and COMPARED.
+
+Writing REPORT ...
+REPORT written.
+
+
+
+LVS completed. CORRECT. See report file: device_lvs.rep
+
+LVS completed.
+
+--- LVS REPORT FILE = device_lvs.rep
+--- CALIBRE::LVS/xRC EXECUTIVE MODULE COMPLETED.
+
+--- CALIBRE::LVS/xRC COMPLETED
+--- TOTAL
+
+--- SPICE NETLIST FILE = extracted.sp
+--- CIRCUIT EXTRACTION REPORT FILE = device_lvs.rep.ext
+
+--- GRAND TOTAL
+

@@ -1,0 +1,22 @@
+{
+  "scope": "Numerical recheck of the five-design research-model package; not foundry signoff or all-specification equivalence.",
+  "metric_count": 84,
+  "change_count": 56,
+  "transient_runs": 15,
+  "native_logs": 18,
+  "functional_probe_count": 108,
+  "stability_header_values": 8,
+  "failures": [],
+  "consistent": true,
+  "PT_extra_source_curve_in_84_56_tables": false,
+  "PT_prior_sizing_control_raw_present": true,
+  "PT_prior_sizing_control_metrics_recomputed": 4,
+  "REF_raw_DC_required_and_present": true,
+  "precision_tolerance": {
+    "relative": 1e-10,
+    "absolute": 1e-10
+  },
+  "all_waveforms_complete": true,
+  "all_native_logs_zero_errors": true,
+  "full_precision_or_all_design_specs_pass": null
+}

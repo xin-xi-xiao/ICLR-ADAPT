@@ -1,0 +1,136 @@
+{
+  "measurement_origin": "Python postprocessing of the archived simulator PSF-ASCII values. CSVs and figures are derived results, not simulator-native signed reports.",
+  "numerical_conventions": {
+    "PSF": "Read quoted signal/value rows after VALUE; retain full precision and actual simulator sample times.",
+    "sampling": "Linear interpolation at explicitly listed probe times; settled voltages use an arithmetic average of saved voltage samples inside the specified half-open window.",
+    "crossing": "First directional crossing within the specified window, linearly interpolated between neighboring saved samples.",
+    "integral": "Trapezoidal integration over the full transient [first saved time,last saved time].",
+    "comparison_baseline": "unit_collapse for all 84 scalar metrics and 56 RC/RCC comparison rows. The PT prior sizing-control curve is a separate additional control.",
+    "signed_change": "post - unit_collapse",
+    "signed_change_percent": "100*(post-unit_collapse)/abs(unit_collapse); blank if baseline is zero or a value is unavailable.",
+    "percentage_caution": "Near-zero or signed baseline quantities can yield large or misleading percentages. Signed lag and energy-return power are not automatically improvement/degradation measures. Absolute values are retained.",
+    "completion": "Full specified duration, finite saved traces, receipt returncode 0 and native log completion. This does not imply all specifications pass.",
+    "all_specifications_pass": null
+  },
+  "shared_metrics": {
+    "VSUP_mean_current_mA": "-1000*integral(VSUP:p dt)/(t_end-t_start)",
+    "VSUP_mean_power_mW": "0.8*VSUP_mean_current_mA"
+  },
+  "design_metrics": {
+    "CLK-CMP": {
+      "decision_mean_ps": "Mean of six stable complementary 80/20-level response times measured from the clock 50% time (probe_ns-3.95)*1e-9. For each interval [edge,(probe_ns+0.5)ns), find the last violating saved point and use the next sample. This is not a 50%-output propagation delay.",
+      "sample_ns": [
+        9,
+        19,
+        29,
+        39,
+        49,
+        59
+      ],
+      "expected_out": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "fixed_gate": "For each probe, out>=0.64/outb<=0.16 when expected high; converse when expected low.",
+      "gate_denominator_per_condition": 6
+    },
+    "CT-CMP": {
+      "output_low_V": "Arithmetic sample mean on [18,24) ns",
+      "output_high_V": "Arithmetic sample mean on [8,14) ns",
+      "rise_signed_lag_ps": "1e12*(output rising 0.4V crossing - input differential rising zero crossing), both sought in [4,10] ns",
+      "fall_signed_lag_ps": "1e12*(output falling 0.4V crossing - input differential falling zero crossing), both sought in [14,20] ns",
+      "signed_lag_interpretation": "An output crossing can precede the differential zero crossing because of offset and finite slew. A negative lag is not negative causal propagation delay.",
+      "DC_trip_mV": "1000*differential DC input at first rising out=0.4 V crossing in [-0.05,0.05] V",
+      "fixed_gate": "output_low_V<0.16 and output_high_V>0.64",
+      "gate_denominator_per_condition": 1
+    },
+    "DC-Switch": {
+      "node_order": [
+        "y0t",
+        "y1t",
+        "y0b",
+        "y1b"
+      ],
+      "probe_targets": {
+        "39ns,49ns,59ns": [
+          0.8,
+          0.4,
+          0.4,
+          0
+        ],
+        "44ns,54ns": [
+          0.4,
+          0.8,
+          0,
+          0.4
+        ]
+      },
+      "rail_max_error_mV": "1000*max(abs(interpolated output-target)) over all 20 probes",
+      "upper_overshoot_mV": "1000*max(max(y0t)-0.8,max(y1t)-0.8,max(y0b)-0.4,max(y1b)-0.4), using the full trace",
+      "VHIGH_mean_power_uW": "-1e6*0.8*integral(VHIGH:p dt)/duration",
+      "VMID_mean_power_uW": "-1e6*0.4*integral(VMID:p dt)/duration",
+      "fixed_gate": "Each of 20 sampled absolute rail errors is <0.1V. No efficiency gate.",
+      "gate_denominator_per_condition": 20
+    },
+    "PT-CMP": {
+      "word_sample_ns": "9+10*i for i=0..7",
+      "word_expected": "1 if each adjacent pair of the eight input bits agrees; otherwise 0",
+      "rise_mean_signed_lag_ps": "Mean of the three rising output-0.4V crossings minus their corresponding input 50% times (i*10ns+50ps). Crossing search [i*10ns,(i*10+9)ns].",
+      "fall_mean_signed_lag_ps": "Same, mean of the four falling transitions.",
+      "transition_onset_to_crossing_ps": "signed_crossing_lag_ps+50; retained as a second timing convention, not substituted silently for the signed lag",
+      "persistent_valid_rail_from_onset_ps": "Within each transition interval, time from i*10ns to the first saved point after the last violation of expected out>=0.64 or <=0.16.",
+      "fixed_gate": "All eight fixed-word samples satisfy >=0.64V for expected1, <=0.16V for expected0.",
+      "gate_denominator_per_condition": 8,
+      "10_percent": "Not the reported fixed functional gate. The archived post-layout delay changes are much larger than 10%; a uniform electrical-equivalence claim is not supported."
+    },
+    "REF-BUF": {
+      "low_window_ns": [
+        150,
+        190
+      ],
+      "high_window_ns": [
+        350,
+        390
+      ],
+      "step_gain": "(mean_high-mean_low)/0.02",
+      "settling_rise_ns": "Time from 200ns to the first sample after the last departure from +/-1% of the measured output-step amplitude around mean_high, evaluated up to 399ns.",
+      "settling_fall_ns": "Same, relative to 400ns and mean_low, evaluated up to 599ns.",
+      "settling_caution": "1% of the measured output step is not 1% input tracking accuracy. If no settling in the window, value is unavailable.",
+      "DC_max_error_mV": "1000*max(abs(out-vin)) over the fixed 21-point DC sweep",
+      "DC_mean_error_mV": "1000*mean(abs(out-vin)) over the fixed 21 points",
+      "DC_secant_gain": "(last_out-first_out)/(last_vin-first_vin)",
+      "PSF_duplicate_vin_handling": "The DC parameter and saved node both use vin, creating two equal adjacent values per point. Verify pair equality to 1e-14V and use one per pair; do not average unrelated points.",
+      "recorded_probe": "mean_high>mean_low only. This is not a precision/full application specification.",
+      "gate_denominator_per_condition": 1,
+      "STB": "Use the native margin.stb header gainMargin[dB], phaseMargin[degrees] and the respective frequencies[Hz]. Header precision is higher than rounded VALUE fields. Local VFB1 loop, VFB2 closed; no RCC/global multi-loop result."
+    }
+  },
+  "reproduction": {
+    "entry_point": "verify_simulation.py",
+    "command": "python verify_simulation.py Anonymous_Evidence_Reviewed.zip --output verification",
+    "dependencies": [
+      "Python 3",
+      "NumPy"
+    ],
+    "requires_native_simulator": false,
+    "requires_netlist_or_layout": false,
+    "core_tables": {
+      "metrics": 84,
+      "comparisons": 56,
+      "fixed_response_probes": 108,
+      "transient_runs": 15,
+      "native_logs_in_original_package": 17,
+      "local_STB_header_values": 8
+    },
+    "not_verified_by_this_script": [
+      "Device model calibration",
+      "Foundry DRC/LVS",
+      "Completeness of original historical optimization population",
+      "Electrical specifications not stated in the archived probe definitions"
+    ]
+  }
+}

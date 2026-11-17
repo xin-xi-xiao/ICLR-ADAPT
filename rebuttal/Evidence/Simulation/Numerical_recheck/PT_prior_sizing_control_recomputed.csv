@@ -1,0 +1,5 @@
+case,condition,metric,recomputed_value,finite_and_full_duration,functional_probes_pass,functional_probes_total,scope
+PT-CMP,prior_sizing_control,VSUP_mean_current_mA,0.1029038112128422,True,8,8,53-MOS sizing control; not original long-L source; not part of 84/56 tables
+PT-CMP,prior_sizing_control,VSUP_mean_power_mW,0.08232304897027376,True,8,8,53-MOS sizing control; not original long-L source; not part of 84/56 tables
+PT-CMP,prior_sizing_control,rise_mean_signed_lag_ps,184.84021615447122,True,8,8,53-MOS sizing control; not original long-L source; not part of 84/56 tables
+PT-CMP,prior_sizing_control,fall_mean_signed_lag_ps,10.494231532987415,True,8,8,53-MOS sizing control; not original long-L source; not part of 84/56 tables

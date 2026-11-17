@@ -1,0 +1,75 @@
+{
+  "case": "PT-CMP",
+  "condition": "prior_sizing_control",
+  "evidence_role": "Existing 53-MOS ideal-interconnect sizing-screen control underlying the fourth waveform curve; not the original long-channel source or a new-layout extracted simulation.",
+  "unit_MOS_instances": 53,
+  "source_families": 53,
+  "new_layout_unit_MOS_instances": 54,
+  "new_geometry_in_this_control": false,
+  "source_family_relation": "All 53 family identities and terminal connections match the later unit control. The one sized PMOS represented as NF4 here becomes two parallel NF2 devices later; all other 52 family declarations are identical. Numerical equivalence is measured rather than assumed.",
+  "sizing_changes": {
+    "kind": "New follow-up design, with two sensing-inverter transistor sizing changes; not a P&R-only repair of the historical experiment.",
+    "p_device": {
+      "NFIN_before": 10,
+      "NFIN_after": 12,
+      "NF_before": 2,
+      "NF_after": 4,
+      "M": 1,
+      "L_nm": 14
+    },
+    "n_device": {
+      "NFIN_before": 10,
+      "NFIN_after": 2,
+      "NF_before": 2,
+      "NF_after": 2,
+      "M": 1,
+      "L_nm": 14
+    },
+    "topology_families_retained": 53
+  },
+  "fixed_conditions": {
+    "supply_V": 0.8,
+    "temperature_C": 27,
+    "load_fF": 10,
+    "word_count": 8,
+    "transient_stop_ns": 80,
+    "maxstep_ps": 2,
+    "input_edges_ps": 100
+  },
+  "model_scope": {
+    "family": "Public PTM-MG 14 nm high-performance NFET and PFET predictive compact models",
+    "model_files": [
+      "14nfet.pm",
+      "14pfet.pm"
+    ],
+    "instance_channel_length_nm": 14,
+    "simulation_corner": "One nominal predictive-model condition; no process-corner distribution or mismatch sweep.",
+    "matched_to_mock14_fabrication_process": false,
+    "foundry_calibration": false,
+    "uncertainty_calibration": "unknown",
+    "provenance": "Model identity is established from the archived NFET/PFET files and their model-card comments. No transistor models are distributed in this results-only supplement."
+  },
+  "simulation_returncode": 0,
+  "terminal_status": "complete",
+  "native_errors": 0,
+  "native_warnings": 2,
+  "native_notices": 3,
+  "saved_transient_points": 41119,
+  "functional_checks_pass": 8,
+  "functional_checks_total": 8,
+  "full_application_specification_pass": null,
+  "metrics": {
+    "VSUP_mean_current_mA": 0.1029038112128422,
+    "VSUP_mean_power_mW": 0.08232304897027376,
+    "rise_mean_signed_lag_ps": 184.84021615447122,
+    "fall_mean_signed_lag_ps": 10.494231532987415
+  },
+  "recommended_figure_label": "Prior sizing control: ideal wires",
+  "recommended_difference_label": "RC - prior sizing control",
+  "file_roles": {
+    "execution_summary.json": "Anonymized execution/provenance summary; not a simulator-generated report.",
+    "spectre.log": "Anonymized copy of native completion/warning log.",
+    "transient.txt": "Anonymized PSF-ASCII transient values.",
+    "operating_point.txt": "Anonymized PSF-ASCII DC operating-point values."
+  }
+}

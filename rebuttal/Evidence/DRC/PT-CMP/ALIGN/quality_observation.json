@@ -1,0 +1,38 @@
+{
+  "G": true,
+  "C": true,
+  "L": true,
+  "tier": "L",
+  "gates": {
+    "all_five_phases_completed": true,
+    "frozen_runtime": true,
+    "binding_verified": true,
+    "postroute_masks_with_launch_identity": true,
+    "required_artifacts_intact": true,
+    "checker_selected_hierarchy_complete": true,
+    "complete_owned_geometry": true,
+    "four_metrics_finite": true,
+    "explicit_power_and_ground": true
+  },
+  "connectivity_and_DRC": {
+    "OPEN": 0,
+    "SHORT": 0,
+    "DRC": 0,
+    "unknown": 0,
+    "accepted_explained_diagnostics": 0
+  },
+  "metrics4": [
+    83.136544,
+    354.26399999999984,
+    275.4920000000002,
+    609
+  ],
+  "diagnostic_arithmetic_metrics4": [
+    83.136544,
+    354.26399999999984,
+    275.4920000000002,
+    609
+  ],
+  "high_quality_reward_eligible": true,
+  "strict_validator_legal": true
+}

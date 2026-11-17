@@ -1,0 +1,13 @@
+case,condition,metric,value
+PT-CMP,unit_collapse,VSUP_mean_current_mA,0.1029038116214608
+PT-CMP,unit_collapse,VSUP_mean_power_mW,0.08232304929716865
+PT-CMP,unit_collapse,rise_mean_signed_lag_ps,184.84021599812195
+PT-CMP,unit_collapse,fall_mean_signed_lag_ps,10.494231523056285
+PT-CMP,RC,VSUP_mean_current_mA,0.09092750438719267
+PT-CMP,RC,VSUP_mean_power_mW,0.07274200350975414
+PT-CMP,RC,rise_mean_signed_lag_ps,418.67062636715906
+PT-CMP,RC,fall_mean_signed_lag_ps,77.9858814539758
+PT-CMP,RCC,VSUP_mean_current_mA,0.09123348356212006
+PT-CMP,RCC,VSUP_mean_power_mW,0.07298678684969605
+PT-CMP,RCC,rise_mean_signed_lag_ps,448.6863313017104
+PT-CMP,RCC,fall_mean_signed_lag_ps,86.12667633222046

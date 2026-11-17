@@ -1,0 +1,343 @@
+
+
+
+                  ##################################################
+                  ##                                              ##
+                  ##         C A L I B R E    S Y S T E M         ##
+                  ##                                              ##
+                  ##             L V S   R E P O R T              ##
+                  ##                                              ##
+                  ##################################################
+
+
+
+REPORT FILE NAME:         device_lvs.rep
+LAYOUT NAME:              extracted.sp ('CLK-CMP')
+SOURCE NAME:              source.sp ('CLK-CMP')
+RULE FILE:                lvs.svrf
+
+
+
+                               OVERALL COMPARISON RESULTS
+
+
+
+                         #       ###################       _   _   
+                        #        #                 #       *   *   
+                   #   #         #     CORRECT     #         |     
+                    # #          #                 #       \___/  
+                     #           ###################               
+
+
+  Warning:  Unbalanced smashed mosfets were matched.
+  Warning:  Ambiguity points were found and resolved arbitrarily.
+
+
+**************************************************************************************************************
+                                      CELL  SUMMARY
+**************************************************************************************************************
+
+  Result         Layout                        Source
+  -----------    -----------                   --------------
+  CORRECT        CLK-CMP     CLK-CMP
+
+
+
+**************************************************************************************************************
+                                      LVS PARAMETERS
+**************************************************************************************************************
+
+
+o LVS Setup:
+
+   // LVS COMPONENT TYPE PROPERTY
+   // LVS COMPONENT SUBTYPE PROPERTY
+   // LVS PIN NAME PROPERTY
+   LVS POWER NAME                         "VDD" "VPWR"
+   LVS GROUND NAME                        "VSS" "GND" "VGND"
+   LVS CELL SUPPLY                        NO
+   LVS RECOGNIZE GATES                    NONE
+   LVS IGNORE PORTS                       NO
+   LVS CHECK PORT NAMES                   YES
+   LVS IGNORE TRIVIAL NAMED PORTS         NO
+   LVS BUILTIN DEVICE PIN SWAP            YES
+   LVS ALL CAPACITOR PINS SWAPPABLE       NO
+   LVS DISCARD PINS BY DEVICE             NO
+   LVS SOFT SUBSTRATE PINS                NO
+   LVS INJECT LOGIC                       NO
+   LVS EXPAND UNBALANCED CELLS            YES
+   LVS FLATTEN INSIDE CELL                NO
+   LVS EXPAND SEED PROMOTIONS             NO
+   LVS PRESERVE PARAMETERIZED CELLS       NO
+   LVS GLOBALS ARE PORTS                  YES
+   LVS REVERSE WL                         NO
+   LVS SPICE PREFER PINS                  NO
+   LVS SPICE SLASH IS SPACE               YES
+   LVS SPICE ALLOW FLOATING PINS          YES
+   // LVS SPICE ALLOW INLINE PARAMETERS     
+   LVS SPICE ALLOW UNQUOTED STRINGS       NO
+   LVS SPICE CONDITIONAL LDD              NO
+   LVS SPICE CULL PRIMITIVE SUBCIRCUITS   NO
+   LVS SPICE IMPLIED MOS AREA             NO
+   // LVS SPICE MULTIPLIER NAME
+   LVS SPICE OVERRIDE GLOBALS             NO
+   LVS SPICE REDEFINE PARAM               NO
+   LVS SPICE REPLICATE DEVICES            NO
+   LVS SPICE SCALE X PARAMETERS           NO
+   LVS SPICE STRICT WL                    NO
+   // LVS SPICE OPTION
+   LVS STRICT SUBTYPES                    NO
+   LVS EXACT SUBTYPES                     NO
+   LAYOUT CASE                            NO
+   SOURCE CASE                            NO
+   LVS COMPARE CASE                       NO
+   LVS DOWNCASE DEVICE                    NO
+   LVS REPORT MAXIMUM                     50
+   LVS PROPERTY RESOLUTION MAXIMUM        200
+   // LVS SIGNATURE MAXIMUM
+   // LVS FILTER UNUSED OPTION
+   // LVS REPORT OPTION
+   LVS REPORT UNITS                       YES
+   // LVS NON USER NAME PORT
+   // LVS NON USER NAME NET
+   // LVS NON USER NAME INSTANCE
+   // LVS IGNORE DEVICE PIN
+
+   // Reduction
+
+   LVS REDUCE SERIES MOS                  NO
+   LVS REDUCE PARALLEL MOS                YES
+   LVS REDUCE SEMI SERIES MOS             NO
+   LVS REDUCE SPLIT GATES                 YES
+   LVS REDUCE PARALLEL BIPOLAR            YES
+   LVS REDUCE SERIES CAPACITORS           YES
+   LVS REDUCE PARALLEL CAPACITORS         YES
+   LVS REDUCE SERIES RESISTORS            YES
+   LVS REDUCE PARALLEL RESISTORS          YES
+   LVS REDUCE PARALLEL DIODES             YES
+   LVS REDUCTION PRIORITY                 PARALLEL
+   
+   LVS SHORT EQUIVALENT NODES             NO
+
+   // Trace Property
+
+   TRACE PROPERTY  mn(n)  l l 0
+   TRACE PROPERTY  mp(p)  l l 0
+   TRACE PROPERTY  mn(n)  w w 0
+   TRACE PROPERTY  mp(p)  w w 0
+
+
+
+                   CELL COMPARISON RESULTS ( TOP LEVEL )
+
+
+
+                         #       ###################       _   _   
+                        #        #                 #       *   *   
+                   #   #         #     CORRECT     #         |     
+                    # #          #                 #       \___/  
+                     #           ###################               
+
+
+  Warning:  Unbalanced smashed mosfets were matched.
+  Warning:  Ambiguity points were found and resolved arbitrarily.
+
+LAYOUT CELL NAME:         CLK-CMP
+SOURCE CELL NAME:         CLK-CMP
+
+--------------------------------------------------------------------------------------------------------------
+
+INITIAL NUMBERS OF OBJECTS
+--------------------------
+
+                Layout    Source         Component Type
+                ------    ------         --------------
+ Ports:              7         7
+
+ Nets:             153       153
+
+ Instances:        314       136    *    MN (4 pins)
+                   242        30    *    MP (4 pins)
+                ------    ------
+ Total Inst:       556       166
+
+
+NUMBERS OF OBJECTS AFTER TRANSFORMATION
+---------------------------------------
+
+                Layout    Source         Component Type
+                ------    ------         --------------
+ Ports:              7         7
+
+ Nets:             153       153
+
+ Instances:        133       133         MN (4 pins)
+                    29        29         MP (4 pins)
+                ------    ------
+ Total Inst:       162       162
+
+
+       * = Number of objects in layout different from number in source.
+
+
+
+**************************************************************************************************************
+                               INFORMATION AND WARNINGS
+**************************************************************************************************************
+
+
+                  Matched    Matched    Unmatched    Unmatched    Component
+                   Layout     Source       Layout       Source    Type
+                  -------    -------    ---------    ---------    ---------
+   Ports:               7          7            0            0
+
+   Nets:              153        153            0            0
+
+   Instances:         133        133            0            0    MN(N)
+                       29         29            0            0    MP(P)
+                  -------    -------    ---------    ---------
+   Total Inst:        162        162            0            0
+
+
+o Statistics:
+
+   424 layout mos transistors were reduced to 30.
+     394 mos transistors were deleted by parallel reduction.
+   6 source mos transistors were reduced to 2.
+     4 mos transistors were deleted by parallel reduction.
+
+   78 nets were matched arbitrarily.
+
+
+o Initial Correspondence Points:
+
+   Ports:        VDD VSS INP INM CLKE D DB
+
+
+o Ambiguity Resolution Points:
+
+      (Each one of the following objects belongs to a group of indistinguishable objects.
+       The listed objects were matched arbitrarily by the Ambiguity Resolution feature of LVS.
+       Arbitrary matching may be prevented by assigning names to these objects or to adjacent nets).
+
+       Layout                                                    Source
+       ------                                                    ------
+
+                                     Nets
+                                     ----
+
+       53                                                        CLK-CMP__X_M10_M11__EDGE_R_FLOAT
+       61                                                        CLK-CMP__X_M12_M13__EDGE_R_FLOAT
+       X171/7                                                    CLK-CMP__X_M28_M34__EDGE_L_FLOAT
+       18                                                        CLK-CMP__X_M43__EDGE_R_FLOAT
+       108                                                       CLK-CMP__X_M48__EDGE_R_FLOAT
+       31                                                        CLK-CMP__X_M39__EDGE_R_FLOAT
+       73                                                        CLK-CMP__X_M18_M19_M26_M27__X_M3__EDGE_L_FLOAT
+       79                                                        CLK-CMP__X_M18_M19_M26_M27__X_M3__EDGE_R_FLOAT
+       X172/10                                                   CLK-CMP__X_M8_M9__X_M1__EDGE_R_FLOAT
+       X172/12                                                   CLK-CMP__X_M8_M9__X_M1__EDGE_L_FLOAT
+       X173/10                                                   CLK-CMP__X_M6_M7__X_M1__EDGE_R_FLOAT
+       67                                                        CLK-CMP__X_M40__EDGE_L_FLOAT
+       66                                                        CLK-CMP__X_M35__EDGE_R_FLOAT
+       37                                                        CLK-CMP__X_M35__EDGE_L_FLOAT
+       103                                                       CLK-CMP__X_M18_M19_M26_M27__X_M2__EDGE_R_FLOAT
+       102                                                       CLK-CMP__X_M18_M19_M26_M27__X_M2__EDGE_L_FLOAT
+       76                                                        CLK-CMP__X_M42__EDGE_L_FLOAT
+       89                                                        CLK-CMP__X_M18_M19_M26_M27__X_M1__EDGE_L_FLOAT
+       97                                                        CLK-CMP__X_M18_M19_M26_M27__X_M1__EDGE_R_FLOAT
+       46                                                        CLK-CMP__X_M29_M32__EDGE_R_FLOAT
+       50                                                        CLK-CMP__X_M38__EDGE_L_FLOAT
+       52                                                        CLK-CMP__X_M38__EDGE_R_FLOAT
+       57                                                        CLK-CMP__X_M29_M32__EDGE_L_FLOAT
+       96                                                        CLK-CMP__X_M25_M33__EDGE_R_FLOAT
+       X172/11                                                   CLK-CMP__X_M18_M19_M26_M27__X_M0__EDGE_L_FLOAT
+       X173/9                                                    CLK-CMP__X_M18_M19_M26_M27__X_M0__EDGE_R_FLOAT
+       X173/11                                                   CLK-CMP__X_M41__EDGE_R_FLOAT
+       X172/9                                                    CLK-CMP__X_M41__EDGE_L_FLOAT
+       27                                                        CLK-CMP__X_M6_M7__X_M0__EDGE_L_FLOAT
+       28                                                        CLK-CMP__X_M6_M7__X_M0__EDGE_R_FLOAT
+       88                                                        CLK-CMP__X_M8_M9__X_M0__EDGE_L_FLOAT
+       X170/158                                                  CLK-CMP__X_M14_M21__EDGE_R_X21_FLOAT
+       X170/135                                                  CLK-CMP__X_M14_M21__EDGE_L_X21_FLOAT
+       X170/285                                                  CLK-CMP__X_M14_M21__EDGE_L_X45_FLOAT
+       X170/284                                                  CLK-CMP__X_M14_M21__EDGE_R_X45_FLOAT
+       X170/279                                                  CLK-CMP__X_M14_M21__EDGE_L_X46_FLOAT
+       X170/278                                                  CLK-CMP__X_M14_M21__EDGE_R_X46_FLOAT
+       X170/236                                                  CLK-CMP__X_M14_M21__EDGE_L_X33_FLOAT
+       X170/159                                                  CLK-CMP__X_M14_M21__EDGE_R_X33_FLOAT
+       X170/237                                                  CLK-CMP__X_M14_M21__EDGE_L_X22_FLOAT
+       X170/134                                                  CLK-CMP__X_M14_M21__EDGE_R_X22_FLOAT
+       X170/140                                                  CLK-CMP__X_M14_M21__EDGE_L_X1_FLOAT
+       X170/141                                                  CLK-CMP__X_M14_M21__EDGE_R_X1_FLOAT
+       X170/207                                                  CLK-CMP__X_M14_M21__EDGE_L_X2_FLOAT
+       X170/206                                                  CLK-CMP__X_M14_M21__EDGE_R_X2_FLOAT
+       X170/261                                                  CLK-CMP__X_M14_M21__EDGE_R_X42_FLOAT
+       X170/260                                                  CLK-CMP__X_M14_M21__EDGE_L_X42_FLOAT
+       X170/255                                                  CLK-CMP__X_M14_M21__EDGE_R_X41_FLOAT
+       X170/254                                                  CLK-CMP__X_M14_M21__EDGE_L_X41_FLOAT
+       X170/189                                                  CLK-CMP__X_M14_M21__EDGE_L_X5_FLOAT
+
+
+
+o Matched Mosfets Which Have Been Unequally Reduced:
+
+       M116(1.633,2.961)                                         MCOMPARATOR_1TO7_0P7_LVT__X_M38__M1
+       M168(23.073,0.567)                                        MCOMPARATOR_1TO7_0P7_LVT__X_M39__M1
+       M167(22.993,0.567)                                        ** missing smashed mosfet **
+       M127(2.033,4.473)                                         ** missing smashed mosfet **
+       M126(2.033,2.961)                                         ** missing smashed mosfet **
+       M125(1.953,4.473)                                         ** missing smashed mosfet **
+       M124(1.953,2.961)                                         ** missing smashed mosfet **
+       M123(1.873,4.473)                                         ** missing smashed mosfet **
+       M122(1.873,2.961)                                         ** missing smashed mosfet **
+       M121(1.793,4.473)                                         ** missing smashed mosfet **
+       M120(1.793,2.961)                                         ** missing smashed mosfet **
+       M119(1.713,4.473)                                         ** missing smashed mosfet **
+       M118(1.713,2.961)                                         ** missing smashed mosfet **
+       M117(1.633,4.473)                                         ** missing smashed mosfet **
+
+       M3(0.273,2.835)                                           MCOMPARATOR_1TO7_0P7_LVT__X_M41__M1
+       M112(24.673,0.399)                                        MCOMPARATOR_1TO7_0P7_LVT__X_M48__M1
+       M111(24.593,0.399)                                        MCOMPARATOR_1TO7_0P7_LVT__X_M43__M1
+       M110(24.513,0.399)                                        MCOMPARATOR_1TO7_0P7_LVT__X_M42__M1
+       M109(24.433,0.399)                                        ** missing smashed mosfet **
+       M106(23.793,0.483)                                        ** missing smashed mosfet **
+       M105(23.713,0.483)                                        ** missing smashed mosfet **
+       M38(1.713,7.623)                                          ** missing smashed mosfet **
+       M37(1.633,7.623)                                          ** missing smashed mosfet **
+       M32(0.993,5.523)                                          ** missing smashed mosfet **
+       M31(0.993,4.179)                                          ** missing smashed mosfet **
+       M30(0.993,2.835)                                          ** missing smashed mosfet **
+       M29(0.913,5.523)                                          ** missing smashed mosfet **
+       M28(0.913,4.179)                                          ** missing smashed mosfet **
+       M27(0.913,2.835)                                          ** missing smashed mosfet **
+       M26(0.833,5.523)                                          ** missing smashed mosfet **
+       M25(0.833,4.179)                                          ** missing smashed mosfet **
+       M24(0.833,2.835)                                          ** missing smashed mosfet **
+       M23(0.753,5.523)                                          ** missing smashed mosfet **
+       M22(0.753,4.179)                                          ** missing smashed mosfet **
+       M21(0.753,2.835)                                          ** missing smashed mosfet **
+       M20(0.673,5.523)                                          ** missing smashed mosfet **
+       M19(0.673,4.179)                                          ** missing smashed mosfet **
+       M18(0.673,2.835)                                          ** missing smashed mosfet **
+       M17(0.593,5.523)                                          ** missing smashed mosfet **
+       M16(0.593,4.179)                                          ** missing smashed mosfet **
+       M15(0.593,2.835)                                          ** missing smashed mosfet **
+       M14(0.513,5.523)                                          ** missing smashed mosfet **
+       M13(0.513,4.179)                                          ** missing smashed mosfet **
+       M12(0.513,2.835)                                          ** missing smashed mosfet **
+       M11(0.433,5.523)                                          ** missing smashed mosfet **
+       M10(0.433,4.179)                                          ** missing smashed mosfet **
+       M9(0.433,2.835)                                           ** missing smashed mosfet **
+       M8(0.353,5.523)                                           ** missing smashed mosfet **
+       M7(0.353,4.179)                                           ** missing smashed mosfet **
+       M6(0.353,2.835)                                           ** missing smashed mosfet **
+       M5(0.273,5.523)                                           ** missing smashed mosfet **
+       M4(0.273,4.179)                                           ** missing smashed mosfet **
+
+
+
+**************************************************************************************************************
+                                         SUMMARY
+**************************************************************************************************************
+

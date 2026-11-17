@@ -1,0 +1,145 @@
+
+Cadence (R) Virtuoso (R) Spectre (R) Circuit Simulator
+Copyright (C) 1989-2015 Cadence Design Systems, Inc. All rights reserved worldwide. Cadence, Virtuoso and Spectre are registered trademarks of Cadence Design Systems, Inc. All others are the property of their respective holders.
+
+Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA Security, Inc.
+
+
+
+
+
+Warning from spectre in `DC-Switch':`XDUT', during hierarchy flattening.
+    WARNING (SFE-32): "14pfet.pm" 4: Duplicate specification for parameter `bulkmod' (using last value specified).
+    WARNING (SFE-32): "14nfet.pm" 4: Duplicate specification for parameter `bulkmod' (using last value specified).
+
+
+
+Notice from spectre in `DC-Switch':`XDUT', during hierarchy flattening.
+    XDUT.CGROUND_1873: Terminals are connected together (to node `0').
+    XDUT.CGROUND_1874: Terminals are connected together (to node `0').
+    XDUT.CGROUND_3563: Terminals are connected together (to node `0').
+    XDUT.CGROUND_3564: Terminals are connected together (to node `0').
+
+
+
+Global user options:
+               temp = 27
+               tnom = 27
+             reltol = 1e-05
+            vabstol = 1e-08
+            iabstol = 1e-14
+               save = selected
+
+Scoped user options:
+
+Circuit inventory:
+              nodes 2348
+            bsimcmg 48    
+          capacitor 3670  
+           resistor 2605  
+            vsource 7     
+
+Analysis and control statement inventory:
+                 dc 1     
+               tran 1     
+
+Output statements:
+             .probe 0     
+           .measure 0     
+               save 1     
+
+
+~~~~~~~~~~~~~~~~~~~~~~
+Pre-Simulation Summary
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+
+****************
+DC Analysis `op'
+****************
+
+Important parameter values:
+    reltol = 10e-06
+    abstol(V) = 10 nV
+    abstol(I) = 10 fA
+    temp = 27 C
+    tnom = 27 C
+    tempeffects = all
+    gmindc = 1 pS
+Convergence achieved in 4 iterations.
+
+
+************************************************
+Transient Analysis `tran': time = (0 s -> 60 ns)
+************************************************
+
+Important parameter values:
+    start = 0 s
+    outputstart = 0 s
+    stop = 60 ns
+    step = 60 ps
+    maxstep = 1 ps
+    ic = all
+    useprevic = no
+    skipdc = no
+    reltol = 10e-06
+    abstol(V) = 10 nV
+    abstol(I) = 10 fA
+    temp = 27 C
+    tnom = 27 C
+    tempeffects = all
+    errpreset = moderate
+    method = traponly
+    lteratio = 3.5
+    relref = sigglobal
+    cmin = 0 F
+    gmin = 1 pS
+
+
+Output and IC/nodeset summary:
+                 save   3       (current)
+                 save   8       (voltage)
+
+......
+
+Notice from spectre at time = 5.45776 ns during transient analysis `tran'.
+    Found trapezoidal ringing on node XDUT.RNET_919.
+Notice from spectre at time = 5.45876 ns during transient analysis `tran'.
+    Found trapezoidal ringing on node XDUT.RNET_919.
+Notice from spectre at time = 5.45976 ns during transient analysis `tran'.
+    Found trapezoidal ringing on node XDUT.RNET_919.
+Notice from spectre at time = 5.46076 ns during transient analysis `tran'.
+    Found trapezoidal ringing on node XDUT.RNET_919.
+Notice from spectre at time = 5.46176 ns during transient analysis `tran'.
+    Found trapezoidal ringing on node XDUT.RNET_919.
+        Further occurrences of this notice will be suppressed.
+
+......9......8......7......6......5......4......3......2......1......0
+Number of accepted tran steps =             60552
+
+Notice from spectre during transient analysis `tran'.
+    Trapezoidal ringing is detected during tran analysis.
+        Please use method=trap for better results and performance.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Post-Transient Simulation Summary
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   -   Parasitics slow down simulation. To speed up, consider
+          add +postlayout on command line
+   -   To further speed up simulation, consider
+          add ++aps on command line
+   -   Non-default settings that could significantly slow down simulation
+          maxstep = 1 ps, default 1.2 ns
+          reltol = 10e-06, default 1e-03
+          abstol(V) = 10 nV, default 1 uV
+          abstol(I) = 10 fA, default 1 pA
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+Notice from spectre.
+    24749 notices suppressed.
+
+
+spectre completes with 0 errors, 2 warnings, and 11 notices.

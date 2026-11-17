@@ -1,0 +1,12 @@
+{
+  "case": "REF-BUF",
+  "condition": "RCC",
+  "reference_center_V": 0.6769230769230768,
+  "IBIAS_uA": 20,
+  "no_device_or_geometry_change": true,
+  "comparison_condition": "RCC",
+  "model_scope": "Single confirmation of the measured20uA operating-point adaptation; all old RCC geometry/parameters remain; couplingisresearchsensitivitynotcalibratedPEX.",
+  "predeclared_followup": "No further bias/common-mode search after this call.",
+  "returncode": 0,
+  "terminal_status": "complete"
+}

@@ -1,0 +1,281 @@
+
+
+
+                  ##################################################
+                  ##                                              ##
+                  ##         C A L I B R E    S Y S T E M         ##
+                  ##                                              ##
+                  ##             L V S   R E P O R T              ##
+                  ##                                              ##
+                  ##################################################
+
+
+
+REPORT FILE NAME:         device_lvs.rep
+LAYOUT NAME:              extracted.sp ('PT-CMP')
+SOURCE NAME:              source.sp ('PT-CMP')
+RULE FILE:                lvs.svrf
+
+
+
+                               OVERALL COMPARISON RESULTS
+
+
+
+                         #       ###################       _   _   
+                        #        #                 #       *   *   
+                   #   #         #     CORRECT     #         |     
+                    # #          #                 #       \___/  
+                     #           ###################               
+
+
+  Warning:  Ambiguity points were found and resolved arbitrarily.
+
+
+**************************************************************************************************************
+                                      CELL  SUMMARY
+**************************************************************************************************************
+
+  Result         Layout                        Source
+  -----------    -----------                   --------------
+  CORRECT        PT-CMP               PT-CMP
+
+
+
+**************************************************************************************************************
+                                      LVS PARAMETERS
+**************************************************************************************************************
+
+
+o LVS Setup:
+
+   // LVS COMPONENT TYPE PROPERTY
+   // LVS COMPONENT SUBTYPE PROPERTY
+   // LVS PIN NAME PROPERTY
+   LVS POWER NAME                         "VDD" "VPWR"
+   LVS GROUND NAME                        "VSS" "GND" "VGND"
+   LVS CELL SUPPLY                        NO
+   LVS RECOGNIZE GATES                    NONE
+   LVS IGNORE PORTS                       NO
+   LVS CHECK PORT NAMES                   YES
+   LVS IGNORE TRIVIAL NAMED PORTS         NO
+   LVS BUILTIN DEVICE PIN SWAP            YES
+   LVS ALL CAPACITOR PINS SWAPPABLE       NO
+   LVS DISCARD PINS BY DEVICE             NO
+   LVS SOFT SUBSTRATE PINS                NO
+   LVS INJECT LOGIC                       NO
+   LVS EXPAND UNBALANCED CELLS            YES
+   LVS FLATTEN INSIDE CELL                NO
+   LVS EXPAND SEED PROMOTIONS             NO
+   LVS PRESERVE PARAMETERIZED CELLS       NO
+   LVS GLOBALS ARE PORTS                  YES
+   LVS REVERSE WL                         NO
+   LVS SPICE PREFER PINS                  NO
+   LVS SPICE SLASH IS SPACE               YES
+   LVS SPICE ALLOW FLOATING PINS          YES
+   // LVS SPICE ALLOW INLINE PARAMETERS     
+   LVS SPICE ALLOW UNQUOTED STRINGS       NO
+   LVS SPICE CONDITIONAL LDD              NO
+   LVS SPICE CULL PRIMITIVE SUBCIRCUITS   NO
+   LVS SPICE IMPLIED MOS AREA             NO
+   // LVS SPICE MULTIPLIER NAME
+   LVS SPICE OVERRIDE GLOBALS             NO
+   LVS SPICE REDEFINE PARAM               NO
+   LVS SPICE REPLICATE DEVICES            NO
+   LVS SPICE SCALE X PARAMETERS           NO
+   LVS SPICE STRICT WL                    NO
+   // LVS SPICE OPTION
+   LVS STRICT SUBTYPES                    NO
+   LVS EXACT SUBTYPES                     NO
+   LAYOUT CASE                            NO
+   SOURCE CASE                            NO
+   LVS COMPARE CASE                       NO
+   LVS DOWNCASE DEVICE                    NO
+   LVS REPORT MAXIMUM                     50
+   LVS PROPERTY RESOLUTION MAXIMUM        200
+   // LVS SIGNATURE MAXIMUM
+   // LVS FILTER UNUSED OPTION
+   // LVS REPORT OPTION
+   LVS REPORT UNITS                       YES
+   // LVS NON USER NAME PORT
+   // LVS NON USER NAME NET
+   // LVS NON USER NAME INSTANCE
+   // LVS IGNORE DEVICE PIN
+
+   // Reduction
+
+   LVS REDUCE SERIES MOS                  NO
+   LVS REDUCE PARALLEL MOS                YES
+   LVS REDUCE SEMI SERIES MOS             NO
+   LVS REDUCE SPLIT GATES                 YES
+   LVS REDUCE PARALLEL BIPOLAR            YES
+   LVS REDUCE SERIES CAPACITORS           YES
+   LVS REDUCE PARALLEL CAPACITORS         YES
+   LVS REDUCE SERIES RESISTORS            YES
+   LVS REDUCE PARALLEL RESISTORS          YES
+   LVS REDUCE PARALLEL DIODES             YES
+   LVS REDUCTION PRIORITY                 PARALLEL
+   
+   LVS SHORT EQUIVALENT NODES             NO
+
+   // Trace Property
+
+   TRACE PROPERTY  mn(n)  l l 0
+   TRACE PROPERTY  mp(p)  l l 0
+   TRACE PROPERTY  mn(n)  w w 0
+   TRACE PROPERTY  mp(p)  w w 0
+
+
+
+                   CELL COMPARISON RESULTS ( TOP LEVEL )
+
+
+
+                         #       ###################       _   _   
+                        #        #                 #       *   *   
+                   #   #         #     CORRECT     #         |     
+                    # #          #                 #       \___/  
+                     #           ###################               
+
+
+  Warning:  Ambiguity points were found and resolved arbitrarily.
+
+LAYOUT CELL NAME:         PT-CMP
+SOURCE CELL NAME:         PT-CMP
+
+--------------------------------------------------------------------------------------------------------------
+
+INITIAL NUMBERS OF OBJECTS
+--------------------------
+
+                Layout    Source         Component Type
+                ------    ------         --------------
+ Ports:             11        11
+
+ Nets:             128       128
+
+ Instances:        150       108    *    MN (4 pins)
+                    46        33    *    MP (4 pins)
+                ------    ------
+ Total Inst:       196       141
+
+
+NUMBERS OF OBJECTS AFTER TRANSFORMATION
+---------------------------------------
+
+                Layout    Source         Component Type
+                ------    ------         --------------
+ Ports:             11        11
+
+ Nets:             128       128
+
+ Instances:        108       108         MN (4 pins)
+                    33        33         MP (4 pins)
+                ------    ------
+ Total Inst:       141       141
+
+
+       * = Number of objects in layout different from number in source.
+
+
+
+**************************************************************************************************************
+                               INFORMATION AND WARNINGS
+**************************************************************************************************************
+
+
+                  Matched    Matched    Unmatched    Unmatched    Component
+                   Layout     Source       Layout       Source    Type
+                  -------    -------    ---------    ---------    ---------
+   Ports:              11         11            0            0
+
+   Nets:              128        128            0            0
+
+   Instances:         108        108            0            0    MN(N)
+                       33         33            0            0    MP(P)
+                  -------    -------    ---------    ---------
+   Total Inst:        141        141            0            0
+
+
+o Statistics:
+
+   108 layout mos transistors were reduced to 53.
+     55 mos transistors were deleted by parallel reduction.
+
+   66 nets were matched arbitrarily.
+
+
+o Initial Correspondence Points:
+
+   Ports:        VDD VSS VCLK8 VCLK2 VCLK3 VCLK5 VCLK1 VCLK7 VCLK4 VCLK6 VOUT1
+
+
+o Ambiguity Resolution Points:
+
+      (Each one of the following objects belongs to a group of indistinguishable objects.
+       The listed objects were matched arbitrarily by the Ambiguity Resolution feature of LVS.
+       Arbitrary matching may be prevented by assigning names to these objects or to adjacent nets).
+
+       Layout                                                    Source
+       ------                                                    ------
+
+                                     Nets
+                                     ----
+
+       X18/8                                                     PT-CMP__X_M8__EDGE_R_FLOAT
+       X23/8                                                     PT-CMP__X_M10__EDGE_R_FLOAT
+       X24/8                                                     PT-CMP__X_M22__EDGE_R_FLOAT
+       X25/8                                                     PT-CMP__X_M18__EDGE_R_FLOAT
+       X14/8                                                     PT-CMP__X_M16__EDGE_R_FLOAT
+       X27/8                                                     PT-CMP__X_M20__EDGE_R_FLOAT
+       X17/8                                                     PT-CMP__X_M6__EDGE_R_FLOAT
+       X22/8                                                     PT-CMP__X_M3__EDGE_R_FLOAT
+       X26/8                                                     PT-CMP__X_M1__EDGE_R_FLOAT
+       X21/8                                                     PT-CMP__X_M4__EDGE_R_FLOAT
+       X20/7                                                     PT-CMP__X_M30__EDGE_R_FLOAT
+       X19/7                                                     PT-CMP__X_M28__EDGE_R_FLOAT
+       X15/7                                                     PT-CMP__X_M26__EDGE_R_FLOAT
+       X16/7                                                     PT-CMP__X_M24__EDGE_R_FLOAT
+       X41/10                                                    PT-CMP__X_M27_M29__EDGE_R_FLOAT
+       49                                                        PT-CMP__XI8__X_M0_M1__X_M1__EDGE_R_FLOAT
+       55                                                        PT-CMP__X_M32__EDGE_R_FLOAT
+       46                                                        PT-CMP__XI8__X_M0_M1__X_M0__EDGE_L_FLOAT
+       X43/10                                                    PT-CMP__X_M5_M7__EDGE_R_FLOAT
+       X43/9                                                     PT-CMP__X_M5_M7__EDGE_L_FLOAT
+       X42/10                                                    PT-CMP__X_M11_M13__EDGE_R_FLOAT
+       X45/10                                                    PT-CMP__X_M19_M21__EDGE_R_FLOAT
+       X45/9                                                     PT-CMP__X_M19_M21__EDGE_L_FLOAT
+       X44/10                                                    PT-CMP__X_M12_M14__EDGE_R_FLOAT
+       X36/12                                                    PT-CMP__XI9__X_M0_M1__X_M1__EDGE_L_FLOAT
+       X36/10                                                    PT-CMP__XI9__X_M0_M1__X_M1__EDGE_R_FLOAT
+       X35/10                                                    PT-CMP__XI0__X_M0_M1__X_M1__EDGE_L_FLOAT
+       X35/12                                                    PT-CMP__XI0__X_M0_M1__X_M1__EDGE_R_FLOAT
+       X28/10                                                    PT-CMP__XI7__X_M0_M1__X_M1__EDGE_L_FLOAT
+       X28/12                                                    PT-CMP__XI7__X_M0_M1__X_M1__EDGE_R_FLOAT
+       X29/10                                                    PT-CMP__XI6__X_M0_M1__X_M1__EDGE_L_FLOAT
+       X29/12                                                    PT-CMP__XI6__X_M0_M1__X_M1__EDGE_R_FLOAT
+       X30/10                                                    PT-CMP__XI5__X_M0_M1__X_M1__EDGE_L_FLOAT
+       X30/12                                                    PT-CMP__XI5__X_M0_M1__X_M1__EDGE_R_FLOAT
+       X31/10                                                    PT-CMP__XI4__X_M0_M1__X_M1__EDGE_L_FLOAT
+       X31/12                                                    PT-CMP__XI4__X_M0_M1__X_M1__EDGE_R_FLOAT
+       X32/10                                                    PT-CMP__XI3__X_M0_M1__X_M1__EDGE_L_FLOAT
+       X32/12                                                    PT-CMP__XI3__X_M0_M1__X_M1__EDGE_R_FLOAT
+       X33/10                                                    PT-CMP__XI2__X_M0_M1__X_M1__EDGE_L_FLOAT
+       X33/12                                                    PT-CMP__XI2__X_M0_M1__X_M1__EDGE_R_FLOAT
+       X34/10                                                    PT-CMP__XI1__X_M0_M1__X_M1__EDGE_L_FLOAT
+       X37/9                                                     PT-CMP__XI9__X_M0_M1__X_M0__EDGE_L_FLOAT
+       X37/8                                                     PT-CMP__XI9__X_M0_M1__X_M0__EDGE_R_FLOAT
+       X31/9                                                     PT-CMP__X_M31_M9__EDGE_L_FLOAT
+       X31/11                                                    PT-CMP__X_M31_M9__EDGE_R_FLOAT
+       X33/9                                                     PT-CMP__XI7__X_M0_M1__X_M0__EDGE_L_FLOAT
+       X33/11                                                    PT-CMP__XI7__X_M0_M1__X_M0__EDGE_R_FLOAT
+       X32/9                                                     PT-CMP__XI6__X_M0_M1__X_M0__EDGE_L_FLOAT
+       X32/11                                                    PT-CMP__XI6__X_M0_M1__X_M0__EDGE_R_FLOAT
+       X39/9                                                     PT-CMP__XI5__X_M0_M1__X_M0__EDGE_L_FLOAT
+
+
+
+**************************************************************************************************************
+                                         SUMMARY
+**************************************************************************************************************
+

@@ -1,0 +1,12 @@
+{
+  "case": "REF-BUF",
+  "condition": "RC",
+  "threads": 1,
+  "maximum_calls_total": 2,
+  "maximum_retries": 0,
+  "analysis": "STB 1Hz to100GHz50points/dec about closed-loop DC;probe existingVFB1;VFB2remainsclosed",
+  "no_circuit_device_model_loading_or_DC_bias_change": true,
+  "scope": "local loop around VFB1, not proof of global multiloop stability or calibrated PEX",
+  "returncode": 0,
+  "terminal_status": "complete"
+}

@@ -1,0 +1,461 @@
+{
+  "schema": "public_verification_scope",
+  "artifact_kind": "author_prepared_scope_index_not_native_tool_output",
+  "path_basis": "All report paths are relative to the Evidence directory that contains DRC, LVS and Simulation.",
+  "scope": "This selected-results archive contains seven layout identities: two historical ADAPT DRC examples and five separate supplementary implementations.",
+  "identity_join_rule": "Join reports by public_identity, not by design name. Same-design reports from different populations do not establish joint DRC/LVS/electrical qualification of one layout.",
+  "not_included": "The later fixed six-layout matched ADAPT/baseline study is not represented by these records.",
+  "DRC_scope": {
+    "rule_families": {
+      "Poly_Fin_width": 2,
+      "M1_M6_width_end_side_spacing": 18,
+      "V0_V5_cut_size": 6,
+      "V0_V5_X_Y_spacing": 12,
+      "via_metal_enclosure": 11
+    },
+    "total_rules": 49,
+    "commercial_engine": true,
+    "foundry_deck": false,
+    "limitations": "Declared research polygon checks, not complete foundry device/process, density, antenna or coloring signoff. Runtime PROJECTING/PARALLEL warnings are retained in the reports."
+  },
+  "records": [
+    {
+      "public_identity": "historical_ct_cmp",
+      "population": "historical_ADAPT_example",
+      "design": "CT-CMP",
+      "ALIGN": {
+        "evidence_belongs_to_this_identity": true,
+        "evidence_present": true,
+        "recorded_G": true,
+        "recorded_C": true,
+        "recorded_L": true,
+        "OPEN": 0,
+        "SHORT": 0,
+        "DRC": 0,
+        "unknown": 0,
+        "scope": "Recorded ALIGN mock-PDK selected-hierarchy checks and project qualification; not foundry signoff or device-level LVS.",
+        "project_receipt": "DRC/CT-CMP/ALIGN/quality_observation.json",
+        "native_logs": [
+          "DRC/CT-CMP/ALIGN/routing.stdout.log",
+          "DRC/CT-CMP/ALIGN/routing.stderr.log"
+        ],
+        "selected_hierarchy_error_files": [
+          "DRC/CT-CMP/ALIGN/CELL_V.errors",
+          "DRC/CT-CMP/ALIGN/CT-CMP.errors"
+        ],
+        "all_selected_error_files_empty": true
+      },
+      "Calibre_DRC": {
+        "engine": "Calibre",
+        "deck_type": "declared_49_rule_research_deck",
+        "rulechecks": 49,
+        "results": 0,
+        "foundry_signoff": false,
+        "summary": "DRC/CT-CMP/ALIGN/calibre_drc.summary",
+        "log": "DRC/CT-CMP/ALIGN/calibre_drc.log"
+      },
+      "LVS": {
+        "report_included": false,
+        "result": null,
+        "matched_MOS_groups": null,
+        "matched_nets": null,
+        "matched_ports": null,
+        "source_reference_type": null,
+        "W_L_scope": null,
+        "unexpanded_input_source": {
+          "result": null,
+          "report_included": false,
+          "scope": "No original-source LVS result for this historical identity is provided by this archive."
+        }
+      },
+      "identity_note": "The supplementary DRC/LVS reports under the same design name concern a different implementation. They must not be combined with this ALIGN result to claim joint qualification."
+    },
+    {
+      "public_identity": "historical_pt_cmp",
+      "population": "historical_ADAPT_example",
+      "design": "PT-CMP",
+      "ALIGN": {
+        "evidence_belongs_to_this_identity": true,
+        "evidence_present": true,
+        "recorded_G": true,
+        "recorded_C": true,
+        "recorded_L": true,
+        "OPEN": 0,
+        "SHORT": 0,
+        "DRC": 0,
+        "unknown": 0,
+        "scope": "Recorded ALIGN mock-PDK selected-hierarchy checks and project qualification; not foundry signoff or device-level LVS.",
+        "project_receipt": "DRC/PT-CMP/ALIGN/quality_observation.json",
+        "native_logs": [
+          "DRC/PT-CMP/ALIGN/routing.stdout.log",
+          "DRC/PT-CMP/ALIGN/routing.stderr.log"
+        ],
+        "selected_hierarchy_error_files": [
+          "DRC/PT-CMP/ALIGN/CELL_H.errors",
+          "DRC/PT-CMP/ALIGN/INVERTER.errors",
+          "DRC/PT-CMP/ALIGN/PT-CMP.errors"
+        ],
+        "all_selected_error_files_empty": true
+      },
+      "Calibre_DRC": {
+        "engine": "Calibre",
+        "deck_type": "declared_49_rule_research_deck",
+        "rulechecks": 49,
+        "results": 0,
+        "foundry_signoff": false,
+        "summary": "DRC/PT-CMP/ALIGN/calibre_drc.summary",
+        "log": "DRC/PT-CMP/ALIGN/calibre_drc.log"
+      },
+      "LVS": {
+        "report_included": false,
+        "result": null,
+        "matched_MOS_groups": null,
+        "matched_nets": null,
+        "matched_ports": null,
+        "source_reference_type": null,
+        "W_L_scope": null,
+        "unexpanded_input_source": {
+          "result": null,
+          "report_included": false,
+          "scope": "No original-source LVS result for this historical identity is provided by this archive."
+        }
+      },
+      "identity_note": "The supplementary DRC/LVS reports under the same design name concern a different implementation. They must not be combined with this ALIGN result to claim joint qualification."
+    },
+    {
+      "public_identity": "supplementary_clk_cmp",
+      "population": "supplementary_implementation",
+      "design": "CLK-CMP",
+      "ALIGN": {
+        "evidence_belongs_to_this_identity": false,
+        "evidence_present": false,
+        "scope": "No native ALIGN qualification report for this supplementary identity is included. A same-design historical ALIGN directory, when present, is a different identity.",
+        "frozen_L_status": "not_established",
+        "recorded_frozen_validator_legal": false,
+        "retained_Rvt_width_diagnostic_records": 3,
+        "diagnostic_scope": "Retained frozen-validator diagnostics; not the Calibre49 DRC result and not evidence of a foundry-rule violation.",
+        "Formal35_requalified": false
+      },
+      "Calibre_DRC": {
+        "engine": "Calibre",
+        "deck_type": "declared_49_rule_research_deck",
+        "rulechecks": 49,
+        "results": 0,
+        "foundry_signoff": false,
+        "summary": "DRC/CLK-CMP/Calibre/drc.summary",
+        "log": "DRC/CLK-CMP/Calibre/drc.log"
+      },
+      "LVS": {
+        "report_included": true,
+        "result": "CORRECT",
+        "report": "LVS/CLK-CMP/device_lvs.rep",
+        "log": "LVS/CLK-CMP/lvs.log",
+        "matched_MOS_groups": 162,
+        "matched_nets": 153,
+        "matched_ports": 7,
+        "initial_layout_MOS": 556,
+        "initial_reference_MOS": 166,
+        "source_functional_families": 28,
+        "reference_edge_device_groups": 138,
+        "source_reference_type": "independently_constructed_source_first_generator_effective_geometric_reference",
+        "source_reference_description": "Constructed from input, compiled topology, generator rules and PDK; includes explicit edge-device groups and implemented geometric parameters; not the unexpanded original input source.",
+        "named_ports_checked": true,
+        "parallel_MOS_reduction_enabled": true,
+        "W_L_scope": {
+          "L_tolerance": 0,
+          "W_tolerance": 0,
+          "reference_geometric_L_nm": [
+            14
+          ],
+          "reference_geometric_W_nm_min": 84.0,
+          "reference_geometric_W_nm_max": 44352.0,
+          "W_definition": "Planar channel-area/L probe width, including aggregate parallel width and edge groups; not calibrated FinFET electrical Weff.",
+          "input_source_L_nm": [
+            40.0,
+            120.0,
+            160.0,
+            200.0
+          ],
+          "scope": "Exact geometric L/W agreement with the declared generator reference after permitted comparison transformations; not electrical model calibration or equivalence to original long-channel parameters."
+        },
+        "property_resolution_search_limit": 200,
+        "warnings_retained": [
+          "Ambiguity points were found and resolved arbitrarily.",
+          "Unbalanced smashed mosfets were matched."
+        ],
+        "unexpanded_input_source": {
+          "result": "INCORRECT",
+          "report_included": false,
+          "scope": "The corresponding unexpanded input-source comparison remains INCORRECT in the retained original records. That failing report is not included in this selected-results archive; the CORRECT report compares a different, generator-expanded reference."
+        }
+      },
+      "identity_note": "Supplementary implementation, not a historical optimized output."
+    },
+    {
+      "public_identity": "supplementary_ct_cmp",
+      "population": "supplementary_implementation",
+      "design": "CT-CMP",
+      "ALIGN": {
+        "evidence_belongs_to_this_identity": false,
+        "evidence_present": false,
+        "scope": "No native ALIGN qualification report for this supplementary identity is included. A same-design historical ALIGN directory, when present, is a different identity.",
+        "frozen_L_status": "not_established",
+        "recorded_frozen_validator_legal": false,
+        "retained_Rvt_width_diagnostic_records": 7,
+        "diagnostic_scope": "Retained frozen-validator diagnostics; not the Calibre49 DRC result and not evidence of a foundry-rule violation.",
+        "Formal35_requalified": false
+      },
+      "Calibre_DRC": {
+        "engine": "Calibre",
+        "deck_type": "declared_49_rule_research_deck",
+        "rulechecks": 49,
+        "results": 0,
+        "foundry_signoff": false,
+        "summary": "DRC/CT-CMP/Calibre/drc.summary",
+        "log": "DRC/CT-CMP/Calibre/drc.log"
+      },
+      "LVS": {
+        "report_included": true,
+        "result": "CORRECT",
+        "report": "LVS/CT-CMP/device_lvs.rep",
+        "log": "LVS/CT-CMP/lvs.log",
+        "matched_MOS_groups": 62,
+        "matched_nets": 53,
+        "matched_ports": 7,
+        "initial_layout_MOS": 788,
+        "initial_reference_MOS": 62,
+        "source_functional_families": 26,
+        "reference_edge_device_groups": 36,
+        "source_reference_type": "independently_constructed_source_first_generator_effective_geometric_reference",
+        "source_reference_description": "Constructed from input, compiled topology, generator rules and PDK; includes explicit edge-device groups and implemented geometric parameters; not the unexpanded original input source.",
+        "named_ports_checked": true,
+        "parallel_MOS_reduction_enabled": true,
+        "W_L_scope": {
+          "L_tolerance": 0,
+          "W_tolerance": 0,
+          "reference_geometric_L_nm": [
+            14
+          ],
+          "reference_geometric_W_nm_min": 210.0,
+          "reference_geometric_W_nm_max": 33600.0,
+          "W_definition": "Planar channel-area/L probe width, including aggregate parallel width and edge groups; not calibrated FinFET electrical Weff.",
+          "input_source_L_nm": [
+            2000.0
+          ],
+          "scope": "Exact geometric L/W agreement with the declared generator reference after permitted comparison transformations; not electrical model calibration or equivalence to original long-channel parameters."
+        },
+        "property_resolution_search_limit": 32,
+        "warnings_retained": [
+          "Ambiguity points were found and resolved arbitrarily."
+        ],
+        "unexpanded_input_source": {
+          "result": "INCORRECT",
+          "report_included": false,
+          "scope": "The corresponding unexpanded input-source comparison remains INCORRECT in the retained original records. That failing report is not included in this selected-results archive; the CORRECT report compares a different, generator-expanded reference."
+        }
+      },
+      "identity_note": "Supplementary implementation, not the historical ADAPT instance in the ALIGN subdirectory; its separately evaluated electrical fixture uses VBN=0.25 V and VBP=0.55 V."
+    },
+    {
+      "public_identity": "supplementary_dc_switch",
+      "population": "supplementary_implementation",
+      "design": "DC-Switch",
+      "ALIGN": {
+        "evidence_belongs_to_this_identity": false,
+        "evidence_present": false,
+        "scope": "No native ALIGN qualification report for this supplementary identity is included. A same-design historical ALIGN directory, when present, is a different identity.",
+        "frozen_L_status": "not_established",
+        "recorded_frozen_validator_legal": false,
+        "retained_Rvt_width_diagnostic_records": 5,
+        "diagnostic_scope": "Retained frozen-validator diagnostics; not the Calibre49 DRC result and not evidence of a foundry-rule violation.",
+        "Formal35_requalified": false
+      },
+      "Calibre_DRC": {
+        "engine": "Calibre",
+        "deck_type": "declared_49_rule_research_deck",
+        "rulechecks": 49,
+        "results": 0,
+        "foundry_signoff": false,
+        "summary": "DRC/DC-Switch/Calibre/drc.summary",
+        "log": "DRC/DC-Switch/Calibre/drc.log"
+      },
+      "LVS": {
+        "report_included": true,
+        "result": "CORRECT",
+        "report": "LVS/DC-Switch/device_lvs.rep",
+        "log": "LVS/DC-Switch/lvs.log",
+        "matched_MOS_groups": 56,
+        "matched_nets": 53,
+        "matched_ports": 13,
+        "initial_layout_MOS": 128,
+        "initial_reference_MOS": 56,
+        "source_functional_families": 24,
+        "reference_edge_device_groups": 32,
+        "source_reference_type": "independently_constructed_source_first_generator_effective_geometric_reference",
+        "source_reference_description": "Constructed from input, compiled topology, generator rules and PDK; includes explicit edge-device groups and implemented geometric parameters; not the unexpanded original input source.",
+        "named_ports_checked": true,
+        "parallel_MOS_reduction_enabled": true,
+        "W_L_scope": {
+          "L_tolerance": 0,
+          "W_tolerance": 0,
+          "reference_geometric_L_nm": [
+            14
+          ],
+          "reference_geometric_W_nm_min": 84.0,
+          "reference_geometric_W_nm_max": 2520.0,
+          "W_definition": "Planar channel-area/L probe width, including aggregate parallel width and edge groups; not calibrated FinFET electrical Weff.",
+          "input_source_L_nm": [
+            150.0,
+            2000.0
+          ],
+          "scope": "Exact geometric L/W agreement with the declared generator reference after permitted comparison transformations; not electrical model calibration or equivalence to original long-channel parameters."
+        },
+        "property_resolution_search_limit": 32,
+        "warnings_retained": [
+          "Ambiguity points were found and resolved arbitrarily."
+        ],
+        "unexpanded_input_source": {
+          "result": "INCORRECT",
+          "report_included": false,
+          "scope": "The corresponding unexpanded input-source comparison remains INCORRECT in the retained original records. That failing report is not included in this selected-results archive; the CORRECT report compares a different, generator-expanded reference."
+        }
+      },
+      "identity_note": "Supplementary implementation, not a historical optimized output."
+    },
+    {
+      "public_identity": "supplementary_pt_cmp",
+      "population": "supplementary_implementation",
+      "design": "PT-CMP",
+      "ALIGN": {
+        "evidence_belongs_to_this_identity": false,
+        "evidence_present": false,
+        "scope": "No native ALIGN qualification report for this supplementary identity is included. A same-design historical ALIGN directory, when present, is a different identity.",
+        "frozen_L_status": "not_established",
+        "recorded_frozen_validator_legal": false,
+        "retained_Rvt_width_diagnostic_records": 3,
+        "diagnostic_scope": "Retained frozen-validator diagnostics; not the Calibre49 DRC result and not evidence of a foundry-rule violation.",
+        "Formal35_requalified": false
+      },
+      "Calibre_DRC": {
+        "engine": "Calibre",
+        "deck_type": "declared_49_rule_research_deck",
+        "rulechecks": 49,
+        "results": 0,
+        "foundry_signoff": false,
+        "summary": "DRC/PT-CMP/Calibre/drc.summary",
+        "log": "DRC/PT-CMP/Calibre/drc.log"
+      },
+      "LVS": {
+        "report_included": true,
+        "result": "CORRECT",
+        "report": "LVS/PT-CMP/device_lvs.rep",
+        "log": "LVS/PT-CMP/lvs.log",
+        "matched_MOS_groups": 141,
+        "matched_nets": 128,
+        "matched_ports": 11,
+        "initial_layout_MOS": 196,
+        "initial_reference_MOS": 141,
+        "source_functional_families": 53,
+        "reference_edge_device_groups": 88,
+        "source_reference_type": "independently_constructed_source_first_generator_effective_geometric_reference",
+        "source_reference_description": "Constructed from input, compiled topology, generator rules and PDK; includes explicit edge-device groups and implemented geometric parameters; not the unexpanded original input source.",
+        "named_ports_checked": true,
+        "parallel_MOS_reduction_enabled": true,
+        "W_L_scope": {
+          "L_tolerance": 0,
+          "W_tolerance": 0,
+          "reference_geometric_L_nm": [
+            14
+          ],
+          "reference_geometric_W_nm_min": 42.0,
+          "reference_geometric_W_nm_max": 2016.0,
+          "W_definition": "Planar channel-area/L probe width, including aggregate parallel width and edge groups; not calibrated FinFET electrical Weff.",
+          "input_source_L_nm": [
+            14.0
+          ],
+          "scope": "Exact geometric L/W agreement with the declared generator reference after permitted comparison transformations; not electrical model calibration or equivalence to original long-channel parameters."
+        },
+        "property_resolution_search_limit": 200,
+        "warnings_retained": [
+          "Ambiguity points were found and resolved arbitrarily."
+        ],
+        "unexpanded_input_source": {
+          "result": "INCORRECT",
+          "report_included": false,
+          "scope": "The corresponding unexpanded input-source comparison remains INCORRECT in the retained original records. That failing report is not included in this selected-results archive; the CORRECT report compares a different, generator-expanded reference."
+        }
+      },
+      "identity_note": "Supplementary implementation with changed dimensions of the two XI8 transistors; not the historical ADAPT instance in the ALIGN subdirectory and not an unchanged-sizing replay."
+    },
+    {
+      "public_identity": "supplementary_ref_buf",
+      "population": "supplementary_implementation",
+      "design": "REF-BUF",
+      "ALIGN": {
+        "evidence_belongs_to_this_identity": false,
+        "evidence_present": false,
+        "scope": "No native ALIGN qualification report for this supplementary identity is included. A same-design historical ALIGN directory, when present, is a different identity.",
+        "frozen_L_status": "not_established",
+        "recorded_frozen_validator_legal": false,
+        "retained_Rvt_width_diagnostic_records": 5,
+        "diagnostic_scope": "Retained frozen-validator diagnostics; not the Calibre49 DRC result and not evidence of a foundry-rule violation.",
+        "Formal35_requalified": false
+      },
+      "Calibre_DRC": {
+        "engine": "Calibre",
+        "deck_type": "declared_49_rule_research_deck",
+        "rulechecks": 49,
+        "results": 0,
+        "foundry_signoff": false,
+        "summary": "DRC/REF-BUF/Calibre/drc.summary",
+        "log": "DRC/REF-BUF/Calibre/drc.log"
+      },
+      "LVS": {
+        "report_included": true,
+        "result": "CORRECT",
+        "report": "LVS/REF-BUF/device_lvs.rep",
+        "log": "LVS/REF-BUF/lvs.log",
+        "matched_MOS_groups": 108,
+        "matched_nets": 93,
+        "matched_ports": 9,
+        "initial_layout_MOS": 730,
+        "initial_reference_MOS": 113,
+        "source_functional_families": 39,
+        "reference_edge_device_groups": 74,
+        "source_reference_type": "independently_constructed_source_first_generator_effective_geometric_reference",
+        "source_reference_description": "Constructed from input, compiled topology, generator rules and PDK; includes explicit edge-device groups and implemented geometric parameters; not the unexpanded original input source.",
+        "named_ports_checked": true,
+        "parallel_MOS_reduction_enabled": true,
+        "W_L_scope": {
+          "L_tolerance": 0,
+          "W_tolerance": 0,
+          "reference_geometric_L_nm": [
+            14
+          ],
+          "reference_geometric_W_nm_min": 63.0,
+          "reference_geometric_W_nm_max": 28224.0,
+          "W_definition": "Planar channel-area/L probe width, including aggregate parallel width and edge groups; not calibrated FinFET electrical Weff.",
+          "input_source_L_nm": [
+            40.0,
+            80.0,
+            200.0,
+            300.0,
+            5000.0
+          ],
+          "scope": "Exact geometric L/W agreement with the declared generator reference after permitted comparison transformations; not electrical model calibration or equivalence to original long-channel parameters."
+        },
+        "property_resolution_search_limit": 32,
+        "warnings_retained": [
+          "Ambiguity points were found and resolved arbitrarily.",
+          "Unbalanced smashed mosfets were matched."
+        ],
+        "unexpanded_input_source": {
+          "result": "INCORRECT",
+          "report_included": false,
+          "scope": "The corresponding unexpanded input-source comparison remains INCORRECT in the retained original records. That failing report is not included in this selected-results archive; the CORRECT report compares a different, generator-expanded reference."
+        }
+      },
+      "identity_note": "Supplementary implementation; its separately evaluated electrical fixture uses a 20 uA bias. The electrical fixture is not certified by DRC or LVS."
+    }
+  ]
+}

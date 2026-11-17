@@ -1,0 +1,4 @@
+case,condition,check_index,scope,low_V,high_V,pass
+CT-CMP,unit_collapse,1,fixed_functional_check,0.013942776466689177,0.7147675394198395,True
+CT-CMP,RC,1,fixed_functional_check,0.13685653664038364,0.6430968408816212,True
+CT-CMP,RCC,1,fixed_functional_check,0.13685653664038366,0.6430968408816208,True

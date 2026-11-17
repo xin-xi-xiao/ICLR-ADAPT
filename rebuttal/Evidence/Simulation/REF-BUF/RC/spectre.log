@@ -1,0 +1,175 @@
+
+Cadence (R) Virtuoso (R) Spectre (R) Circuit Simulator
+Copyright (C) 1989-2015 Cadence Design Systems, Inc. All rights reserved worldwide. Cadence, Virtuoso and Spectre are registered trademarks of Cadence Design Systems, Inc. All others are the property of their respective holders.
+
+Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA Security, Inc.
+
+
+
+
+
+Warning from spectre in `REF-BUF':`XDUT', during hierarchy flattening.
+    WARNING (SFE-32): "14nfet.pm" 4: Duplicate specification for parameter `bulkmod' (using last value specified).
+    WARNING (SFE-32): "14pfet.pm" 4: Duplicate specification for parameter `bulkmod' (using last value specified).
+
+
+
+Notice from spectre in `REF-BUF':`XDUT', during hierarchy flattening.
+    XDUT.CGROUND_16857: Terminals are connected together (to node `0').
+    XDUT.CGROUND_16858: Terminals are connected together (to node `0').
+
+
+
+Global user options:
+               temp = 27
+               tnom = 27
+             reltol = 1e-05
+            vabstol = 1e-08
+            iabstol = 1e-14
+               save = selected
+
+Scoped user options:
+
+Circuit inventory:
+              nodes 10892
+            bsimcmg 303   
+          capacitor 17079 
+            isource 1     
+           resistor 13558 
+            vsource 4     
+
+Analysis and control statement inventory:
+                 dc 2     
+               tran 1     
+
+Output statements:
+             .probe 0     
+           .measure 0     
+               save 1     
+
+
+~~~~~~~~~~~~~~~~~~~~~~
+Pre-Simulation Summary
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+
+****************
+DC Analysis `op'
+****************
+
+Important parameter values:
+    reltol = 10e-06
+    abstol(V) = 10 nV
+    abstol(I) = 10 fA
+    temp = 27 C
+    tnom = 27 C
+    tempeffects = all
+    gmindc = 1 pS
+Matrix is singular (detected at `XDUT.MSOURCE__I12__M1__U3:int_si').
+Trying `homotopy = gmin'.
+
+Notice from spectre during DC analysis `op'.
+    Bad pivoting is found during DC analysis. Option dc_pivot_check=yes is recommended for possible improvement of convergence.
+
+Convergence achieved in 33 iterations.
+
+
+*******************************************************
+DC Analysis `sweep': vin = (626.923e-03 -> 726.923e-03)
+*******************************************************
+
+Important parameter values:
+    reltol = 10e-06
+    abstol(V) = 10 nV
+    abstol(I) = 10 fA
+    temp = 27 C
+    tnom = 27 C
+    tempeffects = all
+    gmindc = 1 pS
+Trying `homotopy = gmin'.
+
+Notice from spectre at vin = 626.923e-03 during DC analysis `sweep'.
+    Bad pivoting is found during DC analysis. Option dc_pivot_check=yes is recommended for possible improvement of convergence.
+Notice from spectre at vin = 631.923e-03 during DC analysis `sweep'.
+    Bad pivoting is found during DC analysis. Option dc_pivot_check=yes is recommended for possible improvement of convergence.
+
+....
+
+Notice from spectre at vin = 636.923e-03 during DC analysis `sweep'.
+    Bad pivoting is found during DC analysis. Option dc_pivot_check=yes is recommended for possible improvement of convergence.
+
+......9
+
+Notice from spectre at vin = 641.923e-03 during DC analysis `sweep'.
+    Bad pivoting is found during DC analysis. Option dc_pivot_check=yes is recommended for possible improvement of convergence.
+
+......9....
+
+Notice from spectre at vin = 646.923e-03 during DC analysis `sweep'.
+    Bad pivoting is found during DC analysis. Option dc_pivot_check=yes is recommended for possible improvement of convergence.
+        Further occurrences of this notice will be suppressed.
+
+......9......8......7......6......5......4......3......2......1......0
+
+
+Notice from spectre.
+    16 notices suppressed.
+
+
+*************************************************
+Transient Analysis `tran': time = (0 s -> 600 ns)
+*************************************************
+Matrix is singular (detected at `XDUT.MSOURCE__M62:int_di').
+Trying `homotopy = gmin' for initial conditions.
+
+Notice from spectre during IC analysis, during transient analysis `tran'.
+    Bad pivoting is found during DC analysis. Option dc_pivot_check=yes is recommended for possible improvement of convergence.
+
+
+Important parameter values:
+    start = 0 s
+    outputstart = 0 s
+    stop = 600 ns
+    step = 600 ps
+    maxstep = 10 ps
+    ic = all
+    useprevic = no
+    skipdc = no
+    reltol = 10e-06
+    abstol(V) = 10 nV
+    abstol(I) = 10 fA
+    temp = 27 C
+    tnom = 27 C
+    tempeffects = all
+    errpreset = moderate
+    method = traponly
+    lteratio = 3.5
+    relref = sigglobal
+    cmin = 0 F
+    gmin = 1 pS
+
+
+Output and IC/nodeset summary:
+                 save   1       (current)
+                 save   6       (voltage)
+
+......9......8......7......6......5......4......3......2......1......0
+Number of accepted tran steps =             60008
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Post-Transient Simulation Summary
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   -   Parasitics slow down simulation. To speed up, consider
+          add +postlayout on command line
+   -   To further speed up simulation, consider
+          add ++aps on command line
+   -   Non-default settings that could significantly slow down simulation
+          maxstep = 10 ps, default 12 ns
+          reltol = 10e-06, default 1e-03
+          abstol(V) = 10 nV, default 1 uV
+          abstol(I) = 10 fA, default 1 pA
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+spectre completes with 0 errors, 2 warnings, and 10 notices.

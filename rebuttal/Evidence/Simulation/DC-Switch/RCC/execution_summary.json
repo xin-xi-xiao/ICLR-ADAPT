@@ -1,0 +1,9 @@
+{
+  "case": "DC-Switch",
+  "condition": "RCC",
+  "unit_model_count": 48,
+  "observer_only_change": null,
+  "model_scope": "Unit-terminal distributed interconnect research; devicecompactmodelnotcalibratedtophysicalmockPDK.",
+  "returncode": 0,
+  "terminal_status": "complete"
+}

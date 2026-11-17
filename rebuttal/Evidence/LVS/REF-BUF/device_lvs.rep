@@ -1,0 +1,352 @@
+
+
+
+                  ##################################################
+                  ##                                              ##
+                  ##         C A L I B R E    S Y S T E M         ##
+                  ##                                              ##
+                  ##             L V S   R E P O R T              ##
+                  ##                                              ##
+                  ##################################################
+
+
+
+REPORT FILE NAME:         device_lvs.rep
+LAYOUT NAME:              extracted.sp ('REF-BUF')
+SOURCE NAME:              source.sp ('REF-BUF')
+RULE FILE:                lvs.svrf
+
+
+
+                               OVERALL COMPARISON RESULTS
+
+
+
+                         #       ###################       _   _   
+                        #        #                 #       *   *   
+                   #   #         #     CORRECT     #         |     
+                    # #          #                 #       \___/  
+                     #           ###################               
+
+
+  Warning:  Unbalanced smashed mosfets were matched.
+  Warning:  Ambiguity points were found and resolved arbitrarily.
+
+
+**************************************************************************************************************
+                                      CELL  SUMMARY
+**************************************************************************************************************
+
+  Result         Layout                        Source
+  -----------    -----------                   --------------
+  CORRECT        REF-BUF       REF-BUF
+
+
+
+**************************************************************************************************************
+                                      LVS PARAMETERS
+**************************************************************************************************************
+
+
+o LVS Setup:
+
+   // LVS COMPONENT TYPE PROPERTY
+   // LVS COMPONENT SUBTYPE PROPERTY
+   // LVS PIN NAME PROPERTY
+   LVS POWER NAME                         "VDD" "VPWR"
+   LVS GROUND NAME                        "VSS" "GND" "VGND"
+   LVS CELL SUPPLY                        NO
+   LVS RECOGNIZE GATES                    NONE
+   LVS IGNORE PORTS                       NO
+   LVS CHECK PORT NAMES                   YES
+   LVS IGNORE TRIVIAL NAMED PORTS         NO
+   LVS BUILTIN DEVICE PIN SWAP            YES
+   LVS ALL CAPACITOR PINS SWAPPABLE       NO
+   LVS DISCARD PINS BY DEVICE             NO
+   LVS SOFT SUBSTRATE PINS                NO
+   LVS INJECT LOGIC                       NO
+   LVS EXPAND UNBALANCED CELLS            YES
+   LVS FLATTEN INSIDE CELL                NO
+   LVS EXPAND SEED PROMOTIONS             NO
+   LVS PRESERVE PARAMETERIZED CELLS       NO
+   LVS GLOBALS ARE PORTS                  YES
+   LVS REVERSE WL                         NO
+   LVS SPICE PREFER PINS                  NO
+   LVS SPICE SLASH IS SPACE               YES
+   LVS SPICE ALLOW FLOATING PINS          YES
+   // LVS SPICE ALLOW INLINE PARAMETERS     
+   LVS SPICE ALLOW UNQUOTED STRINGS       NO
+   LVS SPICE CONDITIONAL LDD              NO
+   LVS SPICE CULL PRIMITIVE SUBCIRCUITS   NO
+   LVS SPICE IMPLIED MOS AREA             NO
+   // LVS SPICE MULTIPLIER NAME
+   LVS SPICE OVERRIDE GLOBALS             NO
+   LVS SPICE REDEFINE PARAM               NO
+   LVS SPICE REPLICATE DEVICES            NO
+   LVS SPICE SCALE X PARAMETERS           NO
+   LVS SPICE STRICT WL                    NO
+   // LVS SPICE OPTION
+   LVS STRICT SUBTYPES                    NO
+   LVS EXACT SUBTYPES                     NO
+   LAYOUT CASE                            NO
+   SOURCE CASE                            NO
+   LVS COMPARE CASE                       NO
+   LVS DOWNCASE DEVICE                    NO
+   LVS REPORT MAXIMUM                     50
+   LVS PROPERTY RESOLUTION MAXIMUM        32
+   // LVS SIGNATURE MAXIMUM
+   // LVS FILTER UNUSED OPTION
+   // LVS REPORT OPTION
+   LVS REPORT UNITS                       YES
+   // LVS NON USER NAME PORT
+   // LVS NON USER NAME NET
+   // LVS NON USER NAME INSTANCE
+   // LVS IGNORE DEVICE PIN
+
+   // Reduction
+
+   LVS REDUCE SERIES MOS                  NO
+   LVS REDUCE PARALLEL MOS                YES
+   LVS REDUCE SEMI SERIES MOS             NO
+   LVS REDUCE SPLIT GATES                 YES
+   LVS REDUCE PARALLEL BIPOLAR            YES
+   LVS REDUCE SERIES CAPACITORS           YES
+   LVS REDUCE PARALLEL CAPACITORS         YES
+   LVS REDUCE SERIES RESISTORS            YES
+   LVS REDUCE PARALLEL RESISTORS          YES
+   LVS REDUCE PARALLEL DIODES             YES
+   LVS REDUCTION PRIORITY                 PARALLEL
+   
+   LVS SHORT EQUIVALENT NODES             NO
+
+   // Trace Property
+
+   TRACE PROPERTY  mn(n)  l l 0
+   TRACE PROPERTY  mp(p)  l l 0
+   TRACE PROPERTY  mn(n)  w w 0
+   TRACE PROPERTY  mp(p)  w w 0
+
+
+
+                   CELL COMPARISON RESULTS ( TOP LEVEL )
+
+
+
+                         #       ###################       _   _   
+                        #        #                 #       *   *   
+                   #   #         #     CORRECT     #         |     
+                    # #          #                 #       \___/  
+                     #           ###################               
+
+
+  Warning:  Unbalanced smashed mosfets were matched.
+  Warning:  Ambiguity points were found and resolved arbitrarily.
+
+LAYOUT CELL NAME:         REF-BUF
+SOURCE CELL NAME:         REF-BUF
+
+--------------------------------------------------------------------------------------------------------------
+
+INITIAL NUMBERS OF OBJECTS
+--------------------------
+
+                Layout    Source         Component Type
+                ------    ------         --------------
+ Ports:              9         9
+
+ Nets:              93        93
+
+ Instances:        234        52    *    MN (4 pins)
+                   496        61    *    MP (4 pins)
+                ------    ------
+ Total Inst:       730       113
+
+
+NUMBERS OF OBJECTS AFTER TRANSFORMATION
+---------------------------------------
+
+                Layout    Source         Component Type
+                ------    ------         --------------
+ Ports:              9         9
+
+ Nets:              93        93
+
+ Instances:         51        51         MN (4 pins)
+                    57        57         MP (4 pins)
+                ------    ------
+ Total Inst:       108       108
+
+
+       * = Number of objects in layout different from number in source.
+
+
+
+**************************************************************************************************************
+                               INFORMATION AND WARNINGS
+**************************************************************************************************************
+
+
+                  Matched    Matched    Unmatched    Unmatched    Component
+                   Layout     Source       Layout       Source    Type
+                  -------    -------    ---------    ---------    ---------
+   Ports:               9          9            0            0
+
+   Nets:               93         93            0            0
+
+   Instances:          51         51            0            0    MN(N)
+                       57         57            0            0    MP(P)
+                  -------    -------    ---------    ---------
+   Total Inst:        108        108            0            0
+
+
+o Statistics:
+
+   684 layout mos transistors were reduced to 62.
+     622 mos transistors were deleted by parallel reduction.
+   8 source mos transistors were reduced to 3.
+     5 mos transistors were deleted by parallel reduction.
+
+   49 nets were matched arbitrarily.
+
+
+o Initial Correspondence Points:
+
+   Ports:        VDD GND VBIASP VREF VBIAS VFB_2 VBIASP2 VREF_IN VFB_IN
+
+
+o Ambiguity Resolution Points:
+
+      (Each one of the following objects belongs to a group of indistinguishable objects.
+       The listed objects were matched arbitrarily by the Ambiguity Resolution feature of LVS.
+       Arbitrary matching may be prevented by assigning names to these objects or to adjacent nets).
+
+       Layout                                                    Source
+       ------                                                    ------
+
+                                     Nets
+                                     ----
+
+       90                                                        REF-BUF__X_M99__EDGE_R_FLOAT
+       74                                                        REF-BUF__X_M77__EDGE_R_FLOAT
+       26                                                        REF-BUF__X_M112__EDGE_L_FLOAT
+       X440/46                                                   REF-BUF__I12__X_M1_M4__EDGE_L_FLOAT
+       X440/16                                                   REF-BUF__I12__X_M8__EDGE_L_FLOAT
+       79                                                        REF-BUF__X_M97__EDGE_L_FLOAT
+       161                                                       REF-BUF__X_M62__EDGE_L_FLOAT
+       122                                                       REF-BUF__X_M103__EDGE_L_FLOAT
+       120                                                       REF-BUF__X_M17__EDGE_L_FLOAT
+       64                                                        REF-BUF__X_M19__EDGE_L_FLOAT
+       X440/31                                                   REF-BUF__I12__X_M62__EDGE_R_FLOAT
+       95                                                        REF-BUF__X_M117__EDGE_L_FLOAT
+       30                                                        REF-BUF__X_M108__EDGE_L_FLOAT
+       151                                                       REF-BUF__X_M16__EDGE_L_FLOAT
+       142                                                       REF-BUF__X_M110__EDGE_L_FLOAT
+       56                                                        REF-BUF__X_M9__EDGE_R_FLOAT
+       75                                                        REF-BUF__X_M9__EDGE_L_FLOAT
+       121                                                       REF-BUF__X_M114__EDGE_R_FLOAT
+       44                                                        REF-BUF__X_M0__EDGE_R_FLOAT
+       47                                                        REF-BUF__X_M0__EDGE_L_FLOAT
+       138                                                       REF-BUF__X_M113__EDGE_R_FLOAT
+       41                                                        REF-BUF__X_M64__EDGE_R_FLOAT
+       55                                                        REF-BUF__X_M64__EDGE_L_FLOAT
+       119                                                       REF-BUF__X_M102__EDGE_R_FLOAT
+       X440/35                                                   REF-BUF__I12__X_M7__EDGE_R_FLOAT
+       X440/15                                                   REF-BUF__I12__X_M7__EDGE_L_FLOAT
+       X440/30                                                   REF-BUF__I12__X_M9__EDGE_R_FLOAT
+       25                                                        REF-BUF__X_M7__EDGE_R_FLOAT
+       28                                                        REF-BUF__X_M7__EDGE_L_FLOAT
+       X441/5                                                    REF-BUF__X_M100__EDGE_L_FLOAT
+       134                                                       REF-BUF__I12__X_M2__EDGE_R_FLOAT
+       X440/38                                                   REF-BUF__X_M111__EDGE_R_FLOAT
+       110                                                       REF-BUF__I12__X_M2__EDGE_L_FLOAT
+       157                                                       REF-BUF__X_M18__EDGE_L_FLOAT
+       164                                                       REF-BUF__X_M18__EDGE_R_FLOAT
+       150                                                       REF-BUF__X_M115__EDGE_L_FLOAT
+       X438/5                                                    REF-BUF__X_M118__EDGE_R_FLOAT
+       X439/6                                                    REF-BUF__X_M118__EDGE_L_FLOAT
+       X438/6                                                    REF-BUF__X_M105__EDGE_R_FLOAT
+       45                                                        REF-BUF__X_M66__EDGE_R_FLOAT
+       58                                                        REF-BUF__X_M66__EDGE_L_FLOAT
+       94                                                        REF-BUF__X_M104__EDGE_R_FLOAT
+       97                                                        REF-BUF__X_M104__EDGE_L_FLOAT
+       X442/6                                                    REF-BUF__X_M98__EDGE_R_FLOAT
+       X440/42                                                   REF-BUF__I12__X_M0_M5__EDGE_L_FLOAT
+       99                                                        REF-BUF__I12__X_M0_M5__EDGE_R_FLOAT
+       X440/43                                                   REF-BUF__X_M107__EDGE_L_FLOAT
+       88                                                        REF-BUF__X_M107__EDGE_R_FLOAT
+       50                                                        REF-BUF__X_M116__EDGE_R_FLOAT
+
+
+
+o Matched Mosfets Which Have Been Unequally Reduced:
+
+       M347(6.593,12.747)                                        MREFERENCE_BUFFER_CORE__X_M110__M1
+       M400(7.393,14.007)                                        MREFERENCE_BUFFER_CORE__X_M115__M1
+       M393(7.313,14.007)                                        ** missing smashed mosfet **
+       M372(6.993,12.747)                                        ** missing smashed mosfet **
+       M363(6.913,12.747)                                        ** missing smashed mosfet **
+       M362(6.833,12.747)                                        ** missing smashed mosfet **
+       M359(6.753,12.747)                                        ** missing smashed mosfet **
+       M353(6.673,12.747)                                        ** missing smashed mosfet **
+
+       M98(0.273,0.357)                                          MREFERENCE_BUFFER_CORE__I12__X_M2__M1
+       X440/M193(4.833,21.525)                                   MREFERENCE_BUFFER_CORE__X_M111__M1
+       X440/M192(4.833,22.701)                                   MREFERENCE_BUFFER_CORE__X_M108__M1
+       X440/M191(4.753,21.525)                                   MREFERENCE_BUFFER_CORE__X_M107__M1
+       X440/M190(4.753,22.701)                                   ** missing smashed mosfet **
+       X440/M189(4.673,21.525)                                   ** missing smashed mosfet **
+       X440/M188(4.673,22.701)                                   ** missing smashed mosfet **
+       X440/M187(4.593,21.525)                                   ** missing smashed mosfet **
+       X440/M186(4.593,22.701)                                   ** missing smashed mosfet **
+       X440/M185(4.513,21.525)                                   ** missing smashed mosfet **
+       X440/M184(4.513,22.701)                                   ** missing smashed mosfet **
+       X440/M183(4.433,21.525)                                   ** missing smashed mosfet **
+       X440/M182(4.433,22.701)                                   ** missing smashed mosfet **
+       X440/M181(4.353,21.525)                                   ** missing smashed mosfet **
+       X440/M180(4.353,22.701)                                   ** missing smashed mosfet **
+       X440/M179(4.273,21.525)                                   ** missing smashed mosfet **
+       X440/M178(4.273,22.701)                                   ** missing smashed mosfet **
+       X440/M177(4.193,21.525)                                   ** missing smashed mosfet **
+       X440/M176(4.193,22.701)                                   ** missing smashed mosfet **
+       X440/M175(4.113,21.525)                                   ** missing smashed mosfet **
+       X440/M174(4.113,22.701)                                   ** missing smashed mosfet **
+       X440/M173(4.033,21.525)                                   ** missing smashed mosfet **
+       X440/M172(4.033,22.701)                                   ** missing smashed mosfet **
+       X440/M171(3.953,21.525)                                   ** missing smashed mosfet **
+       X440/M170(3.953,22.701)                                   ** missing smashed mosfet **
+       X440/M169(3.873,21.525)                                   ** missing smashed mosfet **
+       X440/M168(3.873,22.701)                                   ** missing smashed mosfet **
+       X440/M167(3.793,21.525)                                   ** missing smashed mosfet **
+       X440/M166(3.793,22.701)                                   ** missing smashed mosfet **
+       X440/M164(3.713,21.525)                                   ** missing smashed mosfet **
+       X440/M163(3.713,22.701)                                   ** missing smashed mosfet **
+       X440/M161(3.633,21.525)                                   ** missing smashed mosfet **
+       X440/M160(3.633,22.701)                                   ** missing smashed mosfet **
+       X440/M158(3.553,21.525)                                   ** missing smashed mosfet **
+       X440/M157(3.553,22.701)                                   ** missing smashed mosfet **
+       X440/M155(3.473,21.525)                                   ** missing smashed mosfet **
+       X440/M154(3.473,22.701)                                   ** missing smashed mosfet **
+       X440/M152(3.393,21.525)                                   ** missing smashed mosfet **
+       X440/M151(3.393,22.701)                                   ** missing smashed mosfet **
+       X440/M149(3.313,21.525)                                   ** missing smashed mosfet **
+       X440/M148(3.313,22.701)                                   ** missing smashed mosfet **
+       X440/M146(3.233,21.525)                                   ** missing smashed mosfet **
+       X440/M145(3.233,22.701)                                   ** missing smashed mosfet **
+       X440/M143(3.153,21.525)                                   ** missing smashed mosfet **
+       X440/M142(3.153,22.701)                                   ** missing smashed mosfet **
+       X440/M140(3.073,21.525)                                   ** missing smashed mosfet **
+       X440/M139(3.073,22.701)                                   ** missing smashed mosfet **
+       X440/M137(2.993,21.525)                                   ** missing smashed mosfet **
+       X440/M136(2.993,22.701)                                   ** missing smashed mosfet **
+       X440/M135(2.913,21.525)                                   ** missing smashed mosfet **
+       X440/M134(2.913,22.701)                                   ** missing smashed mosfet **
+       X440/M133(2.833,21.525)                                   ** missing smashed mosfet **
+       X440/M132(2.833,22.701)                                   ** missing smashed mosfet **
+       X440/M131(2.753,21.525)                                   ** missing smashed mosfet **
+
+
+
+**************************************************************************************************************
+                                         SUMMARY
+**************************************************************************************************************
+

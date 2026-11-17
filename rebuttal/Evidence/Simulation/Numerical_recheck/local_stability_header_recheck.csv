@@ -1,0 +1,9 @@
+condition,metric,recorded_value,native_header_value,consistent
+unit_collapse,gainMargin,9.625165,9.625165,True
+unit_collapse,gainMarginFrequency,1603338000.0,1603338000.0,True
+unit_collapse,phaseMargin,61.79341,61.79341,True
+unit_collapse,phaseMarginFrequency,757457200.0,757457200.0,True
+RC,gainMargin,11.90351,11.90351,True
+RC,gainMarginFrequency,810096800.0,810096800.0,True
+RC,phaseMargin,53.96031,53.96031,True
+RC,phaseMarginFrequency,374603000.0,374603000.0,True

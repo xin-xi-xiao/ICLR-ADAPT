@@ -1,0 +1,4 @@
+case,condition,check_index,scope,low_V,high_V,pass,interpretation
+REF-BUF,RC,1,positive_response_only_not_precision_spec,0.666746946047428,0.6814987064064633,True,"positive closed-loop response,notunitygain/specpass"
+REF-BUF,RCC,1,positive_response_only_not_precision_spec,0.6667469460476309,0.6814987064066479,True,"positive closed-loop response,notunitygain/specpass"
+REF-BUF,unit_collapse,1,positive_response_only_not_precision_spec,0.6781935002104328,0.693139044745797,True,"positive closed-loop response,notunitygain/specpass"

@@ -1,0 +1,16 @@
+case,condition,transient_samples,last_time_ns,expected_end_ns,finite_and_full_duration,receipt_returncode,recorded_functional_probes_pass,recorded_functional_probes_total,scope
+CLK-CMP,unit_collapse,61172,59.99999999999999,59.99999999999999,True,0,6,6,fixed_selected_probes_not_all_specification
+CLK-CMP,RC,60555,59.99999999999999,59.99999999999999,True,0,6,6,fixed_selected_probes_not_all_specification
+CLK-CMP,RCC,60517,59.99999999999999,59.99999999999999,True,0,6,6,fixed_selected_probes_not_all_specification
+CT-CMP,unit_collapse,60095,59.99999999999999,59.99999999999999,True,0,1,1,fixed_selected_probes_not_all_specification
+CT-CMP,RC,60037,59.99999999999999,59.99999999999999,True,0,1,1,fixed_selected_probes_not_all_specification
+CT-CMP,RCC,60037,59.99999999999999,59.99999999999999,True,0,1,1,fixed_selected_probes_not_all_specification
+DC-Switch,unit_collapse,60308,59.99999999999999,59.99999999999999,True,0,20,20,fixed_selected_probes_not_all_specification
+DC-Switch,RC,60553,59.99999999999999,59.99999999999999,True,0,20,20,fixed_selected_probes_not_all_specification
+DC-Switch,RCC,60537,59.99999999999999,59.99999999999999,True,0,20,20,fixed_selected_probes_not_all_specification
+PT-CMP,unit_collapse,41119,80.0,80.0,True,0,8,8,fixed_selected_probes_not_all_specification
+PT-CMP,RC,40957,80.0,80.0,True,0,8,8,fixed_selected_probes_not_all_specification
+PT-CMP,RCC,40916,80.0,80.0,True,0,8,8,fixed_selected_probes_not_all_specification
+REF-BUF,unit_collapse,60009,600.0,600.0,True,0,1,1,positive_response_only_not_precision_spec
+REF-BUF,RC,60009,600.0,600.0,True,0,1,1,positive_response_only_not_precision_spec
+REF-BUF,RCC,60009,600.0,600.0,True,0,1,1,positive_response_only_not_precision_spec

@@ -1,0 +1,22 @@
+{
+  "case": "CT-CMP",
+  "condition": "unit_collapse",
+  "unit_model_count": 348,
+  "observer_only_change": null,
+  "model_scope": "Unit-terminal distributed interconnect research; devicecompactmodelnotcalibratedtophysicalmockPDK.",
+  "bias_voltages_before": {
+    "VBN": 0.3,
+    "VBP": 0.5
+  },
+  "bias_voltages_after": {
+    "VBN": 0.25,
+    "VBP": 0.55
+  },
+  "reason": "Last bounded bias candidate after DC rail-drop observation and measured .28/.52 high-level improvement5.982mV; remaining5.32mV shortfall. 30mV furtherbiasstep provides approximateheadroommargin.",
+  "selection_status": "Adaptive after two measured operating points, not preregistered initialexperiment; candidate and stoppingrule frozenbefore itsresults.",
+  "stop_rule": "No more biaspoints afterthis. AddsamebiasRCC once only ifRC passesoriginalfixed low<.16/high>.64; sourceunit independentlyreport.",
+  "source_model_geometry_unchanged": true,
+  "stimulus_except_external_bias_unchanged": true,
+  "returncode": 0,
+  "terminal_status": "complete"
+}

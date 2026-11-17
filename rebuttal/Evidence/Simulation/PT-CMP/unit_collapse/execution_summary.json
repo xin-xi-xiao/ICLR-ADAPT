@@ -1,0 +1,15 @@
+{
+  "case": "PT-CMP",
+  "condition": "unit_collapse",
+  "unit_model_count": 54,
+  "observer_only_change": {
+    "kind": "observer_only",
+    "before": "saveOptions options save=allpub",
+    "after": "saveOptions options save=selected",
+    "purpose": "Avoid saving thousands of passive internalnodes; all explicit saves,analysis,timesteps,stimuliandmodelsunchanged.",
+    "full_bench_byte_identical": false
+  },
+  "model_scope": "Unit-terminal distributed interconnect research; devicecompactmodelnotcalibratedtophysicalmockPDK.",
+  "returncode": 0,
+  "terminal_status": "complete"
+}

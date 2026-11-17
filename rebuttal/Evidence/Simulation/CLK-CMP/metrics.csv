@@ -1,0 +1,10 @@
+case,condition,metric,value
+CLK-CMP,unit_collapse,VSUP_mean_current_mA,0.34000377931359876
+CLK-CMP,unit_collapse,VSUP_mean_power_mW,0.272003023450879
+CLK-CMP,unit_collapse,decision_mean_ps,51.90304861812579
+CLK-CMP,RC,VSUP_mean_current_mA,0.19925383796485904
+CLK-CMP,RC,VSUP_mean_power_mW,0.15940307037188725
+CLK-CMP,RC,decision_mean_ps,190.0084738110429
+CLK-CMP,RCC,VSUP_mean_current_mA,0.20130885207749225
+CLK-CMP,RCC,VSUP_mean_power_mW,0.1610470816619938
+CLK-CMP,RCC,decision_mean_ps,207.27840566357142

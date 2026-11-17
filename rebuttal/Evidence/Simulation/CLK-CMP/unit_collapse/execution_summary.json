@@ -1,0 +1,9 @@
+{
+  "case": "CLK-CMP",
+  "condition": "unit_collapse",
+  "unit_model_count": 205,
+  "observer_only_change": null,
+  "model_scope": "Unit-terminal distributed interconnect research; devicecompactmodelnotcalibratedtophysicalmockPDK.",
+  "returncode": 0,
+  "terminal_status": "complete"
+}

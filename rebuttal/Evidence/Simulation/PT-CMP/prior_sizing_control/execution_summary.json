@@ -1,0 +1,29 @@
+{
+  "design": "PT-CMP",
+  "condition": "prior_sizing_control",
+  "returncode": 0,
+  "new_geometry": false,
+  "control_device_declarations": 53,
+  "new_layout_unit_device_declarations": 54,
+  "meaning": "Earlier ideal-interconnect unit-device sizing control used by the fourth plotted curve; not an independently reconstructed original schematic.",
+  "implementation_change": "The sensing inverter PMOS changes NFIN 10 to 12 and NF 2 to 4; its NMOS changes NFIN 10 to 2 with NF 2 retained.",
+  "decomposition_difference": "The earlier PMOS declaration with NF=4 becomes two same-terminal NF=2 declarations in the new-layout unit control. The trace comparison measures the effect; equality is not assumed.",
+  "model_scope": "Predictive PTM-MG 14nm; research-model study, not calibrated foundry PEX.",
+  "supply_V": 0.8,
+  "temperature_C": 27,
+  "output_load_fF": 10,
+  "transient_stop_ns": 80,
+  "maximum_step_ps": 2,
+  "input_edge_ps": 100,
+  "input_words": [
+    "00000000",
+    "10000000",
+    "11111111",
+    "11101111",
+    "11001100",
+    "11000100",
+    "00111100",
+    "00111110"
+  ],
+  "file_type": "Derived execution and scope summary of an existing native run"
+}
